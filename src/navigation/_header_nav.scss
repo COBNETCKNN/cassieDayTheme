@@ -1,0 +1,65 @@
+/* Hide sub-menu by default */
+#menu-header-menu .sub-menu {
+    opacity: 0; /* Initially invisible */
+    visibility: hidden; /* Prevents interaction */
+    position: absolute;
+    width: 250px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Adds smooth transition */
+}
+
+/* Show sub-menu on parent item hover */
+#menu-header-menu li:hover > .sub-menu {
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Interactable */
+}
+
+.sub-menu {
+    li {
+        padding: 7px 0;
+        a {
+            padding: 5px 0;
+        }
+    }
+}
+
+/* Optional: Style for the parent menu items */
+#menu-header-menu li {
+    position: relative; /* Required for absolute positioning of sub-menu */
+}
+
+/* Optional: Basic styles */
+#menu-header-menu {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+#menu-header-menu > li {
+    display: inline-block; /* Display parent items inline */
+    margin-right: 35px; /* Space between parent items */
+}
+
+/* Style sub-menu items */
+#menu-header-menu .sub-menu {
+    background: #fff; /* Background color for sub-menu */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Optional shadow for sub-menu */
+    z-index: 999; /* Make sure sub-menu appears above other elements */
+}
+
+.down-arrow {
+    margin-left: 0; /* Space between title and arrow */
+    display: inline-block; /* Ensures proper alignment */
+    vertical-align: middle; /* Aligns the arrow vertically with text */
+}
+
+.down-arrow svg {
+    fill: currentColor; /* Ensures the SVG inherits the text color */
+    width: 1.5em; /* Adjust size of the SVG */
+    height: 1.5em; /* Adjust size of the SVG */
+}
+
+#menu-header-menu li:hover .down-arrow {
+    fill: #0073aa; /* Change color on hover if needed */
+}

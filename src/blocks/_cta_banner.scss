@@ -1,0 +1,17 @@
+.bannerWrapper {
+    span {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+}
+
+.bannerButton {
+    background-color: $secondary_text_color;
+}
+
+.bannerDecoration {
+    position: absolute;
+    top: 0;
+    left: 5%;
+}

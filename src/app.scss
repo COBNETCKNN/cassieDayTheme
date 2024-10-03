@@ -1,0 +1,48 @@
+// Importing Tailwind stylings
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Loading fonts
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+}
+
+/*--------------------------------------------------------------
+# Global stylings and variables used across site
+--------------------------------------------------------------*/
+@import "variables/colors";
+@import "variables/elements";
+
+/*--------------------------------------------------------------
+# Header Menu Navigation
+--------------------------------------------------------------*/
+@import "navigation/header_nav";
+
+/*--------------------------------------------------------------
+# Styling for Footer
+--------------------------------------------------------------*/
+@import "navigation/footer";
+
+/*--------------------------------------------------------------
+# Styling for blocks
+--------------------------------------------------------------*/
+@import "blocks/home_hero";
+@import "blocks/steps_cards";
+@import "blocks/get_strong";
+@import "blocks/programs_section";
+@import "blocks/reviews";
+@import "blocks/cta_banner";
+@import "blocks/guide_section";
+
+
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: #fff; /* Change this to match your design */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Optional shadow */
+}

@@ -1,0 +1,59 @@
+/** 
+* Global stylings for elements 
+*/
+
+h1 {
+    span {
+        text-transform: uppercase;
+        color: $quaternary_text_color;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+}
+
+.homeEditorContent {
+    h2 {
+        color: $secondary_text_color;
+        font-weight: 800;
+        font-size: 72px;
+        line-height: 82px;
+        margin-bottom: 1.1rem;
+    }
+
+    p {
+        color: $primary_light_text_color;
+        font-weight: 600;
+        font-size: 24px;
+    }
+}
+
+h2 {
+    font-size: 33px;
+    line-height: 44px;
+    font-weight: 800;
+    margin-bottom: 1.1rem;
+}
+
+.homeGetStrong {
+    h2 {
+        font-size: 36px;
+        line-height: 44px;
+        font-weight: 800;
+        margin-bottom: 1.1rem;
+    }
+}
+
+p {
+    color: $primary_light_text_color;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+button {
+    a {
+        font-size: 16px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+    }
+}

@@ -1,0 +1,86 @@
+/** 
+* Making global variables for colors extracted from ACF 
+*/
+
+//Main Theme Colors
+$primary_color: var(--primary-color);
+$primary_light_color: var(--primary-light-color);
+$secondary_color: var(--secondary-color);
+$tertiary_color: var(--tertiary-color);
+$quaternary_color: var(--quaternary-color);
+$quinary_color: var(--quinary-color);
+$senary_color: var(--senary-color);
+
+.bg-primary {
+    background-color: $primary_color;
+}
+
+.bg-primary-light {
+    background-color: $primary_light_color;
+}
+
+.bg-secondary {
+    background-color: $secondary_color;
+}
+
+.bg-tertiary {
+    background-color: $tertiary_color;
+}
+
+.bg-quaternary {
+    background-color: $quaternary_color;
+}
+
+.bg-quinary {
+    background-color: $quinary_color;
+}
+
+.bg-senary {
+    background-color: $senary_color;
+}
+
+//Text Colors
+$primary_text_color: var(--primary-text-color);
+$primary_light_text_color: var(--primary-light-text-color);
+$secondary_text_color: var(--secondary-text-color);
+$tertiary_text_color: var(--tertiary-text-color);
+$quaternary_text_color: var(--quaternary-text-color);
+$quinary_text_color: var(--quinary-text-color);
+$senary_text_color: var(--senary-text-color);
+
+.text-primary {
+    color: $primary_text_color;
+}
+
+.text-primary-light {
+    color: $primary_light_text_color;
+}
+
+.text-secondary {
+    color: $secondary_text_color;
+}
+
+.text-tertiary {
+    color: $tertiary_text_color;
+}
+
+.text-quaternary {
+    color: $quaternary_text_color;
+}
+
+.text-quinary {
+    color: $quinary_text_color;
+}
+
+.text-senary {
+    color: $senary_text_color;
+}
+
+//Gradients
+.bg-first-gradient {
+    background: var(--first-gradient);
+}
+
+.bg-second-gradient {
+    background: var(--second-gradient);
+}

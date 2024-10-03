@@ -1,0 +1,40 @@
+.stepsCard_span {
+    font-size: 48px;
+}
+
+.stepCard_counter1 {
+    color: $tertiary_color;
+}
+
+.stepCard_counter2 {
+    color: $quinary_color;
+}
+
+.stepCard_counter3 {
+    color: $quaternary_color;
+}
+
+.iconRounded_wrapper {
+    width: 60px;               /* Adjust the width */
+    height: 60px;              /* Adjust the height */
+    background-color: #ECF0F2;
+    border-radius: 50%;          /* Makes the div fully rounded (circle) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;         
+    border: 5px solid #FAFBFB;    /* Lighter border color */
+    border-radius: 50%;    
+  }
+
+.stepCard_wrapper {
+    min-height: 290px;
+}
+
+.cardsSection_decorativeShape {
+    position: absolute;
+    bottom: 0; 
+    right: 0;
+    z-index: 0;
+}

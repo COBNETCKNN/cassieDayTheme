@@ -1,0 +1,54 @@
+.footerCopyright_link:hover {
+    text-decoration: underline;
+}
+
+#menu-footer-menu {
+    display: flex;
+    list-style: none; /* Optional: remove default bullets */
+    padding: 0;      /* Optional: remove default padding */
+    margin: 0;       /* Optional: remove default margin */
+}
+
+#menu-footer-menu li {
+    position: relative; /* Position for the pseudo-element */
+}
+
+#menu-footer-menu li:not(:last-child)::after {
+    content: '';
+    display: inline-block;
+    width: 5px;  
+    height: 5px; 
+    background-color: $tertiary_text_color;
+    border-radius: 50%;
+    margin-left: 10px; 
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.bottom-footer {
+    position: relative;
+    padding-top: 40px;
+    margin-top: 150px;
+}
+
+.bottom-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, rgba(255, 0, 0, 0) 0%, rgba(254, 202, 202, 1) 50%, rgba(255, 0, 0, 0) 100%);
+    z-index: 1;
+}
+
+.footer_openingHours__wrapper {
+    li {
+        margin-top: 7px;
+        margin-bottom: 7px;
+    }
+}
+
+.footerCredential {
+    color: $tertiary_text_color;
+}

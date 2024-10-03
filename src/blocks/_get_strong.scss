@@ -1,0 +1,19 @@
+.getStrong_decobox {
+    width: 284px;
+    height: 462px;
+    background: linear-gradient(180deg, #F0EFF8 0%, $primary_light_color 100%);
+    border-radius: 30px;
+}
+
+.getStrong_image__wrapper {
+    img {
+        width: 400px;
+        height: 350px;
+        gap: 7.91px;
+        border-radius: 10px 160px 160px 10px;        
+        position: absolute;
+        top: 50%;  /* position the top  edge of the element at the middle of the parent */
+        left: 50%; /* position the left edge of the element at the middle of the parent */
+        transform: translate(-50%, -50%); 
+    }
+}

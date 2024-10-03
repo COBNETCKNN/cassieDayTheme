@@ -1,0 +1,19 @@
+.homeHero_imageWrapper {
+    display: inline-block;
+    position: relative;
+}
+
+.imageBorderWrapper {
+    display: inline-block;
+    border-radius: 50%;
+    padding: 20px;
+    border: 0.5px solid $tertiary_color;
+    position: relative;
+    box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.1);   
+}
+
+.imageBorderWrapper img {
+    border-radius: 50%;
+    border: 16.28px solid $tertiary_color;
+    display: block;
+}

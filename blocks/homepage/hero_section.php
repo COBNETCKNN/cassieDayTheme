@@ -55,14 +55,14 @@
                     // Get the Popup Form content and Custom Link
                     $popup_form_content = get_sub_field('home_hero_popup_content');
                     $custom_link = get_sub_field('home_hero_custom_link_content');
+                    $form_id = $popup_form_content['select_form']->ID; 
 
                     if ($add_cta_button || $add_custom_link) {
                         if ($add_cta_button && $popup_form_content) {
                             ?>
-                            <button class="cta-button font-plus text-white bg-primary rounded-xl text-base font-bold uppercase tracking-tighter px-10 py-4 mt-10">
-                                <a href="#">
-                                    <?php echo esc_html($popup_form_content['form_links_popup_form_button_name']); ?>
-                                </a>
+                            <button class="cta-button font-plus text-white bg-primary rounded-xl text-base font-bold uppercase tracking-tighter px-10 py-4 mt-10"
+                                data-form-id="<?php echo esc_attr($form_id); ?>" class="cta-button-hero">
+                                <?php echo esc_html($popup_form_content['form_links_popup_form_button_name']); ?>
                             </button>
                             <?php
                         }

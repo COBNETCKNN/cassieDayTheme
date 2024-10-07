@@ -59,39 +59,38 @@ $header_class = 'py-5 ' . $header_fixed;
                 <?php if( have_rows('header_button', 'option') ): ?>
                     <?php while( have_rows('header_button', 'option') ): the_row(); 
                     $headerAddButton = get_sub_field('add_header_button', 'option');
-                    $headerAddCTAButton = get_sub_field('header_add_cta_button', 'option');
-                    $headerAddCustomLink = get_sub_field('header_add_custom_link', 'option');
                     ?>
 
                     <?php
-                    if($headerAddButton) {
-                        if ($headerAddCTAButton) {
-                            if( have_rows('header_popup_form', 'option') ):
-                                while( have_rows('header_popup_form', 'option') ): the_row(); 
+                        if($headerAddButton) {
+                        // Get the true/false values
+                        $add_cta_button = get_sub_field('header_add_cta_button', 'option');
+                        $add_custom_link = get_sub_field('header_add_custom_link', 'option');
 
-                                $ctaButtonName = get_sub_field('button_name', 'option');
-                                $ctaButtonLink = get_sub_field('select_form', 'option'); ?>
+                        // Get the Popup Form content and Custom Link
+                        $popup_form_content = get_sub_field('header_popup_form', 'option');
+                        $custom_link = get_sub_field('header_custom_link_group', 'option');
+                        $form_id = $popup_form_content['select_form']->ID;
 
-                                <a href="#" class="font-giga text-sm font-bold uppercase tracking-tighter px-5 py-3 bg-primary-light text-tertiary rounded-lg"><?php echo $ctaButtonName; ?></a>
+                        if ($add_cta_button || $add_custom_link) {
+                            if ($add_cta_button && $popup_form_content) {
+                                ?>
+                                <button class="cta-button font-giga text-sm font-bold uppercase tracking-tighter px-5 py-3 bg-primary-light text-tertiary rounded-lg"
+                                    data-form-id="<?php echo esc_attr($form_id); ?>" class="cta-button-header">
+                                    <?php echo esc_html($popup_form_content['button_name']); ?>
+                                </button>
+                                <?php
+                            }
+                            if ($add_custom_link && $custom_link) {
+                                ?>
+                                <button class="cta-button font-plus text-white bg-primary rounded-xl text-base font-bold uppercase tracking-tighter px-10 py-4 mt-10">
+                                    <a href="<?php echo esc_url($custom_link['custom_button_link']) ?>">
+                                        <?php echo esc_html($custom_link['custom_link_button_name']); ?>
+                                    </a>
+                                </button>
+                                <?php
+                            }
 
-                                <?php 
-
-                            endwhile;
-                        endif;
-                        } 
-                        if ($headerAddCustomLink) {
-                            if( have_rows('header_custom_link_group', 'option') ):
-                                while( have_rows('header_custom_link_group', 'option') ): the_row(); 
-
-                                $customLinkButtonName = get_sub_field('custom_link_button_name', 'option');
-                                $customLinkButtonLink = get_sub_field('custom_button_link', 'option'); ?>
-
-                                <a href="<?php echo esc_url($customLinkButtonLink); ?>" class="font-giga text-sm font-bold uppercase tracking-tighter px-5 py-3 bg-primary-light text-tertiary rounded-lg"><?php echo $customLinkButtonName; ?></a>
-
-                                <?php 
-
-                            endwhile;
-                        endif;
                         }
                     }
                     ?>

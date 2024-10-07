@@ -1,0 +1,19 @@
+#form-content {
+    font-family: "Plus Jakarta Sans", "sans-serif";
+    text-align: center;
+
+    h3 {
+        color: $secondary_text_color;
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 2rem; 
+        margin-bottom: 1.2rem;
+    }
+
+    div {
+        color: $primary_light_text_color;
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 1.2rem;
+    }
+}

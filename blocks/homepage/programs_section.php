@@ -5,20 +5,17 @@
  */
 
 // Retrieve custom class and ID from the ACF fields
-$custom_class = get_sub_field('programs_settings_custom_html_class');
-$custom_id = get_sub_field('programs_settings_custom_html_id');
+$custom_class = get_sub_field('custom_html_class');
+$custom_id = get_sub_field('custom_html_id');
 
-// Set default values if the fields are empty (optional)
 $default_class = 'homePrograms';
 $default_id = 'homePrograms';
 
-// Check if custom class or ID is provided, otherwise use defaults
-$section_class = !empty($custom_class) ? esc_attr($custom_class) : $default_class;
-$section_id = !empty($custom_id) ? esc_attr($custom_id) : $default_id;
+$section_class = $default_class . (!empty($custom_class) ? ' ' . esc_attr($custom_class) : '');
+$section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '');
 
-$showSection = get_sub_field('programs_settings_show_section');
-if($showSection) { ?>
-
+$showSection = get_sub_field('show_section');
+if ($showSection) { ?>
  <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> py-24 bg-white font-plus relative">
     <div class="container mx-auto">
     <!-- Content -->
@@ -78,36 +75,10 @@ if($showSection) { ?>
                         $imageContentEditor = get_sub_field('image_content_editor');
                     ?>
                         <?php echo $imageContentEditor; ?>
-                        <?php
-                        // Get the true/false values
-                        $add_cta_button = get_sub_field('image_content_add_cta_button');
-                        $add_custom_link = get_sub_field('image_content_add_custom_link');
-
-                        // Get the Popup Form content and Custom Link
-                        $popup_form_content = get_sub_field('image_content_popup_form_group');
-                        $custom_link = get_sub_field('image_content_custom_link_group');
-
-                        if ($add_cta_button || $add_custom_link) {
-                            if ($add_cta_button && $popup_form_content) {
-                                ?>
-                                <button class="text-secondary bg-senary font-plus text-white rounded-lg text-sm font-bold uppercase tracking-tighter px-5 py-3 mt-10">
-                                    <a class="programsButton_link" href="#">
-                                        <?php echo esc_html($popup_form_content['cta_button_name']); ?>
-                                    </a>
-                                </button>
-                                <?php
-                            }
-                            if ($add_custom_link && $custom_link) {
-                                ?>
-                                <button class="text-secondary bg-senary font-plus text-white rounded-lg text-sm font-bold uppercase tracking-tighter px-5 py-3 mt-10">
-                                    <a class="programsButton_link" href="<?php echo esc_url($custom_link['custom_link_link']) ?>">
-                                        <?php echo esc_html($custom_link['custom_link_button_name']); ?>
-                                    </a>
-                                </button>
-                                <?php
-                            }
-                        }
-                        ?>
+                        <!-- Button -->
+                         <div class="programsButton_wrapper">
+                            <?php get_template_part('partials/form', 'links-button'); ?>
+                         </div>
                     <?php endwhile; ?>
                 <?php endif; ?>
             </div>
@@ -124,36 +95,11 @@ if($showSection) { ?>
                                 $contentImageEditor = get_sub_field('content_image_editor');
                             ?>
                                 <?php echo $contentImageEditor; ?>
-                                <?php
-                                // Get the true/false values
-                                $add_cta_button = get_sub_field('content_image_add_cta_button');
-                                $add_custom_link = get_sub_field('content_image_add_custom_link');
-
-                                // Get the Popup Form content and Custom Link
-                                $popup_form_content = get_sub_field('content_image_popup_form_group');
-                                $custom_link = get_sub_field('content_image_custom_link_group');
-
-                                if ($add_cta_button || $add_custom_link) {
-                                    if ($add_cta_button && $popup_form_content) {
-                                        ?>
-                                        <button class="text-secondary bg-senary font-plus text-white rounded-lg text-sm font-bold uppercase tracking-tighter px-5 py-3 mt-10">
-                                            <a class="programsButton_link" href="#">
-                                                <?php echo esc_html($popup_form_content['cta_button_name']); ?>
-                                            </a>
-                                        </button>
-                                        <?php
-                                    }
-                                    if ($add_custom_link && $custom_link) {
-                                        ?>
-                                        <button class="text-secondary bg-senary font-plus text-white rounded-lg text-sm font-bold uppercase tracking-tighter px-5 py-3 mt-10">
-                                            <a class="programsButton_link" href="<?php echo esc_url($custom_link['custom_link_link']) ?>">
-                                                <?php echo esc_html($custom_link['custom_link_button_name']); ?>
-                                            </a>
-                                        </button>
-                                        <?php
-                                    }
-                                }
-                                ?>
+                              
+                            <!-- Button -->
+                            <div class="programsButton_wrapper">
+                                <?php get_template_part('partials/form', 'links-button'); ?>
+                            </div>
                             <?php endwhile; ?>
                         <?php endif; ?>
                     </div>

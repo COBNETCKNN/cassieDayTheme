@@ -66,3 +66,14 @@
     top: 25%;
     left: 0;
 }
+
+.programsButton_wrapper {
+    button {
+        color: $secondary_text_color;
+        background-color: $senary_color;
+        font-size: 14px;
+        font-weight: 800;
+        padding: 10px 24px;
+        border-radius: 8px;
+    }
+}

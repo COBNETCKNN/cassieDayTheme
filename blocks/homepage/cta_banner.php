@@ -5,20 +5,17 @@
  */
 
 // Retrieve custom class and ID from the ACF fields
-$custom_class = get_sub_field('cta_banner_settings_custom_html_class');
-$custom_id = get_sub_field('cta_banner_settings_custom_html_id');
+$custom_class = get_sub_field('custom_html_class');
+$custom_id = get_sub_field('custom_html_id');
 
-// Set default values if the fields are empty (optional)
-$default_class = 'ctaBanner';
-$default_id = 'ctaBanner';
+$default_class = 'homeBanner';
+$default_id = 'homeBanner';
 
-// Check if custom class or ID is provided, otherwise use defaults
-$section_class = !empty($custom_class) ? esc_attr($custom_class) : $default_class;
-$section_id = !empty($custom_id) ? esc_attr($custom_id) : $default_id;
+$section_class = $default_class . (!empty($custom_class) ? ' ' . esc_attr($custom_class) : '');
+$section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '');
 
-$showSection = get_sub_field('cta_banner_settings_show_section');
-if($showSection) { 
-?>
+$showSection = get_sub_field('show_section');
+if ($showSection) { ?>
 
  <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> py-20 bg-white font-plus text-secondary">
     <div class="container mx-auto relative">

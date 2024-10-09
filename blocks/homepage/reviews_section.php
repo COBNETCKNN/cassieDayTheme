@@ -17,31 +17,27 @@ $section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '
 $showSection = get_sub_field('show_section');
 if ($showSection) { ?>
 
- <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> bg-white font-plus">
+ <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> bg-section-primary font-plus relative">
     <div class="container mx-auto">
         <!-- Content -->
-        <?php if( have_rows('reviews_content_group') ): ?>
-            <?php while( have_rows('reviews_content_group') ): the_row(); 
-            
-                $reviewsEditor = get_sub_field('reviews_content_editor');
-                $alignment = get_sub_field('reviews_align_content');
+        <?php
+            $reviewsEditor = get_sub_field('content_editor');
+            $alignment = get_sub_field('align_content');
 
-                // Determine the alignment value for inline CSS
-                $alignment_style = '';
-                if ($alignment == 'left') {
-                    $alignment_style = 'left';
-                } elseif ($alignment == 'center') {
-                    $alignment_style = 'center';
-                } elseif ($alignment == 'right') {
-                    $alignment_style = 'right';
-                }
-                ?>
+            // Determine the alignment value for inline CSS
+            $alignment_style = '';
+            if ($alignment == 'left') {
+                $alignment_style = 'left';
+            } elseif ($alignment == 'center') {
+                $alignment_style = 'center';
+            } elseif ($alignment == 'right') {
+                $alignment_style = 'right';
+            }
+        ?>
 
-                <div class="homePrograms_content" style="text-align: <?php echo $alignment_style; ?>;">
-                    <?php echo $reviewsEditor; ?>
-                </div>
-            <?php endwhile; ?>
-        <?php endif; ?>
+        <div class="homePrograms_content mt-14" style="text-align: <?php echo $alignment_style; ?>;">
+            <?php echo $reviewsEditor; ?>
+        </div>
         <!-- Reviews Repeater -->
          <div class="reviewsRepeater_wrapper my-14">
             <div class="owl-carousel owl-theme">

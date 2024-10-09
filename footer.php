@@ -4,13 +4,13 @@ global $footerLogoWidth;
 $columns = get_field('show_section_in_footer', 'option') ? 4 : 3;
 ?>
 
-<footer class="py-14">
+<footer class="py-14 relative">
     <div class="container mx-auto">
         <!-- Upper footer -->
         <div class="my-14">
             <div class="grid gap-4" style="grid-template-columns: repeat(<?php echo $columns; ?>, 1fr);">
                         <!-- Logo and Partners -->
-                        <div class="">
+                        <div class="relative z-10">
                             <!-- Logo -->
                             <div class="mb-12">
                                 <?php if( have_rows('footer_logo_group', 'option') ): ?>
@@ -31,7 +31,7 @@ $columns = get_field('show_section_in_footer', 'option') ? 4 : 3;
                                 <?php endif; ?>
                             </div>
                             <!-- Partners -->
-                             <div class="">
+                             <div class="relative z-10">
                                 <?php if( have_rows('footer_partners', 'option') ): ?>
                                     <?php while( have_rows('footer_partners', 'option') ): the_row(); 
                                     
@@ -54,7 +54,7 @@ $columns = get_field('show_section_in_footer', 'option') ? 4 : 3;
                         </div>
                         <!-- Opening hours -->
                         <?php if ( get_field('show_section_in_footer', 'option') ) : ?>
-                            <div class="flex justify-center">
+                            <div class="flex justify-center relative z-10">
                                 <div class="">
                                     <h5 class="footerInfo_card__heading font-plus uppercase text-base font-extrabold mb-3 text-tertiary">Opening Hours</h5>
                                     <ul class="footer_openingHours__wrapper text-lg font-plus font-medium text-primary">
@@ -77,7 +77,7 @@ $columns = get_field('show_section_in_footer', 'option') ? 4 : 3;
                             </div>
                         <?php endif; ?>
                         <!-- Contact -->
-                        <div class="flex justify-center">
+                        <div class="flex justify-center relative z-10">
                             <div class="">
                                 <h5 class="footerInfo_card__heading font-plus uppercase text-base font-extrabold mb-3 text-tertiary">Contact</h5>
                                 <!-- Phone -->
@@ -164,7 +164,7 @@ $columns = get_field('show_section_in_footer', 'option') ? 4 : 3;
             </div>
         </div>
         <!-- Bottom Footer -->
-        <div class="bottom-footer">
+        <div class="bottom-footer relative z-10">
             <div class="flex justify-between">
                 <!-- Copyright -->
                 <?php 
@@ -187,6 +187,19 @@ $columns = get_field('show_section_in_footer', 'option') ? 4 : 3;
             </div>
         </div>
     </div>
+    <svg class="footerDeco" width="600" height="586" viewBox="0 0 951 586" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_f_78_2312)">
+        <ellipse cx="475.5" cy="293" rx="410.5" ry="228" fill="#FEF1FA"/>
+        </g>
+        <defs>
+        <filter id="filter0_f_78_2312" x="0" y="0" width="951" height="586" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+        <feGaussianBlur stdDeviation="32.5" result="effect1_foregroundBlur_78_2312"/>
+        </filter>
+        </defs>
+    </svg>
+
 </footer>
 
 <style>

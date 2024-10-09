@@ -1,3 +1,8 @@
+header {
+    position: relative;
+    z-index: 10;
+}
+
 /* Hide sub-menu by default */
 #menu-header-menu .sub-menu {
     opacity: 0; /* Initially invisible */

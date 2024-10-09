@@ -10,12 +10,19 @@ function theme_colors() {
         while( have_rows('theme_colors', 'option') ): the_row();
 
             $primary_color = get_sub_field('primary_color', 'option');
-            $primary_light_color = get_sub_field('primary_light_color', 'option');
             $secondary_color = get_sub_field('secondary_color', 'option');
             $tertiary_color = get_sub_field('tertiary_color', 'option');
             $quaternary_color = get_sub_field('quaternary_color', 'option');
-            $quinary_color = get_sub_field('quinary_color', 'option');
-            $senary_color = get_sub_field('senary_color', 'option');
+
+        endwhile;
+    endif;
+
+    //Section Background
+    if( have_rows('section_background', 'option') ):
+        while( have_rows('section_background', 'option') ): the_row();
+
+            $primary_section_color = get_sub_field('primary_color', 'option');
+            $secondary_section_color = get_sub_field('secondary_color', 'option');
 
         endwhile;
     endif;
@@ -27,10 +34,6 @@ function theme_colors() {
             $primary_text_color = get_sub_field('primary_text_color', 'option');
             $primary_light_text_color = get_sub_field('primary_light_text_color', 'option');
             $secondary_text_color = get_sub_field('secondary_text_color', 'option');
-            $tertiary_text_color = get_sub_field('tertiary_text_color', 'option');
-            $quaternary_text_color = get_sub_field('quaternary_text_color', 'option');
-            $quinary_text_color = get_sub_field('quinary_text_color', 'option');
-            $senary_text_color = get_sub_field('senary_text_color', 'option');
 
         endwhile;
     endif;
@@ -39,20 +42,93 @@ function theme_colors() {
     echo "<style>
         :root {
             --primary-color: $primary_color;
-            --primary-light-color: $primary_light_color;
             --secondary-color: $secondary_color;
             --tertiary-color: $tertiary_color;
             --quaternary-color: $quaternary_color;
-            --quinary-color: $quinary_color;
-            --senary-color: $senary_color;
+            --primary-section-color: $primary_section_color;
+            --secondary-section-color: $secondary_section_color;
             --primary-text-color: $primary_text_color;
             --primary-light-text-color: $primary_light_text_color;
             --secondary-text-color: $secondary_text_color;
-            --tertiary-text-color: $tertiary_text_color;
-            --quaternary-text-color: $quaternary_text_color;
-            --quinary-text-color: $quinary_text_color;
-            --senary-text-color: $senary_text_color;
         }
+    </style>";
+
+    //Button colors
+    if( have_rows('button_colors', 'option') ):
+        while( have_rows('button_colors', 'option') ): the_row();
+            //Primary Button
+            if( have_rows('primary_button', 'option') ):
+                while( have_rows('primary_button', 'option') ): the_row();
+
+                    $primary_button_text_color = get_sub_field('text_color', 'option');
+                    $primary_button_background_color = get_sub_field('background_color', 'option');
+                    $primary_button_hover_dark = get_sub_field('hover_primary', 'option');
+                    $primary_button_hover_darker = get_sub_field('hover_secondary', 'option');
+
+                endwhile;
+            endif;
+
+            //Secondary Button
+            if( have_rows('secondary_button', 'option') ):
+                while( have_rows('secondary_button', 'option') ): the_row();
+
+                    $secondary_button_text_color = get_sub_field('text_color', 'option');
+                    $secondary_button_background_color = get_sub_field('background_color', 'option');
+                    $secondary_button_hover_dark = get_sub_field('hover_primary', 'option');
+                    $secondary_button_hover_darker = get_sub_field('hover_secondary', 'option');
+
+                endwhile;
+            endif;
+
+            //Banner Button
+            if( have_rows('banner_button', 'option') ):
+                while( have_rows('banner_button', 'option') ): the_row();
+
+                    $banner_button_text_color = get_sub_field('text_color', 'option');
+                    $banner_button_background_color = get_sub_field('background_color', 'option');
+                    $banner_button_hover_dark = get_sub_field('hover_primary', 'option');
+                    $banner_button_hover_darker = get_sub_field('hover_secondary', 'option');
+
+                endwhile;
+            endif;
+
+            //Header Button
+            if( have_rows('header_button', 'option') ):
+                while( have_rows('header_button', 'option') ): the_row();
+
+                    $header_button_text_color = get_sub_field('text_color', 'option');
+                    $header_button_background_color = get_sub_field('background_color', 'option');
+                    $header_button_hover_dark = get_sub_field('hover_primary', 'option');
+                    $header_button_hover_darker = get_sub_field('hover_secondary', 'option');
+
+                endwhile;
+            endif;
+        endwhile;
+    endif;
+
+    // Output the custom styles with the ACF color values
+    echo "<style>
+    :root {
+        --primary-button-text-color: $primary_button_text_color;
+        --primary-button-background-color: $primary_button_background_color;
+        --primary-button-hover-dark: $primary_button_hover_dark;
+        --primary-button-hover-darker: $primary_button_hover_darker;
+
+        --secondary-button-text-color: $secondary_button_text_color;
+        --secondary-button-background-color: $secondary_button_background_color;
+        --secondary-button-hover-dark: $secondary_button_hover_dark;
+        --secondary-button-hover-darker: $secondary_button_hover_darker;
+
+        --banner-button-text-color: $banner_button_text_color;
+        --banner-button-background-color: $banner_button_background_color;
+        --banner-button-hover-dark: $banner_button_hover_dark;
+        --banner-button-hover-darker: $banner_button_hover_darker;
+
+        --header-button-text-color: $header_button_text_color;
+        --header-button-background-color: $header_button_background_color;
+        --header-button-hover-dark: $header_button_hover_dark;
+        --header-button-hover-darker: $header_button_hover_darker;
+    }
     </style>";
 
 

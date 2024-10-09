@@ -19,12 +19,25 @@ if ($showSection) { ?>
 <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> bg-white font-plus relative">
     <div class="container mx-auto py-28">
         <div class="grid grid-cols-4 gap-6">
-        <!-- Heading -->
-        <?php 
-        $stepsHeading = get_sub_field('steps_section_heading');
+        <?php
+            $stepsContent = get_sub_field('content_editor');
+            $alignment = get_sub_field('align_content');
         ?>
-        <div class="my-auto">
-            <?php echo $stepsHeading; ?>
+        <!-- Text Content -->
+        <?php 
+            // Determine the alignment value for inline CSS
+            $alignment_style = '';
+            if ($alignment == 'left') {
+                $alignment_style = 'left';
+            } elseif ($alignment == 'center') {
+                $alignment_style = 'center';
+            } elseif ($alignment == 'right') {
+                $alignment_style = 'right';
+            }
+        ?>
+        <div class="my-auto" style="text-align: <?php echo $alignment_style; ?>;">
+            <!-- Content -->
+            <?php echo $stepsContent; ?>
         </div>
         <!-- Card Repeater -->
         <?php 
@@ -40,7 +53,7 @@ if ($showSection) { ?>
             $formatted_number = sprintf('%02d', $counter);
             ?>
 
-            <div class="stepCard_wrapper bg-secondary px-7 py-10 rounded-2xl shadow-lg relative z-10">
+            <div class="stepCard_wrapper bg-section-primary px-7 py-10 rounded-2xl shadow-lg relative z-10">
                 <div class="numberIcon_wrapper flex justify-between">
                     <span class="stepsCard_span stepCard_counter<?php echo $counter; ?> font-plus font-extrabold leading-none opacity-40 my-auto"><?php echo $formatted_number; ?></span>
                     <div class="iconRounded_wrapper">

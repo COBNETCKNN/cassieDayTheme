@@ -75,16 +75,16 @@ $header_class = 'py-5 ' . $header_fixed;
                         if ($add_cta_button || $add_custom_link) {
                             if ($add_cta_button && $popup_form_content) {
                                 ?>
-                                <button class="cta-button font-giga text-sm font-bold uppercase tracking-tighter px-5 py-3 bg-primary-light text-tertiary rounded-lg"
+                                <button class="header-button font-plus cta-button font-giga text-sm font-extrabold uppercase tracking-tighter rounded-lg"
                                     data-form-id="<?php echo esc_attr($form_id); ?>" class="cta-button-header">
-                                    <?php echo esc_html($popup_form_content['button_name']); ?>
+                                    <a class="block px-5 py-3" href=""><?php echo esc_html($popup_form_content['button_name']); ?></a>
                                 </button>
                                 <?php
                             }
                             if ($add_custom_link && $custom_link) {
                                 ?>
-                                <button class="cta-button font-plus text-white bg-primary rounded-xl text-base font-bold uppercase tracking-tighter px-10 py-4 mt-10">
-                                    <a href="<?php echo esc_url($custom_link['custom_button_link']) ?>">
+                                <button class="header-button font-plus cta-button font-plus rounded-xl text-base font-extrabold uppercase tracking-tighter mt-10">
+                                    <a class="block px-5 py-3" href="<?php echo esc_url($custom_link['custom_button_link']) ?>">
                                         <?php echo esc_html($custom_link['custom_link_button_name']); ?>
                                     </a>
                                 </button>

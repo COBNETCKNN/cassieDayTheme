@@ -4,19 +4,12 @@
 
 //Main Theme Colors
 $primary_color: var(--primary-color);
-$primary_light_color: var(--primary-light-color);
 $secondary_color: var(--secondary-color);
 $tertiary_color: var(--tertiary-color);
 $quaternary_color: var(--quaternary-color);
-$quinary_color: var(--quinary-color);
-$senary_color: var(--senary-color);
 
 .bg-primary {
     background-color: $primary_color;
-}
-
-.bg-primary-light {
-    background-color: $primary_light_color;
 }
 
 .bg-secondary {
@@ -31,22 +24,22 @@ $senary_color: var(--senary-color);
     background-color: $quaternary_color;
 }
 
-.bg-quinary {
-    background-color: $quinary_color;
+//Section Background
+$primary_section_color: var(--primary-section-color);
+$secondary_section_color: var(--secondary-section-color);
+
+.bg-section-primary {
+    background-color: $primary_section_color;
 }
 
-.bg-senary {
-    background-color: $senary_color;
+.bg-section-secondary {
+    background-color: $secondary_section_color;
 }
 
 //Text Colors
 $primary_text_color: var(--primary-text-color);
 $primary_light_text_color: var(--primary-light-text-color);
 $secondary_text_color: var(--secondary-text-color);
-$tertiary_text_color: var(--tertiary-text-color);
-$quaternary_text_color: var(--quaternary-text-color);
-$quinary_text_color: var(--quinary-text-color);
-$senary_text_color: var(--senary-text-color);
 
 .text-primary {
     color: $primary_text_color;
@@ -60,21 +53,31 @@ $senary_text_color: var(--senary-text-color);
     color: $secondary_text_color;
 }
 
-.text-tertiary {
-    color: $tertiary_text_color;
-}
+//Button Colors
+//Primary Button
+$primary_button_text_color: var(--primary-button-text-color);
+$primary_button_background_color: var(--primary-button-background-color);
+$primary_button_hover_dark: var(--primary-button-hover-dark);
+$primary_button_hover_darker: var(--primary-button-hover-darker);
 
-.text-quaternary {
-    color: $quaternary_text_color;
-}
+//Secondary Button
+$secondary_button_text_color: var(--secondary-button-text-color);
+$secondary_button_background_color: var(--secondary-button-background-color);
+$secondary_button_hover_dark: var(--secondary-button-hover-dark);
+$secondary_button_hover_darker: var(--secondary-button-hover-darker);
 
-.text-quinary {
-    color: $quinary_text_color;
-}
+//Banner Button
+$banner_button_text_color: var(--banner-button-text-color);
+$banner_button_background_color: var(--banner-button-background-color);
+$banner_button_hover_dark: var(--banner-button-hover-dark);
+$banner_button_hover_darker: var(--banner-button-hover-darker);
 
-.text-senary {
-    color: $senary_text_color;
-}
+//Header Button
+$header_button_text_color: var(--header-button-text-color);
+$header_button_background_color: var(--header-button-background-color);
+$header_button_hover_dark: var(--header-button-hover-dark);
+$header_button_hover_darker: var(--header-button-hover-darker);
+
 
 //Gradients
 .bg-first-gradient {

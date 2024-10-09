@@ -17,66 +17,35 @@ $section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '
 $showSection = get_sub_field('show_section');
 if ($showSection) { ?>
 
- <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> py-20 bg-white font-plus text-secondary">
+ <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> py-20 bg-section-primary font-plus text-secondary">
     <div class="container mx-auto relative">
         <div class="bannerWrapper bg-second-gradient py-20 px-5 rounded-2xl">
             <div class="banner_content relative z-10" style="text-align: <?php echo $alignment_style; ?>;">
-                <?php if( have_rows('cta_content_group') ): ?>
-                    <?php while( have_rows('cta_content_group') ): the_row(); 
-                    
-                        $reviewsEditor = get_sub_field('cta_banner_editor');
-                        $alignment = get_sub_field('cta_banner_align_content');
+                <?php              
+                    $reviewsEditor = get_sub_field('content_editor');
+                    $alignment = get_sub_field('align_content');
 
-                        // Determine the alignment value for inline CSS
-                        $alignment_style = '';
-                        if ($alignment == 'left') {
-                            $alignment_style = 'left';
-                        } elseif ($alignment == 'center') {
-                            $alignment_style = 'center';
-                        } elseif ($alignment == 'right') {
-                            $alignment_style = 'right';
-                        }
-                        ?>
-                        <!-- Content -->
-                        <?php echo $reviewsEditor; ?>
-                    <?php endwhile; ?>
-                <?php endif; ?>
-                <!-- Button -->
-                <?php
-                // Get the true/false values
-                $add_cta_button = get_sub_field('cta_banner_add_cta_button');
-                $add_custom_link = get_sub_field('cta_banner_add_custom_link');
-
-                // Get the Popup Form content and Custom Link
-                $popup_form_content = get_sub_field('cta_banner_popup_form_group');
-                $custom_link = get_sub_field('cta_banner_custom_link_group');
-
-                if ($add_cta_button || $add_custom_link) {
-                    if ($add_cta_button && $popup_form_content) {
-                        ?>
-                        <button class="bannerButton font-plus text-white rounded-xl text-sm font-bold uppercase tracking-tighter px-7 py-4 mt-5">
-                            <a class="programsButton_link" href="#">
-                                <?php echo esc_html($popup_form_content['cta_button_name']); ?>
-                            </a>
-                        </button>
-                        <?php
+                    // Determine the alignment value for inline CSS
+                    $alignment_style = '';
+                    if ($alignment == 'left') {
+                        $alignment_style = 'left';
+                    } elseif ($alignment == 'center') {
+                        $alignment_style = 'center';
+                    } elseif ($alignment == 'right') {
+                        $alignment_style = 'right';
                     }
-                    if ($add_custom_link && $custom_link) {
-                        ?>
-                        <button class="bannerButton font-plus text-white rounded-xl text-sm font-bold uppercase tracking-tighter px-7 py-4 mt-5">
-                            <a class="programsButton_link" href="<?php echo esc_url($custom_link['custom_link_button_link']) ?>">
-                                <?php echo esc_html($custom_link['custom_link_button_name']); ?>
-                            </a>
-                        </button>
-                        <?php
-                    }
-                }
                 ?>
+                <!-- Content -->
+                <?php echo $reviewsEditor; ?>
+                <!-- Button -->
+                 <div class="bannerButton_wrapper">
+                    <?php get_template_part('partials/form', 'links-button'); ?>
+                 </div>
             </div>
         </div>
         <!-- Banner Decoration -->
         <?php 
-        $sectionDecoration = get_sub_field('show_banner_decoration');
+        $sectionDecoration = get_sub_field('show_section_decoration');
 
         if($sectionDecoration) { ?>
             <img class="bannerDecoration" src="<?php echo get_template_directory_uri() . '/assets/svgs/banner_decoration.svg'; ?>" alt="Decorative SVG"/>

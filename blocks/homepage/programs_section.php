@@ -16,31 +16,28 @@ $section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '
 
 $showSection = get_sub_field('show_section');
 if ($showSection) { ?>
- <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> py-24 bg-white font-plus relative">
+ <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> py-24 bg-section-secondary font-plus relative">
     <div class="container mx-auto">
     <!-- Content -->
-     <?php if( have_rows('programs_content_group') ): ?>
-        <?php while( have_rows('programs_content_group') ): the_row(); 
-        
-            $homeStepsEditor = get_sub_field('programs_editor');
-            $alignment = get_sub_field('programs_align_content');
+     <?php 
+    $homeStepsEditor = get_sub_field('content_editor');
+    $alignment = get_sub_field('align_content');
 
-            // Determine the alignment value for inline CSS
-            $alignment_style = '';
-            if ($alignment == 'left') {
-                $alignment_style = 'left';
-            } elseif ($alignment == 'center') {
-                $alignment_style = 'center';
-            } elseif ($alignment == 'right') {
-                $alignment_style = 'right';
-            }
-            ?>
+    // Determine the alignment value for inline CSS
+    $alignment_style = '';
+    if ($alignment == 'left') {
+        $alignment_style = 'left';
+    } elseif ($alignment == 'center') {
+        $alignment_style = 'center';
+    } elseif ($alignment == 'right') {
+        $alignment_style = 'right';
+    }
+    ?>
 
-            <div class="homePrograms_content" style="text-align: <?php echo $alignment_style; ?>;">
-                <?php echo $homeStepsEditor; ?>
-            </div>
-        <?php endwhile; ?>
-    <?php endif; ?>
+
+    <div class="homePrograms_content" style="text-align: <?php echo $alignment_style; ?>;">
+        <?php echo $homeStepsEditor; ?>
+    </div>
     <!-- Flexible Programs Content -->
     <?php if( have_rows('programs_flexible_content') ): ?>
     <?php $layout_count = 0; // Initialize counter ?>
@@ -77,7 +74,38 @@ if ($showSection) { ?>
                         <?php echo $imageContentEditor; ?>
                         <!-- Button -->
                          <div class="programsButton_wrapper">
-                            <?php get_template_part('partials/form', 'links-button'); ?>
+                            <?php 
+                                    // Get the true/false values
+                                $add_button = get_sub_field('add_button');
+                                $add_custom_link = get_sub_field('add_custom_link');
+                                
+                                // Get the Popup Form content and Custom Link
+                                $popup_form_content = get_sub_field('popup_form_group');
+                                $custom_link = get_sub_field('custom_link');
+                                
+                                // Check if popup form ID is available
+                                $form_id = isset($popup_form_content['cta_select_form']) && is_object($popup_form_content['cta_select_form']) 
+                                            ? $popup_form_content['cta_select_form']->ID 
+                                            : null;
+                                
+                                // Prioritize the custom link over the CTA button
+                                if ($add_custom_link && $custom_link) {
+                                    $custom_link_url = $custom_link['url'];
+                                    $custom_link_title = $custom_link['title'];
+                                    ?>
+                                    <button class="button-secondary font-plus rounded-xl text-sm font-bold uppercase mt-10">
+                                        <a class="px-6 py-3 block" href="<?php echo esc_url($custom_link_url); ?>"><?php echo esc_html($custom_link_title); ?></a>
+                                    </button>
+                                    <?php
+                                } elseif ($add_button && $popup_form_content && $form_id) {
+                                    ?>
+                                    <button class="cta-button button-secondary font-plus rounded-xl text-sm font-bold uppercase mt-10"
+                                        data-form-id="<?php echo esc_attr($form_id); ?>">
+                                        <a class="px-6 py-3 block" href=""><?php echo esc_html($popup_form_content['cta_button_name']); ?></a>
+                                    </button>
+                                    <?php
+                                }
+                            ?>
                          </div>
                     <?php endwhile; ?>
                 <?php endif; ?>
@@ -98,7 +126,38 @@ if ($showSection) { ?>
                               
                             <!-- Button -->
                             <div class="programsButton_wrapper">
-                                <?php get_template_part('partials/form', 'links-button'); ?>
+                                <?php 
+                                 // Get the true/false values
+                                $add_button = get_sub_field('add_button');
+                                $add_custom_link = get_sub_field('add_custom_link');
+                                
+                                // Get the Popup Form content and Custom Link
+                                $popup_form_content = get_sub_field('popup_form_group');
+                                $custom_link = get_sub_field('custom_link');
+                                
+                                // Check if popup form ID is available
+                                $form_id = isset($popup_form_content['cta_select_form']) && is_object($popup_form_content['cta_select_form']) 
+                                            ? $popup_form_content['cta_select_form']->ID 
+                                            : null;
+                                
+                                // Prioritize the custom link over the CTA button
+                                if ($add_custom_link && $custom_link) {
+                                    $custom_link_url = $custom_link['url'];
+                                    $custom_link_title = $custom_link['title'];
+                                    ?>
+                                    <button class="button-secondary font-plus rounded-xl text-sm font-bold uppercase mt-10">
+                                        <a class="px-6 py-3 block" href="<?php echo esc_url($custom_link_url); ?>"><?php echo esc_html($custom_link_title); ?></a>
+                                    </button>
+                                    <?php
+                                } elseif ($add_button && $popup_form_content && $form_id) {
+                                    ?>
+                                    <button class="cta-button button-secondary font-plus rounded-xl text-sm font-bold uppercase mt-10"
+                                        data-form-id="<?php echo esc_attr($form_id); ?>">
+                                        <a class="px-6 py-3 block"><?php echo esc_html($popup_form_content['cta_button_name']); ?></a>
+                                    </button>
+                                    <?php
+                                }
+                                ?>
                             </div>
                             <?php endwhile; ?>
                         <?php endif; ?>

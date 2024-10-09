@@ -50,15 +50,15 @@
 }
 
 .layout-1, .layout-4 {
-    background-color: $tertiary_color;
+    background-color: $secondary_color;
 }
 
 .layout-2, .layout-5 {
-    background-color: $quaternary_color;
+    background-color: $tertiary_color;
 }
 
 .layout-3, .layout-6 {
-    background-color: $quinary_color;
+    background-color: $quaternary_color;
 }
 
 .programsDecoration {
@@ -69,11 +69,15 @@
 
 .programsButton_wrapper {
     button {
-        color: $secondary_text_color;
-        background-color: $senary_color;
+        color: $secondary_button_text_color;
+        background-color: $secondary_button_background_color;
         font-size: 14px;
         font-weight: 800;
-        padding: 10px 24px;
         border-radius: 8px;
+
+        a {
+            font-size: 14px;
+            font-weight: 800;
+        }
     }
 }

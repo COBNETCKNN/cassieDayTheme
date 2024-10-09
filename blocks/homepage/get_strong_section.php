@@ -17,50 +17,67 @@ $section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '
 $showSection = get_sub_field('show_section');
 if ($showSection) { ?>
 
-<section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> py-36 bg-white font-plus">
+<section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> py-36 bg-section-primary font-plus">
     <div class="container mx-auto">
         <div class="grid grid-cols-2 gap-14">
-        <?php if( have_rows('get_started_content') ): ?>
-            <?php while( have_rows('get_started_content') ): the_row(); 
-            
-                $featuredImage = get_sub_field('get_strong_featured_image');
-                $featuredImageSize = 'strong-featured';
-                $editorContent = get_sub_field('get_strong_editor');
-                $alignment = get_sub_field('get_strong_align_content');
-                ?>
+            <!-- Featured Image -->
+            <div class="relative my-auto">
+                <div class="getStrong_decobox">
+                </div>
+                <div class="getStrong_image__wrapper">
+                    <?php
+                        $featuredImage = get_sub_field('featured_image');
+                        if( $featuredImage ):
 
-                <?php 
-                    //Text Alignment 
-                    // Determine the alignment value for inline CSS
-                    $alignment_style = '';
-                    if ($alignment == 'left') {
-                        $alignment_style = 'left';
-                    } elseif ($alignment == 'center') {
-                        $alignment_style = 'center';
-                    } elseif ($alignment == 'right') {
-                        $alignment_style = 'right';
-                    }
-                ?>
-                <!-- Featured Image -->
-                <div class="relative my-auto">
-                    <div class="getStrong_decobox">
-                    </div>
-                    <div class="getStrong_image__wrapper">
-                        <?php 
-                        if( $featuredImage ) {
-                            echo wp_get_attachment_image( $featuredImage, $featuredImageSize );
-                        }
-                        ?>
-                    </div>
+                        // Image variables.
+                        $url = $featuredImage['url'];
+                        $alt = $featuredImage['alt'];
+                        $size = 'strong-featured';
+                        $thumb = $featuredImage['sizes'][ $size ]; ?>
+
+                            <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
+
+                    <?php endif; ?>
                 </div>
-                <!-- Content -->
-                <div class="my-auto" style="text-align: <?php echo $alignment_style; ?>;">
+            </div>
+            <?php
+                $editorContent = get_sub_field('content_editor');
+                $alignment = get_sub_field('align_content');
+            ?>
+
+            <?php 
+                //Text Alignment 
+                // Determine the alignment value for inline CSS
+                $alignment_style = '';
+                if ($alignment == 'left') {
+                    $alignment_style = 'left';
+                } elseif ($alignment == 'center') {
+                    $alignment_style = 'center';
+                } elseif ($alignment == 'right') {
+                    $alignment_style = 'right';
+                }
+            ?>
+
+            <div class="my-auto relative" style="text-align: <?php echo $alignment_style; ?>;">
+                <div class="relative z-10">
+                    <!-- Content -->
                     <?php echo $editorContent; ?>
-                    <?php endwhile; ?>
-                <?php endif; ?>
-                <!-- Button -->
-                <?php get_template_part('partials/form', 'links-button'); ?>
+                    <!-- Button -->
+                    <?php get_template_part('partials/form', 'links-button'); ?>
                 </div>
+                <svg class="getStrongDeco" width="834" height="505" viewBox="0 0 834 505" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_f_78_2374)">
+                    <ellipse cx="417" cy="252.5" rx="300" ry="135.5" fill="#F0EFF8"/>
+                    </g>
+                    <defs>
+                    <filter id="filter0_f_78_2374" x="0" y="0" width="834" height="505" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="58.5" result="effect1_foregroundBlur_78_2374"/>
+                    </filter>
+                    </defs>
+                </svg>
+            </div>
         </div>
     </div>
 </section>

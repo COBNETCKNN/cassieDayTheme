@@ -40,6 +40,7 @@ $secondary_section_color: var(--secondary-section-color);
 $primary_text_color: var(--primary-text-color);
 $primary_light_text_color: var(--primary-light-text-color);
 $secondary_text_color: var(--secondary-text-color);
+$hero_preheading_color: var(--hero-preheading-color);
 
 .text-primary {
     color: $primary_text_color;
@@ -51,6 +52,10 @@ $secondary_text_color: var(--secondary-text-color);
 
 .text-secondary {
     color: $secondary_text_color;
+}
+
+.text-hero-preheading {
+    color: $hero_preheading_color;
 }
 
 //Button Colors
@@ -77,6 +82,22 @@ $header_button_text_color: var(--header-button-text-color);
 $header_button_background_color: var(--header-button-background-color);
 $header_button_hover_dark: var(--header-button-hover-dark);
 $header_button_hover_darker: var(--header-button-hover-darker);
+
+//Link Colors
+$link_color: var(--link-color);
+$link_hover_color: var(--link-hover-color);
+$link_active_color: var(--link-active-color);
+
+//Footer Links Colors
+$footer_link_color: var(--footer-link-color);
+$footer_link_hover_color: var(--footer-link-hover-color);
+$footer_link_active_color: var(--footer-link-active-color);
+
+//Heading Decorations
+$primary_heading_decoration: var(--primary-heading-decoration);
+$secondary_heading_decoration: var(--secondary-heading-decoration);
+$tertiary_heading_decoration: var(--tertiary-heading-decoration);
+
 
 
 //Gradients

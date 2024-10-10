@@ -25,6 +25,18 @@
     vertical-align: middle;
 }
 
+#menu-footer-menu {
+    li {
+        a {
+            color: $primary_text_color;
+        }
+
+        a:hover {
+            color: $footer_link_hover_color;
+        }
+    }
+}
+
 .bottom-footer {
     position: relative;
     padding-top: 40px;
@@ -57,4 +69,45 @@
     position: absolute;
     top: 0;
     left: 20%;
+}
+
+//Footer Links
+.contactInfo_link {
+    color: $footer_link_color;
+    transition: color 0.3s ease-in-out 0.1s; // Adding transition delay of 0.1s
+}
+
+.contactInfo_link:hover {
+    color: $footer_link_hover_color;
+}
+
+.contactInfo_link:active {
+    color: $footer_link_active_color;
+}
+
+.addressLink {
+    span {
+        color: $footer_link_color;
+        transition: color 0.3s ease-in-out 0.1s; // Adding transition delay of 0.1s
+    }
+}
+
+.addressLink:hover {
+    span {
+        color: $footer_link_hover_color;
+    }
+}
+
+.addressLink:active {
+    span {
+        color: $footer_link_active_color;
+    }
+}
+
+.footerInfo_card__heading {
+    color: $primary_color;
+}
+
+.footerInfo_contact__heading {
+    color: $primary_light_text_color;
 }

@@ -1,0 +1,87 @@
+.homeEditorContent_wrapper > h2 > .underlinePrimaryDecoration {
+  position: relative;
+  z-index: 10;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -0.125rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    height: 2rem;
+    z-index: -1;
+    background-color: $primary_heading_decoration;
+    -webkit-mask-image: url('../assets/svgs/underlinePrimary.svg');
+    mask-image: url('../assets/svgs/underlinePrimary.svg');
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+}
+
+.underlinePrimaryDecoration {
+  position: relative;
+  z-index: 10;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -0.125rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    height: 1rem;
+    z-index: -1;
+    background-color: $primary_heading_decoration;
+    -webkit-mask-image: url('../assets/svgs/underlinePrimary.svg');
+    mask-image: url('../assets/svgs/underlinePrimary.svg');
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+}
+
+.underlineSecondaryDecoration {
+  position: relative;
+  z-index: 10;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -0.125rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    height: 1rem;
+    z-index: -1;
+    background-color: $secondary_heading_decoration;
+    -webkit-mask-image: url('../assets/svgs/underlineSecondary.svg');
+    mask-image: url('../assets/svgs/underlineSecondary.svg');
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+}
+
+.underlineTertiaryDecoration {
+  position: relative;
+  z-index: 10;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -0.125rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    height: 1rem;
+    z-index: -1;
+    background-color: $tertiary_heading_decoration;
+    -webkit-mask-image: url('../assets/svgs/underlineSecondary.svg');
+    mask-image: url('../assets/svgs/underlineSecondary.svg');
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+}

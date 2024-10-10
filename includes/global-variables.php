@@ -34,6 +34,7 @@ function theme_colors() {
             $primary_text_color = get_sub_field('primary_text_color', 'option');
             $primary_light_text_color = get_sub_field('primary_light_text_color', 'option');
             $secondary_text_color = get_sub_field('secondary_text_color', 'option');
+            $hero_preheading_color = get_sub_field('hero_preheading_color', 'option');
 
         endwhile;
     endif;
@@ -50,6 +51,7 @@ function theme_colors() {
             --primary-text-color: $primary_text_color;
             --primary-light-text-color: $primary_light_text_color;
             --secondary-text-color: $secondary_text_color;
+            --hero-preheading-color: $hero_preheading_color;
         }
     </style>";
 
@@ -131,6 +133,65 @@ function theme_colors() {
     }
     </style>";
 
+    //Link Colors
+    if( have_rows('link_colors', 'option') ):
+        while( have_rows('link_colors', 'option') ): the_row();
+
+            $link_color = get_sub_field('link_color', 'option');
+            $link_hover_color = get_sub_field('link_hover_color', 'option');
+            $link_active_color = get_sub_field('link_active_color', 'option');
+
+        endwhile;
+    endif;
+
+    // Output the custom styles with the ACF link color values
+    echo "<style>
+    :root {
+        --link-color: $link_color;
+        --link-hover-color: $link_hover_color;
+        --link-active-color: $link_active_color;
+    }
+    </style>";
+
+    //Footer Link Colors
+    if( have_rows('footer_links', 'option') ):
+        while( have_rows('footer_links', 'option') ): the_row();
+
+            $footer_link_color = get_sub_field('link_color', 'option');
+            $footer_link_hover_color = get_sub_field('link_hover_color', 'option');
+            $footer_link_active_color = get_sub_field('link_active_color', 'option');
+
+        endwhile;
+    endif;
+
+    // Output the custom styles with the ACF link color values
+    echo "<style>
+    :root {
+        --footer-link-color: $footer_link_color;
+        --footer-link-hover-color: $footer_link_hover_color;
+        --footer-link-active-color: $footer_link_active_color;
+    }
+    </style>";
+
+    //Heading Underline Colors
+    if( have_rows('heading_underline_decoration_colors', 'option') ):
+        while( have_rows('heading_underline_decoration_colors', 'option') ): the_row();
+
+            $primary_heading_decoration = get_sub_field('primary_underline_color', 'option');
+            $secondary_heading_decoration = get_sub_field('secondary_underline_color', 'option');
+            $tertiary_heading_decoration = get_sub_field('tertiary_underline_color', 'option');
+
+        endwhile;
+    endif;
+
+    // Output the custom styles with the ACF link color values
+    echo "<style>
+    :root {
+        --primary-heading-decoration: $primary_heading_decoration;
+        --secondary-heading-decoration: $secondary_heading_decoration;
+        --tertiary-heading-decoration: $tertiary_heading_decoration;
+    }
+    </style>";
 
     // Gradients
     //Function that converts HEx value to RGBA

@@ -56,7 +56,7 @@ $columns = get_field('show_section_in_footer', 'option') ? 4 : 3;
                         <?php if ( get_field('show_section_in_footer', 'option') ) : ?>
                             <div class="flex justify-center relative z-10">
                                 <div class="">
-                                    <h5 class="footerInfo_card__heading font-plus uppercase text-base font-extrabold mb-3 text-tertiary">Opening Hours</h5>
+                                    <h5 class="footerInfo_card__heading font-plus uppercase text-base font-extrabold mb-3">Opening Hours</h5>
                                     <ul class="footer_openingHours__wrapper text-lg font-plus font-medium text-primary">
                                     <?php if( have_rows('footer_opening_hours', 'option') ): ?>
                                         <?php while( have_rows('footer_opening_hours', 'option') ): the_row(); 
@@ -79,10 +79,10 @@ $columns = get_field('show_section_in_footer', 'option') ? 4 : 3;
                         <!-- Contact -->
                         <div class="flex justify-center relative z-10">
                             <div class="">
-                                <h5 class="footerInfo_card__heading font-plus uppercase text-base font-extrabold mb-3 text-tertiary">Contact</h5>
+                                <h5 class="footerInfo_card__heading font-plus uppercase text-base font-extrabold mb-3">Contact</h5>
                                 <!-- Phone -->
                                 <div class="">
-                                    <span class="footerInfo_contact__heading font-plus text-base uppercase font-normal block text-primary-light">Phone</span>
+                                    <span class="footerInfo_contact__heading font-plus text-base uppercase font-normal block">Phone</span>
                                     <?php if( have_rows('contact_phone_number_repeater', 'option') ): ?>
                                         <?php while( have_rows('contact_phone_number_repeater', 'option') ): the_row(); 
                                         
@@ -96,7 +96,7 @@ $columns = get_field('show_section_in_footer', 'option') ? 4 : 3;
                                 </div>
                                 <!-- Email -->
                                 <div class="my-3">
-                                    <span class="footerInfo_contact__heading font-plus text-base uppercase font-normal block text-primary-light">Email</span>
+                                    <span class="footerInfo_contact__heading font-plus text-base uppercase font-normal block">Email</span>
                                     <?php if( have_rows('contact_email_repeater', 'option') ): ?>
                                         <?php while( have_rows('contact_email_repeater', 'option') ): the_row(); 
                                         
@@ -137,7 +137,7 @@ $columns = get_field('show_section_in_footer', 'option') ? 4 : 3;
                         <!-- Address -->
                         <div class="flex justify-center">
                             <div class="">
-                                <h5 class="footerInfo_card__heading font-plus uppercase text-base font-extrabold mb-3 text-tertiary">Address</h5>
+                                <h5 class="footerInfo_card__heading font-plus uppercase text-base font-extrabold mb-3">Address</h5>
                                 <?php 
                                 
                                 $addressName = get_field('gym_name', 'option');
@@ -148,8 +148,8 @@ $columns = get_field('show_section_in_footer', 'option') ? 4 : 3;
                                 $addressMapLink = get_field('gym_map_link', 'option');
                                 ?>
 
-                                <span class="footerInfo_contact__heading font-plus text-base uppercase font-normal block text-primary-light"><?php echo $addressName; ?></span>
-                                <a class="addressLink" href="<?php echo esc_url($addressMapLink); ?>">
+                                <span class="footerInfo_contact__heading font-plus text-base uppercase font-normal block"><?php echo $addressName; ?></span>
+                                <a class="addressLink" target="_blank" href="<?php echo esc_url($addressMapLink); ?>">
                                     <div class="font-bold font-plus text-base text-primary">
                                         <span><?php echo $addressStreet; ?>,</span>
                                         <span><?php echo $addressCity; ?>,</span>

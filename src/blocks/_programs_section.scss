@@ -1,13 +1,28 @@
+.homePrograms_content {
+    color: $secondary_text_color;
+
+    p {
+        color: $primary_light_text_color;
+    }
+}
+
 .programsButton_link {
     font-size: 14px;
 }
 
 .programs_imageContent__contentWrapper {
-    h3 {
+    h1, h2, h3, h4, h5 {
         font-size: 30px;
         line-height: 44px;
         font-weight: 800;
         margin-bottom: 0.7rem;
+        color: $secondary_text_color;
+    }
+
+    p {
+        color: $primary_text_color;
+        font-size: 18px;
+        font-weight: 500;
     }
 }
 
@@ -31,21 +46,21 @@
 
 .imageContent_coloredBackground {
     width: 500px;
-    height: 250px;
+    height: 270px;
     border-radius: 160px 30px 30px 160px;
     position: absolute;
-    top: 1.5%;
-    left: 1.5%;
+    bottom: 3%;
+    left: 2%;
     z-index: 0;
 }
 
 .contentImage_coloredBackground {
     width: 500px;
-    height: 250px;
+    height: 270px;
     border-radius: 30px 160px 160px 30px;
     position: absolute;
-    top: 1.5%;
-    right: 1.5%;
+    bottom: 3%;
+    right: 2%;
     z-index: 0;
 }
 

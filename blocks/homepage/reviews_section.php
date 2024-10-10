@@ -35,18 +35,18 @@ if ($showSection) { ?>
             }
         ?>
 
-        <div class="homePrograms_content mt-14" style="text-align: <?php echo $alignment_style; ?>;">
+        <div class="homeReviews_content mt-14" style="text-align: <?php echo $alignment_style; ?>;">
             <?php echo $reviewsEditor; ?>
         </div>
         <!-- Reviews Repeater -->
-         <div class="reviewsRepeater_wrapper my-14">
+         <div class="reviewsRepeater_wrapper">
             <div class="owl-carousel owl-theme">
                 <?php if( have_rows('reviews_repeater') ): ?>
                     <?php while( have_rows('reviews_repeater') ): the_row(); ?>
-                    <div class="item grid grid-cols-10 gap-4 my-10">
+                    <div class="item grid grid-cols-10 gap-4 my-20">
                         <div class="col-span-1"></div>
                         <!-- Content -->
-                        <div class="col-span-7 bg-white p-20 rounded-2xl shadow-xl">
+                        <div class="reviewsContent_wrapper col-span-7 bg-white p-20 rounded-2xl">
                             <div class="grid grid-cols-10">
                                 <div class="col-span-8">
                                     <?php if( have_rows('reviews_content') ): ?>
@@ -56,7 +56,7 @@ if ($showSection) { ?>
                                         $reviewerName = get_sub_field('reviewer_name');
                                         ?>
 
-                                        <p><?php echo $reviewerReview; ?></p>
+                                        <p class="reviewParagraph"><?php echo $reviewerReview; ?></p>
                                         <div class="reviewerName_wrapper flex justify-start items-center mt-5">
                                             <svg class="quoteSVG" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_78_2469)">

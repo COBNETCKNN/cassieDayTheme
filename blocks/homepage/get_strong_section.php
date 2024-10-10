@@ -59,7 +59,7 @@ if ($showSection) { ?>
             ?>
 
             <div class="my-auto relative" style="text-align: <?php echo $alignment_style; ?>;">
-                <div class="relative z-10">
+                <div class="getStrongContent_wrapper relative z-10 text-secondary">
                     <!-- Content -->
                     <?php echo $editorContent; ?>
                     <!-- Button -->

@@ -1,8 +1,9 @@
 .bannerWrapper {
-    span {
+    p {
         font-size: 18px;
         font-weight: 700;
         margin-bottom: 5px;
+        color: $secondary_text_color;
     }
 }
 
@@ -10,4 +11,10 @@
     position: absolute;
     top: 0;
     left: 5%;
+}
+
+.bannerButton_wrapper {
+    button {
+        margin-top: 1rem;
+    }
 }

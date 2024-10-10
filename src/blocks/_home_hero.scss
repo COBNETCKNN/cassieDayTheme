@@ -18,6 +18,10 @@
     display: block;
 }
 
+.homeHero_imageWrapper {
+    z-index: 1;
+}
+
 .heroDecoGreen {
     position: absolute;
     top: -5%;
@@ -27,7 +31,7 @@
 
     ellipse {
         fill: $tertiary_color;
-        opacity: 0.8;
+        opacity: 0.4;
     }
 }
 
@@ -40,7 +44,7 @@
 
     ellipse {
         fill: $quaternary_color;
-        opacity: 0.2;
+        opacity: 0.1;
     }
 }
 

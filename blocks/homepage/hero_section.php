@@ -37,7 +37,7 @@ if ($showSection) { ?>
                     }
                 ?>
                 <div class="homeEditorContent my-auto relative" style="text-align: <?php echo $alignment_style; ?>;">
-                    <div class="relative z-10">
+                    <div class="homeEditorContent_wrapper relative z-10">
                         <!-- Content -->
                         <?php echo $editorContent; ?>
                         <!-- Button -->
@@ -68,7 +68,7 @@ if ($showSection) { ?>
                         $size = 'hero-featured';
                         $thumb = $featuredImage['sizes'][ $size ]; ?>
 
-                            <div class="homeHero_imageWrapper relative z-10">
+                            <div class="homeHero_imageWrapper relative">
                                 <div class="imageBorderWrapper p-2">
                                     <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
                                 </div>

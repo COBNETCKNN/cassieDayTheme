@@ -12,6 +12,7 @@ header {
     padding: 20px 30px;
     border-radius: 10px;
     transition: opacity 0.3s ease, visibility 0.3s ease; /* Adds smooth transition */
+    z-index: 9999;
 }
 
 /* Show sub-menu on parent item hover */
@@ -22,9 +23,10 @@ header {
 
 .sub-menu {
     li {
-        padding: 7px 0;
+        padding: 10px 0;
         a {
             padding: 5px 0;
+            color: $primary_text_color;
         }
     }
 }
@@ -67,4 +69,16 @@ header {
 
 #menu-header-menu li:hover .down-arrow {
     fill: #0073aa; /* Change color on hover if needed */
+}
+
+#menu-header-menu {
+    li {
+        a {
+            color: $primary_text_color;
+        }
+
+        a:hover {
+            color: $secondary_text_color;
+        }
+    }
 }

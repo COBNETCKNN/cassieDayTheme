@@ -35,7 +35,7 @@ if ($showSection) { ?>
                 $alignment_style = 'right';
             }
         ?>
-        <div class="my-auto" style="text-align: <?php echo $alignment_style; ?>;">
+        <div class="my-auto text-secondary" style="text-align: <?php echo $alignment_style; ?>;">
             <!-- Content -->
             <?php echo $stepsContent; ?>
         </div>
@@ -53,7 +53,7 @@ if ($showSection) { ?>
             $formatted_number = sprintf('%02d', $counter);
             ?>
 
-            <div class="stepCard_wrapper bg-section-primary px-7 py-10 rounded-2xl shadow-lg relative z-10">
+            <div class="stepCard_wrapper bg-section-primary px-7 py-10 rounded-2xl relative z-10">
                 <div class="numberIcon_wrapper flex justify-between">
                     <span class="stepsCard_span stepCard_counter<?php echo $counter; ?> font-plus font-extrabold leading-none opacity-40 my-auto"><?php echo $formatted_number; ?></span>
                     <div class="iconRounded_wrapper">
@@ -64,7 +64,7 @@ if ($showSection) { ?>
                         ?>
                     </div>
                 </div>
-                <div class="stepsCard_content font-medium font-plus text-xl text-primary-light leading-7 mt-10">
+                <div class="stepsCard_content font-medium font-plus text-xl text-primary leading-7 mt-10">
                     <?php echo $stepsDescription; ?>
                 </div>
             </div>

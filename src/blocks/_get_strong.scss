@@ -1,7 +1,7 @@
 .getStrong_decobox {
     width: 284px;
     height: 462px;
-    background: linear-gradient(180deg, #F0EFF8 0%, $header_button_background_color 100%);
+    background: linear-gradient(180deg, #F0EFF8 50%, $quaternary_color 160%);
     border-radius: 30px;
 }
 
@@ -18,10 +18,16 @@
     }
 }
 
+.getStrongContent_wrapper {
+    p {
+        color: $primary_light_text_color;
+    }
+}
+
 .getStrongDeco {
     position: absolute;
-    top: -25%;
-    left: -20%;
+    top: -45%;
+    left: -45%;
     fill: $secondary_color;
 
     ellipse {

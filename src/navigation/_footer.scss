@@ -2,6 +2,26 @@
     text-decoration: underline;
 }
 
+.footerCopyright_link {
+    color: $primary_color;
+
+    span {
+        color: $primary_color;
+    }
+}
+
+.footerCredential {
+    color: $primary_color;
+}
+
+.footerCopyright {
+    p {
+        font-size: 16px;
+        color: $primary_text_color;
+        font-weight: 600;
+    }
+}
+
 #menu-footer-menu {
     display: flex;
     list-style: none; /* Optional: remove default bullets */
@@ -69,6 +89,15 @@
     position: absolute;
     top: 0;
     left: 20%;
+}
+
+.footerShapeDeco {
+    position: absolute;
+    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+    left: 95%; /* position the left edge of the element at the middle of the parent */
+
+    transform: translate(-50%, -50%); /* This is a shorthand of
+                                         translateX(-50%) and translateY(-50%) */
 }
 
 //Footer Links

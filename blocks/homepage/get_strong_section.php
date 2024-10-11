@@ -15,6 +15,7 @@ $section_class = $default_class . (!empty($custom_class) ? ' ' . esc_attr($custo
 $section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '');
 
 $showSection = get_sub_field('show_section');
+$showSprayDecoration = get_sub_field('show_section_spray_color_decoration');
 if ($showSection) { ?>
 
 <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> py-36 bg-section-primary font-plus">
@@ -65,18 +66,21 @@ if ($showSection) { ?>
                     <!-- Button -->
                     <?php get_template_part('partials/form', 'links-button'); ?>
                 </div>
-                <svg class="getStrongDeco" width="834" height="505" viewBox="0 0 834 505" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_f_78_2374)">
-                    <ellipse cx="417" cy="252.5" rx="300" ry="135.5" fill="#F0EFF8"/>
-                    </g>
-                    <defs>
-                    <filter id="filter0_f_78_2374" x="0" y="0" width="834" height="505" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                    <feGaussianBlur stdDeviation="58.5" result="effect1_foregroundBlur_78_2374"/>
-                    </filter>
-                    </defs>
-                </svg>
+                <?php if($showSprayDecoration) { ?>
+                    <!-- Section Spray Decoration -->
+                    <svg class="getStrongDeco" width="834" height="505" viewBox="0 0 834 505" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_f_78_2374)">
+                        <ellipse cx="417" cy="252.5" rx="300" ry="135.5" fill="#F0EFF8"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_f_78_2374" x="0" y="0" width="834" height="505" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feGaussianBlur stdDeviation="58.5" result="effect1_foregroundBlur_78_2374"/>
+                        </filter>
+                        </defs>
+                    </svg>
+                <?php } ?>
             </div>
         </div>
     </div>

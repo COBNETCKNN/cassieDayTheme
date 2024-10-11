@@ -16,7 +16,7 @@ $section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '
 $showSection = get_sub_field('show_section');
 if ($showSection) { ?>
 
-<section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> bg-white font-plus relative">
+<section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> font-plus relative">
     <div class="container mx-auto py-28">
         <div class="grid grid-cols-4 gap-6">
         <?php

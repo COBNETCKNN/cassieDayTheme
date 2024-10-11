@@ -1,0 +1,76 @@
+.owl-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: -3.5rem;
+}
+
+.owl-dots .owl-dot {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    display: inline-block;
+    margin: 5px;
+    border-radius: 50%; /* Makes the dots round */
+}
+
+.owl-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.owl-dot {
+    position: relative; /* Allow the active dot to expand without shifting others */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px; /* Horizontal margin to prevent overlap */
+}
+
+.owl-dot span {
+    width: 8px;
+    height: 8px;
+    background-color: #AFC2C9;
+    display: inline-block;
+    border-radius: 50%;
+    transition: all 0.3s ease; /* Smooth transition for width and background change */
+}
+
+.owl-dot.active span {
+    width: 44px;
+    background-color: #BBB6DF;
+    border-radius: 25px; /* Keep it pill-shaped when the width increases */
+}
+
+.owl-dot.active {
+    width: 50px;
+    padding: 0 22px 0 22px;
+}
+
+.reviewsCarouselGreenDeco {
+    position: absolute;
+    top: 0;
+    top: -45%;
+    left: -10%;
+    z-index: -1;
+    fill: $tertiary_color;
+    opacity: 0.2;
+
+    ellipse {
+        fill: $tertiary_color;
+    }
+}
+
+.reviewsCarouselPurpleDeco {
+    position: absolute;
+    top: 0;
+    top: -35%;
+    right: -15%;
+    z-index: -1;
+    fill: $secondary_color;
+    opacity: 0.4;
+
+    ellipse {
+        fill: $secondary_color;
+    }
+}

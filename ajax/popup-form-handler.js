@@ -1,10 +1,8 @@
 jQuery(document).ready(function($) {
-    // Listen for clicks on any button with the class 'cta-button'
     $('.cta-button').on('click', function(e) {
         e.preventDefault();
         var formID = $(this).data('form-id');
 
-        // Make AJAX call to load form content
         $.ajax({
             url: ajax_object.ajaxurl,
             type: 'POST',
@@ -13,10 +11,7 @@ jQuery(document).ready(function($) {
                 form_id: formID
             },
             success: function(response) {
-                // Inject the form content into the popup
                 $('#form-content').html(response);
-
-                // Find the iframe inside the form and bind a load event to it
                 $('#form-content iframe').on('load', function() {
                     var iframe = $(this);
                     var id = iframe.attr('id');
@@ -30,8 +25,8 @@ jQuery(document).ready(function($) {
                     });
                 });
 
-                // Show the popup
                 $('#form-popup').removeClass('hidden').addClass('active');
+                $('body').css('overflow', 'hidden'); // Prevent scrolling
             },
             error: function() {
                 alert('Failed to load form.');
@@ -39,8 +34,19 @@ jQuery(document).ready(function($) {
         });
     });
 
-    // Close popup
+    // Close popup on button click
     $('#close-popup').on('click', function() {
         $('#form-popup').removeClass('active').addClass('hidden');
+        $('body').css('overflow', ''); // Restore scrolling
+    });
+
+    // Close popup on ESC key press
+    $(document).on('keydown', function(e) {
+        if (e.keyCode === 27) { // ESC key code
+            if ($('#form-popup').hasClass('active')) {
+                $('#form-popup').removeClass('active').addClass('hidden');
+                $('body').css('overflow', ''); // Restore scrolling
+            }
+        }
     });
 });

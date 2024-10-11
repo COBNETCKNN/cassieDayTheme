@@ -19,24 +19,25 @@
 }
 add_action('wp_head', 'custom_favicon');
 
-//Removing p tags from wysiwyg editor custom field
-function my_acf_add_local_field_groups() {
-    remove_filter('acf_the_content', 'wpautop' );
-}
-add_action('acf/init', 'my_acf_add_local_field_groups');
-
-/**
- * Disable editor on certain pages.
- */
-function remove_pages_editor() {
-    $disabled_pages = array(91);
-
-    $current_page_id = get_the_ID();
-
-    if (in_array($current_page_id, $disabled_pages)) {
-        remove_post_type_support('page', 'editor');
+// Fully Disable Gutenberg editor.
+//add_filter('use_block_editor_for_post_type', '__return_false', 5);
+// Don't load Gutenberg-related stylesheets.
+add_action( 'wp_enqueue_scripts', 'remove_block_css', 100 );
+function remove_block_css() {
+    if ( !is_single() ) {
+        wp_dequeue_style( 'wp-block-library' ); // Wordpress core
+        wp_dequeue_style( 'wp-block-library-theme' ); // Wordpress core
+        wp_dequeue_style( 'wc-block-style' ); // WooCommerce
     }
-
-    remove_post_type_support( 'post', 'editor' );
 }
-add_action('add_meta_boxes', 'remove_pages_editor');
+
+function pistol_disable_gutenberg($is_enabled, $post_type) {
+    
+    if ($post_type !== 'post') return false; // enable Gutenberg only on post type
+    
+    return $is_enabled;
+    
+}
+add_filter('use_block_editor_for_post_type', 'pistol_disable_gutenberg', 10, 2);
+// Disables the block editor from managing widgets.
+add_filter( 'use_widgets_block_editor', '__return_false' );

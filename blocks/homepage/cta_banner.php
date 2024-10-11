@@ -17,7 +17,7 @@ $section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '
 $showSection = get_sub_field('show_section');
 if ($showSection) { ?>
 
- <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> py-20 bg-section-primary font-plus text-secondary">
+ <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> pt-32 bg-section-primary font-plus text-secondary">
     <div class="container mx-auto relative">
         <div class="bannerWrapper bg-second-gradient py-20 px-5 rounded-2xl">
             <div class="banner_content relative z-10" style="text-align: <?php echo $alignment_style; ?>;">

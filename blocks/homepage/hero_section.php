@@ -17,10 +17,10 @@ $showSection = get_sub_field('show_section');
 $showSprayDecoration = get_sub_field('show_section_spray_color_decoration');
 if ($showSection) { ?>
 
-<section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> h-[90vh] w-full bg-first-gradient relative">
+<section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> lg:h-[90vh] w-full bg-first-gradient relative py-20 lg:py-0">
     <div class="container mx-auto w-full h-full flex justify-center items-center">
-        <div class="w-full mx-16">
-            <div class="grid grid-cols-2 gap-14 font-plus">
+        <div class="w-full mx-5 lg:mx-16">
+            <div class="grid lg:grid-cols-2 gap-14 font-plus">
                 <?php
                     $editorContent = get_sub_field('content_editor');
                     $alignment = get_sub_field('align_content');
@@ -38,12 +38,13 @@ if ($showSection) { ?>
                     }
                 ?>
                 <div class="homeEditorContent my-auto relative" style="text-align: <?php echo $alignment_style; ?>;">
-                    <div class="homeEditorContent_wrapper relative z-10">
+                    <div class="homeEditorContent_wrapper relative">
                         <!-- Content -->
                         <?php echo $editorContent; ?>
                         <!-- Button -->
                         <?php get_template_part('partials/form', 'links-button'); ?>
                     </div>
+                    <?php if($showSprayDecoration) { ?>
                     <svg class="homeDecoPurple" width="951" height="586" viewBox="0 0 951 586" xmlns="http://www.w3.org/2000/svg">
                         <g filter="url(#filter0_f_78_2312)">
                         <ellipse cx="475.5" cy="293" rx="410.5" ry="228"/>
@@ -56,9 +57,10 @@ if ($showSection) { ?>
                         </filter>
                         </defs>
                     </svg>
+                    <?php } ?>
                 </div>
                 <!-- Featured Image --> 
-                <div class="flex justify-end">
+                <div class="flex justify-center lg:justify-end">
                     <?php
                         $featuredImage = get_sub_field('featured_image');
                         if( $featuredImage ):

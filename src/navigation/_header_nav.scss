@@ -82,3 +82,47 @@ header {
         }
     }
 }
+
+
+/* Mobile Menu Styling */
+#hamburger {
+    cursor: pointer;
+}
+.hamburger-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 4px;
+    background-color: black;
+}
+.mobile-menu {
+    display: none;
+}
+.mobile-menu.active {
+    display: block;
+}
+
+@media screen and (max-width: $size_md) {
+    #menu-header-menu {
+        .menu-item {
+            display: block;
+            text-align: center;
+            margin-right: 0;
+        }
+    }
+
+    .down-arrow {
+        position: absolute;
+        top: 10%;
+    }
+
+    #mobileMenu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        z-index: 9999;
+    }
+
+  }

@@ -1,6 +1,7 @@
 #homeGuide {
     background: linear-gradient(0deg, #F6F8F9, #F6F8F9),
     linear-gradient(0deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45));
+    overflow: hidden;
 }
 
 .guideFeatured_wrapper {
@@ -22,5 +23,29 @@
 
     p {
         color: $primary_text_color;
+    }
+}
+
+@media screen and (max-width: $size_md) {
+    .guideFeatured_wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .guideContent_wrapper {
+        text-align: center !important;
+    }
+}
+
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .guideFeatured_wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 400px;
+        }
     }
 }

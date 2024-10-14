@@ -15,17 +15,30 @@ $section_class = $default_class . (!empty($custom_class) ? ' ' . esc_attr($custo
 $section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '');
 
 $showSection = get_sub_field('show_section');
+
+// Get the spacing array from ACF Dimensions plugin
+$spacing = get_sub_field('spacing');
+
+// Fallback function to provide a default value
+function get_spacing_value_guide($spacing, $key, $default = '0px 0px 0px 0px') {
+    return isset($spacing[$key]) && !empty($spacing[$key]) ? $spacing[$key] : $default;
+}
+
+$desktopSpacing = get_spacing_value_guide($spacing, 'desktop', '100px 0px 100px 0px');
+$tabletSpacing = get_spacing_value_guide($spacing, 'tablet', '50px 0px 50px 0px');
+$mobileSpacing = get_spacing_value_guide($spacing, 'mobile', '30px 0px 30px 0px');
+
 if ($showSection) { ?>
 
  <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> pt-52 pb-32 -mt-14 font-plus">
     <div class="container mx-auto">
-        <div class="grid grid-cols-5 gap-4 mx-14">
+        <div class="grid lg:grid-cols-5 gap-14 md:gap-4 mx-5 md:mx-14">
             <?php
                 $guideFeaturedImage = get_sub_field('guide_featured_image');
                 $guideFeaturedImageSize = 'guide-featured';
             ?>
             <!-- Featured Image -->
-            <div class="guideFeatured_wrapper col-span-2 my-auto">
+            <div class="guideFeatured_wrapper lg:col-span-2 my-auto">
             <?php
                 $featuredImage = get_sub_field('featured_image');
                 if( $featuredImage ):
@@ -40,9 +53,7 @@ if ($showSection) { ?>
 
                 <?php endif; ?>
             </div>
-            <!-- Content -->
-            <div class="guideContent_wrapper col-span-3 my-auto">
-                <?php 
+            <?php 
                 $guideEditor = get_sub_field('content_editor');
                 $alignment = get_sub_field('align_content');
 
@@ -55,7 +66,9 @@ if ($showSection) { ?>
                 } elseif ($alignment == 'right') {
                     $alignment_style = 'right';
                 }
-                ?>
+            ?>
+            <!-- Content -->
+            <div class="guideContent_wrapper lg:col-span-3 my-auto" style="text-align: <?php echo $alignment_style; ?>;">
                 <!-- Content -->
                 <?php echo $guideEditor; ?>
                 <!-- Button -->
@@ -66,3 +79,21 @@ if ($showSection) { ?>
  </section>
 
  <?php } ?>
+
+ <style>
+    #<?php echo $default_id; ?> {
+        padding: <?php echo $desktopSpacing; ?>;
+    }
+
+    @media (max-width: 1024px) {
+        #<?php echo $default_id; ?> {
+            padding: <?php echo $tabletSpacing; ?>;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #<?php echo $default_id; ?> {
+            padding: <?php echo $mobileSpacing; ?>;
+        }
+    }
+</style>

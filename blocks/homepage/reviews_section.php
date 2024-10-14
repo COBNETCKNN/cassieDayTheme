@@ -16,6 +16,19 @@ $section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '
 
 $showSection = get_sub_field('show_section');
 $showSprayDecoration = get_sub_field('show_section_spray_color_decoration');
+
+// Get the spacing array from ACF Dimensions plugin
+$spacing = get_sub_field('spacing');
+
+// Fallback function to provide a default value
+function get_spacing_value_reviews($spacing, $key, $default = '0px 0px 0px 0px') {
+    return isset($spacing[$key]) && !empty($spacing[$key]) ? $spacing[$key] : $default;
+}
+
+$desktopSpacing = get_spacing_value_reviews($spacing, 'desktop', '100px 0px 100px 0px');
+$tabletSpacing = get_spacing_value_reviews($spacing, 'tablet', '50px 0px 50px 0px');
+$mobileSpacing = get_spacing_value_reviews($spacing, 'mobile', '30px 0px 30px 0px');
+
 if ($showSection) { ?>
 
  <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> bg-section-primary font-plus relative">
@@ -36,7 +49,7 @@ if ($showSection) { ?>
             }
         ?>
 
-        <div class="homeReviews_content mt-24" style="text-align: <?php echo $alignment_style; ?>;">
+        <div class="homeReviews_content mx-20 md:mx-0" style="text-align: <?php echo $alignment_style; ?>;">
             <?php echo $reviewsEditor; ?>
         </div>
         <!-- Reviews Repeater -->
@@ -44,13 +57,13 @@ if ($showSection) { ?>
             <div class="owl-carousel">
                 <?php if( have_rows('reviews_repeater') ): ?>
                     <?php while( have_rows('reviews_repeater') ): the_row(); ?>
-                    <div class="flex justify-center mt-5">
+                    <div class="flex justify-center mt-14 md:mt-5">
                         <div class="item grid grid-cols-10 gap-4 my-20 max-w-[1200px] relative">
-                            <div class="col-span-1"></div>
+                            <div class="col-span-1 hidden md:block order-1"></div>
                             <!-- Content -->
-                            <div class="reviewsContent_wrapper col-span-7 bg-white p-20 rounded-2xl">
+                            <div class="reviewsContent_wrapper col-span-10 md:col-span-7 bg-white p-20 rounded-2xl order-last md:order-2 mx-5 md:mx-0">
                                 <div class="grid grid-cols-10">
-                                    <div class="col-span-8">
+                                    <div class="col-span-10 md:col-span-8">
                                         <?php if( have_rows('reviews_content') ): ?>
                                             <?php while( have_rows('reviews_content') ): the_row(); 
                                             
@@ -106,7 +119,7 @@ if ($showSection) { ?>
                                 <?php } ?>
                             </div>
                             <!-- Image -->
-                            <div class="reviewImage_wrapper col-span-2 my-auto">
+                            <div class="reviewImage_wrapper col-span-2 my-auto order-first md:order-last">
                                 <?php 
                                     $reviewerImage = get_sub_field('reviewer_image');
                                     $reviewerImageSize = 'reviewer-image';
@@ -127,3 +140,21 @@ if ($showSection) { ?>
  </section>
 
  <?php } ?>
+
+ <style>
+    #<?php echo $default_id; ?> {
+        padding: <?php echo $desktopSpacing; ?>;
+    }
+
+    @media (max-width: 1024px) {
+        #<?php echo $default_id; ?> {
+            padding: <?php echo $tabletSpacing; ?>;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #<?php echo $default_id; ?> {
+            padding: <?php echo $mobileSpacing; ?>;
+        }
+    }
+</style>

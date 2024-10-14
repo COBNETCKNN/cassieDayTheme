@@ -1,6 +1,7 @@
 #homeSteps {
     background: linear-gradient(0deg, #F6F8F9, #F6F8F9),
     linear-gradient(0deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45));
+    overflow: hidden;
 }
 
 .stepsCard_span {
@@ -43,4 +44,21 @@
     bottom: 0; 
     right: 0;
     z-index: 0;
+}
+
+@media screen and (max-width: $size_md) {
+    .stepsContentWrapper {
+        display: flex;
+        justify-content: center;
+
+        h1,h2,h3,h4,h5,h6 {
+            width: 70%;
+            text-align: center !important;
+        }
+    }
+
+    .cardsSection_decorativeShape {
+        left: 30%;
+        scale: 0.8;
+    }
 }

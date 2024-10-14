@@ -15,11 +15,24 @@ $section_class = $default_class . (!empty($custom_class) ? ' ' . esc_attr($custo
 $section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '');
 
 $showSection = get_sub_field('show_section');
+
+// Get the spacing array from ACF Dimensions plugin
+$spacing = get_sub_field('spacing');
+
+// Fallback function to provide a default value
+function get_spacing_value_banner($spacing, $key, $default = '0px 0px 0px 0px') {
+    return isset($spacing[$key]) && !empty($spacing[$key]) ? $spacing[$key] : $default;
+}
+
+$desktopSpacing = get_spacing_value_banner($spacing, 'desktop', '100px 0px 100px 0px');
+$tabletSpacing = get_spacing_value_banner($spacing, 'tablet', '50px 0px 50px 0px');
+$mobileSpacing = get_spacing_value_banner($spacing, 'mobile', '30px 0px 30px 0px');
+
 if ($showSection) { ?>
 
  <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> pt-32 bg-section-primary font-plus text-secondary">
     <div class="container mx-auto relative">
-        <div class="bannerWrapper bg-second-gradient py-20 px-5 rounded-2xl">
+        <div class="bannerWrapper bg-second-gradient py-20 px-5 rounded-2xl mx-5 md:mx-0">
             <div class="banner_content relative z-10" style="text-align: <?php echo $alignment_style; ?>;">
                 <?php              
                     $reviewsEditor = get_sub_field('content_editor');
@@ -54,3 +67,21 @@ if ($showSection) { ?>
  </section>
 
  <?php } ?>
+
+ <style>
+    #<?php echo $default_id; ?> {
+        padding: <?php echo $desktopSpacing; ?>;
+    }
+
+    @media (max-width: 1024px) {
+        #<?php echo $default_id; ?> {
+            padding: <?php echo $tabletSpacing; ?>;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #<?php echo $default_id; ?> {
+            padding: <?php echo $mobileSpacing; ?>;
+        }
+    }
+</style>

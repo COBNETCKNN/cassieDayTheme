@@ -8,15 +8,15 @@ $sprayDeco = get_field('show_color_decoration', 'option');
 $shapeDeco = get_field('show_shape_decoration', 'option');
 ?>
 
-<footer class="py-14 relative">
+<footer class="py-5 md:py-14 relative">
     <div class="container mx-auto">
         <!-- Upper footer -->
-        <div class="my-14">
-            <div class="grid gap-4" style="grid-template-columns: repeat(<?php echo $columns; ?>, 1fr);">
+        <div class="my-14 mx-5 md:mx-0">
+            <div class="lg:grid gap-4" style="grid-template-columns: repeat(<?php echo $columns; ?>, 1fr);">
                         <!-- Logo and Partners -->
                         <div class="relative z-10">
                             <!-- Logo -->
-                            <div class="mb-12">
+                            <div class="footerLogoWrapper pt-14 md:pt-0 mb-12">
                                 <?php if( have_rows('footer_logo_group', 'option') ): ?>
                                     <?php while( have_rows('footer_logo_group', 'option') ): the_row(); 
                                     
@@ -44,13 +44,15 @@ $shapeDeco = get_field('show_shape_decoration', 'option');
                                     $partnersLink = get_sub_field('partners_link', 'option');
                                     ?>
 
-                                    <a href="<?php echo esc_url($partnersLink); ?>" target="_blank">
-                                        <?php 
-                                        if( $partnersLogo ) {
-                                            echo wp_get_attachment_image( $partnersLogo, $partnersLogoSize );
-                                        }
-                                        ?>
-                                    </a>
+                                    <div class="footerPartnerWrapper">
+                                        <a href="<?php echo esc_url($partnersLink); ?>" target="_blank">
+                                            <?php 
+                                            if( $partnersLogo ) {
+                                                echo wp_get_attachment_image( $partnersLogo, $partnersLogoSize );
+                                            }
+                                            ?>
+                                        </a>
+                                    </div>
 
                                     <?php endwhile; ?>
                                 <?php endif; ?>
@@ -58,8 +60,8 @@ $shapeDeco = get_field('show_shape_decoration', 'option');
                         </div>
                         <!-- Opening hours -->
                         <?php if ( get_field('show_section_in_footer', 'option') ) : ?>
-                            <div class="flex justify-center relative z-10">
-                                <div class="">
+                            <div class="flex justify-center relative z-10 my-10 md:my-0">
+                                <div class="footerOpeningHours">
                                     <h5 class="footerInfo_card__heading font-plus uppercase text-base font-extrabold mb-3">Opening Hours</h5>
                                     <ul class="footer_openingHours__wrapper text-lg font-plus font-medium text-primary">
                                     <?php if( have_rows('footer_opening_hours', 'option') ): ?>
@@ -70,7 +72,7 @@ $shapeDeco = get_field('show_shape_decoration', 'option');
                                         ?>
 
                                         <li>
-                                            <span class="inline-block w-[70px]"><?php echo substr($openingDay, 0, 3); ?></span>
+                                            <span class="daySpan inline-block w-[70px]"><?php echo substr($openingDay, 0, 3); ?></span>
                                             <span><?php echo $openingHour; ?></span>
                                         </li>
 
@@ -82,11 +84,11 @@ $shapeDeco = get_field('show_shape_decoration', 'option');
                         <?php endif; ?>
                         <!-- Contact -->
                         <div class="flex justify-center relative z-10">
-                            <div class="">
+                            <div class="footerContact">
                                 <h5 class="footerInfo_card__heading font-plus uppercase text-base font-extrabold mb-3">Contact</h5>
                                 <!-- Phone -->
                                 <div class="">
-                                    <span class="footerInfo_contact__heading font-plus text-base uppercase font-normal block">Phone</span>
+                                    <span class="footerInfo_contact__heading font-plus text-base uppercase font-normal block mb-2 lg:mb-0">Phone</span>
                                     <?php if( have_rows('contact_phone_number_repeater', 'option') ): ?>
                                         <?php while( have_rows('contact_phone_number_repeater', 'option') ): the_row(); 
                                         
@@ -100,7 +102,7 @@ $shapeDeco = get_field('show_shape_decoration', 'option');
                                 </div>
                                 <!-- Email -->
                                 <div class="my-3">
-                                    <span class="footerInfo_contact__heading font-plus text-base uppercase font-normal block">Email</span>
+                                    <span class="footerInfo_contact__heading font-plus text-base uppercase font-normal block mb-2 lg:mb-0">Email</span>
                                     <?php if( have_rows('contact_email_repeater', 'option') ): ?>
                                         <?php while( have_rows('contact_email_repeater', 'option') ): the_row(); 
                                         
@@ -114,8 +116,8 @@ $shapeDeco = get_field('show_shape_decoration', 'option');
                                 </div>
                                 <!-- Social Media -->
                                 <div class="">
-                                    <span class="footerInfo_contact__heading font-plus text-base uppercase font-normal block mb-2">Social</span>
-                                    <div class="flex justify-start">
+                                    <span class="footerInfo_contact__heading font-plus text-base uppercase font-normal block mb-2 mb-2 lg:mb-0">Social</span>
+                                    <div class="footerInfoSocialMedia_icon flex justify-center md:justify-start">
                                         <?php if( have_rows('footer_social_media_icons', 'option') ): ?>
                                             <?php while( have_rows('footer_social_media_icons', 'option') ): the_row(); 
                                             
@@ -124,7 +126,7 @@ $shapeDeco = get_field('show_shape_decoration', 'option');
                                             $socialMediaIconLink = get_sub_field('social_media_link', 'option');
                                             ?>
 
-                                            <a class="mr-4" href="<?php echo esc_url($socialMediaIconLink); ?>" target="_blank">
+                                            <a class="mr-2 md:mr-4" href="<?php echo esc_url($socialMediaIconLink); ?>" target="_blank">
                                                 <?php 
                                                     if( $socialMediaIcon ) {
                                                         echo wp_get_attachment_image( $socialMediaIcon, $socialMediaIconSize );
@@ -140,7 +142,7 @@ $shapeDeco = get_field('show_shape_decoration', 'option');
                         </div>
                         <!-- Address -->
                         <div class="flex justify-center">
-                            <div class="">
+                            <div class="footerAddress mt-10 md:mt-0">
                                 <h5 class="footerInfo_card__heading font-plus uppercase text-base font-extrabold mb-3">Address</h5>
                                 <?php 
                                 
@@ -152,7 +154,7 @@ $shapeDeco = get_field('show_shape_decoration', 'option');
                                 $addressMapLink = get_field('gym_map_link', 'option');
                                 ?>
 
-                                <span class="footerInfo_contact__heading font-plus text-base uppercase font-normal block"><?php echo $addressName; ?></span>
+                                <span class="footerInfo_contact__heading font-plus text-base uppercase font-normal block mb-2 lg:mb-0"><?php echo $addressName; ?></span>
                                 <a class="addressLink" target="_blank" href="<?php echo esc_url($addressMapLink); ?>">
                                     <div class="font-bold font-plus text-base text-primary">
                                         <span><?php echo $addressStreet; ?>,</span>
@@ -168,18 +170,20 @@ $shapeDeco = get_field('show_shape_decoration', 'option');
             </div>
         </div>
         <!-- Bottom Footer -->
-        <div class="bottom-footer relative z-10">
-            <div class="flex justify-between">
+        <div class="bottom-footer relative z-10 mx-5 md:mx-0">
+            <div class="grid md:grid-cols-2">
                 <!-- Copyright -->
-                <?php 
-                    $footerCopyright = get_field('footer_copyright', 'option');
-                ?>
-                <div class="footerCopyright flex font-plus text-base font-semibold text-primary">
-                    <span>Copyright &copy; </span>
-                    <span class="flex" id="year"><?php echo date("Y"); ?>&nbsp;<?php echo $footerCopyright; ?></span>
+                <div class="">
+                    <?php 
+                        $footerCopyright = get_field('footer_copyright', 'option');
+                    ?>
+                    <div class="footerCopyright flex justify-center md:justify-start font-plus text-base font-semibold text-primary">
+                        <span>Copyright &copy; </span>
+                        <span class="flex" id="year"><?php echo date("Y"); ?>&nbsp;<?php echo $footerCopyright; ?></span>
+                    </div>
                 </div>
                 <!-- Footer menu -->
-                <div class="footerNavigation">
+                <div class="footerNavigation order-first md:order-last mx-10 md:mx-0 mb-10 lg:mb-0">
                 <?php 
                     wp_nav_menu(
                         array(

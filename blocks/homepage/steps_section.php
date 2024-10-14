@@ -14,11 +14,18 @@ $section_class = $default_class . (!empty($custom_class) ? ' ' . esc_attr($custo
 $section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '');
 
 $showSection = get_sub_field('show_section');
+
+//Spacing added through ACF Dimensions plugin
+$spacing = get_sub_field('spacing');
+$desktopSpacing = $spacing['desktop'];
+$tabletSpacing = $spacing['tablet'];
+$mobileSpacing = $spacing['mobile'];
+
 if ($showSection) { ?>
 
 <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> font-plus relative">
-    <div class="container mx-auto py-28">
-        <div class="grid grid-cols-4 gap-6">
+    <div class="container mx-auto">
+        <div class="grid lg:grid-cols-4 gap-6">
         <?php
             $stepsContent = get_sub_field('content_editor');
             $alignment = get_sub_field('align_content');
@@ -35,7 +42,7 @@ if ($showSection) { ?>
                 $alignment_style = 'right';
             }
         ?>
-        <div class="my-auto text-secondary" style="text-align: <?php echo $alignment_style; ?>;">
+        <div class="my-auto text-secondary stepsContentWrapper" style="text-align: <?php echo $alignment_style; ?>;">
             <!-- Content -->
             <?php echo $stepsContent; ?>
         </div>
@@ -53,7 +60,7 @@ if ($showSection) { ?>
             $formatted_number = sprintf('%02d', $counter);
             ?>
 
-            <div class="stepCard_wrapper bg-section-primary px-7 py-10 rounded-2xl relative z-10">
+            <div class="stepCard_wrapper bg-section-primary px-7 py-10 rounded-2xl relative z-10 mx-10 md:mx-0">
                 <div class="numberIcon_wrapper flex justify-between">
                     <span class="stepsCard_span stepCard_counter<?php echo $counter; ?> font-plus font-extrabold leading-none opacity-40 my-auto"><?php echo $formatted_number; ?></span>
                     <div class="iconRounded_wrapper">
@@ -87,3 +94,21 @@ if ($showSection) { ?>
 </section>
 
 <?php } ?>
+
+<style>
+    #<?php echo $default_id; ?> {
+        padding: <?php echo $desktopSpacing; ?>;
+    }
+
+    @media (max-width: 1024px) {
+        #<?php echo $default_id; ?> {
+            padding: <?php echo $tabletSpacing; ?>;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #<?php echo $default_id; ?> {
+            padding: <?php echo $mobileSpacing; ?>;
+        }
+    }
+</style>

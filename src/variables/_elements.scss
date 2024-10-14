@@ -13,19 +13,37 @@ h1 {
 }
 
 .homeEditorContent {
+  h2 {
+      color: $secondary_text_color;
+      font-weight: 800;
+      font-size: 72px;
+      line-height: 82px;
+      margin-bottom: 1.1rem;
+  }
+
+  p {
+      color: $primary_light_text_color;
+      font-weight: 600;
+      font-size: 24px;
+  }
+}
+
+@media screen and (max-width: $size_sm) {
+  .homeEditorContent {
     h2 {
         color: $secondary_text_color;
         font-weight: 800;
-        font-size: 72px;
-        line-height: 82px;
+        font-size: 40px;
+        line-height: 40px;
         margin-bottom: 1.1rem;
     }
 
     p {
         color: $primary_light_text_color;
         font-weight: 600;
-        font-size: 24px;
+        font-size: 16px;
     }
+  }
 }
 
 h2 {
@@ -264,3 +282,4 @@ a:hover {
 a:active {
   color: $link_active_color;
 }
+

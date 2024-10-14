@@ -1,3 +1,7 @@
+#homeReviews {
+    overflow: hidden;
+}
+
 .reviewerName {
     font-weight: 700;
     font-size: 20px;
@@ -40,4 +44,34 @@
 
 .reviewParagraph {
     color: $primary_text_color;
+}
+
+@media screen and (max-width: $size_md) {
+    .reviewsContent_wrapper {
+        padding: 17rem 2rem 2rem 2rem;
+        min-height: 700px;
+    }
+
+    .reviewImage_wrapper {
+        position: absolute;
+        left: 20%;
+        top: -10%;
+        margin-left: 0;
+    }
+
+    .homeReviews_content {
+        margin-bottom: 2.5rem;
+    }
+
+    .reviewsCarouselGreenDeco {
+        scale: 0.5;
+        left: -30%;
+    }
+
+    .reviewsCarouselPurpleDeco {
+        scale: 0.5;
+        top: 45%;
+        right: -70%;
+    }
+
 }

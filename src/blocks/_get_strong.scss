@@ -1,3 +1,7 @@
+#homeStrong {
+    overflow: hidden;
+}
+
 .getStrong_decobox {
     width: 284px;
     height: 462px;
@@ -34,4 +38,17 @@
         fill: $secondary_color;
         opacity: 0.5;
     }
+}
+
+@media screen and (max-width: $size_md) {
+    .getStrongContent {
+        text-align: center !important;
+    }
+
+    .getStrongDeco {
+        left: -20%;
+        scale: 0.8;
+    }
+
+
 }

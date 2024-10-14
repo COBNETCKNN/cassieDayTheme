@@ -16,11 +16,18 @@ $section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '
 
 $showSection = get_sub_field('show_section');
 $showSprayDecoration = get_sub_field('show_section_spray_color_decoration');
+
+//Spacing added through ACF Dimensions plugin
+$spacing = get_sub_field('spacing');
+$desktopSpacing = $spacing['desktop'];
+$tabletSpacing = $spacing['tablet'];
+$mobileSpacing = $spacing['mobile'];
+
 if ($showSection) { ?>
 
-<section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> py-36 bg-section-primary font-plus">
+<section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> bg-section-primary font-plus">
     <div class="container mx-auto">
-        <div class="grid grid-cols-2 gap-14">
+        <div class="grid lg:grid-cols-2 gap-14 mx-5 md:mx-0">
             <!-- Featured Image -->
             <div class="relative my-auto">
                 <div class="getStrong_decobox">
@@ -59,7 +66,7 @@ if ($showSection) { ?>
                 }
             ?>
 
-            <div class="my-auto relative" style="text-align: <?php echo $alignment_style; ?>;">
+            <div class="my-auto relative getStrongContent" style="text-align: <?php echo $alignment_style; ?>;">
                 <div class="getStrongContent_wrapper relative z-10 text-secondary">
                     <!-- Content -->
                     <?php echo $editorContent; ?>
@@ -87,3 +94,21 @@ if ($showSection) { ?>
 </section>
 
 <?php } ?>
+
+<style>
+    #<?php echo $default_id; ?> {
+        padding: <?php echo $desktopSpacing; ?>;
+    }
+
+    @media (max-width: 1024px) {
+        #<?php echo $default_id; ?> {
+            padding: <?php echo $tabletSpacing; ?>;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #<?php echo $default_id; ?> {
+            padding: <?php echo $mobileSpacing; ?>;
+        }
+    }
+</style>

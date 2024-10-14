@@ -1,3 +1,7 @@
+#heroHome {
+    overflow: hidden;
+}
+
 .homeHero_imageWrapper {
     display: inline-block;
     position: relative;
@@ -58,5 +62,16 @@
     ellipse {
         fill: $secondary_color;
         opacity: 0.4;
+    }
+}
+
+@media screen and (max-width: $size_md) {
+    .homeEditorContent {
+        text-align: center !important;
+        z-index: 2;
+    }
+
+    .heroDecoPeach {
+        top: 30%;
     }
 }

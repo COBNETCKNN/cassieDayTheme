@@ -15,8 +15,21 @@ $section_class = $default_class . (!empty($custom_class) ? ' ' . esc_attr($custo
 $section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '');
 
 $showSection = get_sub_field('show_section');
+
+// Get the spacing array from ACF Dimensions plugin
+$spacing = get_sub_field('spacing');
+
+// Fallback function to provide a default value
+function get_spacing_value_programs($spacing, $key, $default = '0px 0px 0px 0px') {
+    return isset($spacing[$key]) && !empty($spacing[$key]) ? $spacing[$key] : $default;
+}
+
+$desktopSpacing = get_spacing_value_programs($spacing, 'desktop', '100px 0px 100px 0px');
+$tabletSpacing = get_spacing_value_programs($spacing, 'tablet', '50px 0px 50px 0px');
+$mobileSpacing = get_spacing_value_programs($spacing, 'mobile', '30px 0px 30px 0px');
+
 if ($showSection) { ?>
- <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> py-24 bg-section-secondary font-plus relative">
+ <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> bg-section-secondary font-plus relative">
     <div class="container mx-auto">
     <!-- Content -->
      <?php 
@@ -35,7 +48,7 @@ if ($showSection) { ?>
     ?>
 
 
-    <div class="homePrograms_content" style="text-align: <?php echo $alignment_style; ?>;">
+    <div class="homePrograms_content mx-5 md:mx-0" style="text-align: <?php echo $alignment_style; ?>;">
         <?php echo $homeStepsEditor; ?>
     </div>
     <!-- Flexible Programs Content -->
@@ -54,9 +67,9 @@ if ($showSection) { ?>
             $imageContentFeaturedImageSize = 'programs-featured';
         ?>
         
-        <div class="grid grid-cols-2 gap-14 my-24">
+        <div class="grid lg:grid-cols-2 gap-14 my-24 mx-5 md:mx-0">
             <div class="programs_imageContent__imageWrapper my-auto relative">
-                <div class="relative z-10">
+                <div class="programsImageContent_image relative z-10">
                     <?php 
                         if( $imageContentFeaturedImage ) {
                             echo wp_get_attachment_image( $imageContentFeaturedImage, $imageContentFeaturedImageSize );
@@ -114,9 +127,9 @@ if ($showSection) { ?>
 
         <!-- Content Image Layout -->
         <?php elseif( $layout == 'content_image' ): ?>
-            <div class="grid grid-cols-2 gap-14 my-24">
+            <div class="grid lg:grid-cols-2 gap-14 my-24 mx-5 md:mx-0">
                 <!-- Content -->
-                <div class="relative">
+                <div class="relative order-last lg:order-none">
                     <div class="programs_imageContent__contentWrapper my-auto">
                         <?php if( have_rows('content_image_group') ): ?>
                             <?php while( have_rows('content_image_group') ): the_row(); 
@@ -170,7 +183,7 @@ if ($showSection) { ?>
                     $contentImageFeaturedImageSize = 'programs-featured';
                 ?>
                 <div class="programs_contentImage__imageWrapper my-auto relative">
-                    <div class="relative z-10">
+                    <div class="programsContentImage_image relative z-10">
                         <?php 
                             if( $contentImageFeaturedImage ) {
                                 echo wp_get_attachment_image( $contentImageFeaturedImage, $contentImageFeaturedImageSize );
@@ -194,3 +207,21 @@ if ($showSection) { ?>
  </section>
 
  <?php } ?>
+
+<style>
+    #<?php echo $default_id; ?> {
+        padding: <?php echo $desktopSpacing; ?>;
+    }
+
+    @media (max-width: 1024px) {
+        #<?php echo $default_id; ?> {
+            padding: <?php echo $tabletSpacing; ?>;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #<?php echo $default_id; ?> {
+            padding: <?php echo $mobileSpacing; ?>;
+        }
+    }
+</style>

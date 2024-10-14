@@ -14,10 +14,10 @@ jQuery(document).ready(function(jQuery){
 
     //Initialize OwlCarousel
     var owl = jQuery('.owl-carousel').owlCarousel({
-        loop: true,
+        loop: false,
         margin: 10,
         items: 1,
-        autoplay: true,
+        autoplay: false,
         autoplayTimeout: autoplayTimeout,
         autoplayHoverPause: true,
     });
@@ -36,4 +36,18 @@ document.addEventListener('DOMContentLoaded', function () {
             link.setAttribute('data-form-id', formId);
         });
     }
+});
+
+jQuery(document).ready(function($) {
+    $('#hamburger').on('click', function() {
+        $('#mobileMenu').addClass('active');
+        // Hide decorations when mobile menu is active
+        $('.underlinePrimaryDecoration, .underlineSecondaryDecoration, .underlineTertiaryDecoration').hide();
+    });
+
+    $('#closeMenu').on('click', function() {
+        $('#mobileMenu').removeClass('active');
+        // Show decorations when mobile menu is closed
+        $('.underlinePrimaryDecoration, .underlineSecondaryDecoration, .underlineTertiaryDecoration').show();
+    });
 });

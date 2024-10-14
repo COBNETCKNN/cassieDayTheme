@@ -13,8 +13,10 @@
 # Global stylings and variables used across site
 --------------------------------------------------------------*/
 @import "variables/colors";
+@import "variables/responsive_sizes";
 @import "variables/elements";
 @import "variables/text_underlines";
+
 
 /*--------------------------------------------------------------
 # Navigation stylings
@@ -35,6 +37,9 @@
 @import "blocks/cta_banner";
 @import "blocks/guide_section";
 
+body {
+    overflow-x: hidden;
+}
 
 .header-fixed {
     position: fixed;

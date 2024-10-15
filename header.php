@@ -21,7 +21,7 @@ $header_class = 'py-5 ' . $header_fixed;
 
 <header class="<?php echo esc_attr($header_class); ?> relative">
     <div class="container mx-auto h-auto">
-        <div class="flex justify-between items-center mx-10 lg:mx-0">
+        <div class="flex justify-between items-center mx-7 lg:mx-0">
             <!-- Logo -->
             <?php if (have_rows('header_logo', 'option')): ?>
                 <?php while (have_rows('header_logo', 'option')): the_row(); ?>
@@ -39,11 +39,12 @@ $header_class = 'py-5 ' . $header_fixed;
             <?php endif; ?>
 
             <!-- Hamburger Menu Icon -->
-            <button id="hamburger" class="block md:hidden">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-            </button>
+            <div id="nav-icon3">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
             <!-- Nav items -->
             <div class="header_navItems__wrapper my-auto hidden md:block">
@@ -59,16 +60,48 @@ $header_class = 'py-5 ' . $header_fixed;
             </div>
 
             <!-- Navigation Overlay -->
-            <div id="mobileMenu" class="mobile-menu hidden fixed inset-0 bg-white z-50">
-                <button id="closeMenu" class="absolute top-3 right-10 text-5xl font-bold">&times;</button>
-                <div class="flex flex-col items-center justify-center h-full">
-                    <?php
-                    wp_nav_menu([
-                        'theme_location' => 'header-menu',
-                        'container_class' => 'header-menu-mobile font-medium text-xl text-primary',
-                        'walker' => new Custom_Walker_Nav_Menu(),
-                    ]);
-                    ?>
+            <div id="mobileMenu" class="mobile-menu hidden bg-white fixed inset-0 z-50">
+                <div class="mobileMenuWrapper h-full p-10">
+                    <div class="">
+                        <?php
+                        wp_nav_menu([
+                            'theme_location' => 'header-menu',
+                            'container_class' => 'header-menu-mobile font-medium text-xl text-primary font-plus',
+                            'menu_class' => 'mobile-menu-list w-full',
+                            'walker' => new Custom_Walker_Nav_Menu(),
+                        ]);
+                        ?>
+                    </div>
+                    <div class="py-10">
+                        <div class="headerButton_wrapper w-full h-fit my-auto md:hidden flex justify-center">
+                            <?php if (have_rows('header_button', 'option')): ?>
+                                <?php while (have_rows('header_button', 'option')): the_row();
+                                    $headerAddButton = get_sub_field('add_header_button', 'option');
+                                    if ($headerAddButton) {
+                                        $add_cta_button = get_sub_field('header_add_cta_button', 'option');
+                                        $add_custom_link = get_sub_field('header_add_custom_link', 'option');
+                                        $popup_form_content = get_sub_field('header_popup_form', 'option');
+                                        $custom_link = get_sub_field('header_custom_link_group', 'option');
+                                        $form_id = $popup_form_content['select_form']->ID;
+
+                                        if ($add_cta_button && $popup_form_content) { ?>
+                                            <button class="header-button font-plus cta-button font-giga text-sm font-extrabold uppercase tracking-tighter rounded-lg"
+                                                data-form-id="<?php echo esc_attr($form_id); ?>">
+                                                <a class="block px-5 py-3" href=""><?php echo esc_html($popup_form_content['button_name']); ?></a>
+                                            </button>
+                                        <?php }
+                                        if ($add_custom_link && $custom_link) { ?>
+                                            <button class="header-button font-plus rounded-xl text-base font-extrabold uppercase tracking-tighter mt-10">
+                                                <a class="block px-5 py-3" href="<?php echo esc_url($custom_link['custom_button_link']); ?>">
+                                                    <?php echo esc_html($custom_link['custom_link_button_name']); ?>
+                                                </a>
+                                            </button>
+                                        <?php }
+                                    }
+                                endwhile; ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
                 </div>
             </div>
 

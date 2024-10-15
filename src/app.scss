@@ -63,3 +63,8 @@ body {
 #form-popup.hidden {
     display: none; /* Ensures the popup is hidden when .hidden class is present */
 }
+
+.no-scroll {
+    overflow: hidden; /* Prevent scrolling */
+    height: 100%; /* Ensure the height is set */
+}

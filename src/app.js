@@ -14,10 +14,10 @@ jQuery(document).ready(function(jQuery){
 
     //Initialize OwlCarousel
     var owl = jQuery('.owl-carousel').owlCarousel({
-        loop: false,
+        loop: true,
         margin: 10,
         items: 1,
-        autoplay: false,
+        autoplay: true,
         autoplayTimeout: autoplayTimeout,
         autoplayHoverPause: true,
     });
@@ -38,16 +38,34 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-jQuery(document).ready(function($) {
-    $('#hamburger').on('click', function() {
-        $('#mobileMenu').addClass('active');
-        // Hide decorations when mobile menu is active
-        $('.underlinePrimaryDecoration, .underlineSecondaryDecoration, .underlineTertiaryDecoration').hide();
+jQuery(document).ready(function ($) {
+    // Toggle overlay and decorations using #nav-icon3
+    $('#nav-icon3').on('click', function () {
+        $(this).toggleClass('open'); // Animate hamburger icon to "X"
+
+        // Check if the mobile menu is currently active
+        if ($('#mobileMenu').hasClass('active')) {
+            $('#mobileMenu').fadeOut(500, function() {
+                $(this).removeClass('active'); // Remove the active class after fading out
+            });
+            $('body').removeClass('no-scroll'); // Remove no-scroll class from body
+        } else {
+            $('#mobileMenu').fadeIn(500, function() {
+                $(this).addClass('active'); // Add the active class after fading in
+            });
+            $('body').addClass('no-scroll'); // Add no-scroll class to body
+        }
     });
 
-    $('#closeMenu').on('click', function() {
-        $('#mobileMenu').removeClass('active');
-        // Show decorations when mobile menu is closed
-        $('.underlinePrimaryDecoration, .underlineSecondaryDecoration, .underlineTertiaryDecoration').show();
+    // Toggle submenu visibility on arrow click
+    // Attach click event to parent links containing an arrow
+    $('.mobile-menu-list li:has(.sub-menu) > a').on('click', function (e) {
+        e.preventDefault(); // Prevent default anchor behavior
+
+        const submenu = $(this).siblings('.sub-menu'); // Target sibling sub-menu
+        const arrow = $(this).find('.arrow'); // Find the arrow inside the clicked item
+
+        submenu.slideToggle(300); // Toggle submenu visibility
+        arrow.toggleClass('open'); // Rotate arrow
     });
 });

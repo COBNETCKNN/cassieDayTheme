@@ -26,15 +26,46 @@
     }
 }
 
+@media (min-width: $size_sm) and (max-width: $size_md) {
+    .guideContent_wrapper {
+
+        h1,h2,h3,h4,h5,h6 {
+            width: 63%; /* Reduce width */
+            margin: 0 auto 2.5rem auto; /* Center the heading block */
+            text-align: center; /* Center the text inside the heading */
+        }
+    }
+
+    .guideContent_wrapper {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: $size_md) {
     .guideFeatured_wrapper {
         width: 100%;
         display: flex;
         justify-content: center;
+        align-items: center;
+
+        img {
+            width: 90%;
+            height: 80%;
+        }
     }
 
     .guideContent_wrapper {
         text-align: center !important;
+
+        h1,h2,h3,h4,h5,h6 {
+            font-size: 30px;
+            line-height: 36px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 28px;
+          }
     }
 }
 

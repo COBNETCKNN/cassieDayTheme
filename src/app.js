@@ -14,10 +14,10 @@ jQuery(document).ready(function(jQuery){
 
     //Initialize OwlCarousel
     var owl = jQuery('.owl-carousel').owlCarousel({
-        loop: true,
+        loop: false,
         margin: 10,
         items: 1,
-        autoplay: true,
+        autoplay: false,
         autoplayTimeout: autoplayTimeout,
         autoplayHoverPause: true,
     });

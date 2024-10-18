@@ -8,8 +8,8 @@
 $custom_class = get_sub_field('custom_html_class');
 $custom_id = get_sub_field('custom_html_id');
 
-$default_class = 'homeBanner';
-$default_id = 'homeBanner';
+$default_class = 'pagesBanner';
+$default_id = 'pagesBanner';
 
 $section_class = $default_class . (!empty($custom_class) ? ' ' . esc_attr($custom_class) : '');
 $section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '');
@@ -32,7 +32,7 @@ if ($showSection) { ?>
 
  <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> pt-32 bg-section-primary font-plus text-secondary">
     <div class="container mx-auto relative">
-        <div class="bannerWrapper bg-second-gradient py-20 px-5 rounded-2xl mx-3 md:mx-0">
+        <div class="bannerWrapper bg-second-gradient py-20 px-5 rounded-2xl mx-5 md:mx-0">
             <div class="banner_content relative z-10" style="text-align: <?php echo $alignment_style; ?>;">
                 <?php              
                     $reviewsEditor = get_sub_field('content_editor');
@@ -48,14 +48,15 @@ if ($showSection) { ?>
                         $alignment_style = 'right';
                     }
                 ?>
-                <div class="homeCtaBanner_content__wrapper" style="text-align: <?php echo $alignment_style; ?>;">
-                    <!-- Content -->
+                <!-- Content -->
+                 <div class="ctaBannerPage_content__wrapper" style="text-align: <?php echo $alignment_style; ?>;">
                     <?php echo $reviewsEditor; ?>
                     <!-- Button -->
                     <div class="bannerButton_wrapper">
                         <?php get_template_part('partials/form', 'links-button'); ?>
                     </div>
-                </div>
+                 </div>
+
             </div>
         </div>
         <!-- Banner Decoration -->

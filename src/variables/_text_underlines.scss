@@ -20,6 +20,17 @@
   }
 }
 
+@media screen and (max-width: $size_sm) {
+  .homeEditorContent_wrapper > h2 > .underlinePrimaryDecoration {
+    position: relative;
+    z-index: 10;
+  
+    &::after {
+      height: 1rem;
+    }
+  }
+}
+
 .underlinePrimaryDecoration {
   position: relative;
   z-index: 10;

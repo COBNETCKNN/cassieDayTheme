@@ -50,5 +50,25 @@
         scale: 0.8;
     }
 
+    .getStrongContent_wrapper {
+        h1,h2,h3,h4,h5,h6 {
+            font-size: 30px;
+            line-height: 36px;
+        }
 
+        p {
+            font-size: 18px;
+        }
+    }
+
+    .getStrong_image__wrapper img {
+        width: 275px;
+        height: 265px;
+        left: 57%;
+    }
+
+    .getStrong_decobox {
+        width: 284px;
+        height: 362px;
+    }
 }

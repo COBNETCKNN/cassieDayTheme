@@ -32,7 +32,7 @@ if ($showSection) { ?>
 
  <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> pt-52 pb-32 -mt-14 font-plus">
     <div class="container mx-auto">
-        <div class="grid lg:grid-cols-5 gap-14 md:gap-4 mx-5 md:mx-14">
+        <div class="grid lg:grid-cols-5 gap-5 lg:gap-14 md:gap-4 mx-5 md:mx-14">
             <?php
                 $guideFeaturedImage = get_sub_field('guide_featured_image');
                 $guideFeaturedImageSize = 'guide-featured';

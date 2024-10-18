@@ -72,7 +72,7 @@ $header_class = 'py-5 ' . $header_fixed;
                         ]);
                         ?>
                     </div>
-                    <div class="py-10">
+                    <div class="pb-20">
                         <div class="headerButton_wrapper w-full h-fit my-auto md:hidden flex justify-center">
                             <?php if (have_rows('header_button', 'option')): ?>
                                 <?php while (have_rows('header_button', 'option')): the_row();

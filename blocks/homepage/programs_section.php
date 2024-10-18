@@ -67,7 +67,7 @@ if ($showSection) { ?>
             $imageContentFeaturedImageSize = 'programs-featured';
         ?>
         
-        <div class="grid lg:grid-cols-2 gap-14 my-24 mx-5 md:mx-0">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 my-7 lg:my-24 mx-5 md:mx-0">
             <div class="programs_imageContent__imageWrapper my-auto relative">
                 <div class="programsImageContent_image relative z-10">
                     <?php 
@@ -106,13 +106,13 @@ if ($showSection) { ?>
                                     $custom_link_url = $custom_link['url'];
                                     $custom_link_title = $custom_link['title'];
                                     ?>
-                                    <button class="button-secondary font-plus rounded-xl text-sm font-bold uppercase mt-10">
+                                    <button class="button-secondary font-plus rounded-xl text-sm font-bold uppercase mt-5 lg:mt-10">
                                         <a class="px-6 py-3 block" href="<?php echo esc_url($custom_link_url); ?>"><?php echo esc_html($custom_link_title); ?></a>
                                     </button>
                                     <?php
                                 } elseif ($add_button && $popup_form_content && $form_id) {
                                     ?>
-                                    <button class="cta-button button-secondary font-plus rounded-xl text-sm font-bold uppercase mt-10"
+                                    <button class="cta-button button-secondary font-plus rounded-xl text-sm font-bold uppercase mt-5 lg:mt-10"
                                         data-form-id="<?php echo esc_attr($form_id); ?>">
                                         <a class="px-6 py-3 block" href=""><?php echo esc_html($popup_form_content['cta_button_name']); ?></a>
                                     </button>
@@ -127,7 +127,7 @@ if ($showSection) { ?>
 
         <!-- Content Image Layout -->
         <?php elseif( $layout == 'content_image' ): ?>
-            <div class="grid lg:grid-cols-2 gap-14 my-24 mx-5 md:mx-0">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 my-24 mx-5 md:mx-0">
                 <!-- Content -->
                 <div class="relative order-last lg:order-none">
                     <div class="programs_imageContent__contentWrapper my-auto">
@@ -158,13 +158,13 @@ if ($showSection) { ?>
                                     $custom_link_url = $custom_link['url'];
                                     $custom_link_title = $custom_link['title'];
                                     ?>
-                                    <button class="button-secondary font-plus rounded-xl text-sm font-bold uppercase mt-10">
+                                    <button class="button-secondary font-plus rounded-xl text-sm font-bold uppercase mt-5 lg:mt-10">
                                         <a class="px-6 py-3 block" href="<?php echo esc_url($custom_link_url); ?>"><?php echo esc_html($custom_link_title); ?></a>
                                     </button>
                                     <?php
                                 } elseif ($add_button && $popup_form_content && $form_id) {
                                     ?>
-                                    <button class="cta-button button-secondary font-plus rounded-xl text-sm font-bold uppercase mt-10"
+                                    <button class="cta-button button-secondary font-plus rounded-xl text-sm font-bold uppercase mt-5 lg:mt-10"
                                         data-form-id="<?php echo esc_attr($form_id); ?>">
                                         <a class="px-6 py-3 block"><?php echo esc_html($popup_form_content['cta_button_name']); ?></a>
                                     </button>

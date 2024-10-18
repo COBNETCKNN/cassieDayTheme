@@ -1,0 +1,38 @@
+
+
+.pagesEditor {
+    h1,h2,h3,h4,h5,h6 {
+        font-size: 36px;
+        line-height: 44px;
+        font-weight: 800;
+        color: $secondary_text_color;
+        margin-bottom: 1.75rem;
+    }
+
+    p {
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 500;
+        color: $primary_light_text_color;
+    }
+}
+
+@media screen and (max-width: $size_sm) {
+    .pagesEditor {
+        h1,h2,h3,h4,h5,h6 {
+            font-size: 30px;
+            line-height: 38px;
+            font-weight: 800;
+            color: $secondary_text_color;
+            margin-bottom: 1.75rem;
+        }
+    
+        p {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 500;
+            color: $primary_light_text_color;
+        }
+    }
+}
+

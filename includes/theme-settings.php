@@ -41,3 +41,6 @@ function pistol_disable_gutenberg($is_enabled, $post_type) {
 add_filter('use_block_editor_for_post_type', 'pistol_disable_gutenberg', 10, 2);
 // Disables the block editor from managing widgets.
 add_filter( 'use_widgets_block_editor', '__return_false' );
+
+//Theme Supports
+add_theme_support( 'title-tag' );

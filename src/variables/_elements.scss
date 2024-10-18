@@ -2,7 +2,8 @@
 * Global stylings for elements 
 */
 
-h1 {
+.homeEditorContent {
+  h1 {
     span {
         text-transform: uppercase;
         color: $hero_preheading_color;
@@ -10,9 +11,8 @@ h1 {
         font-weight: 700;
         margin-bottom: 1rem;
     }
-}
+  }
 
-.homeEditorContent {
   h2 {
       color: $secondary_text_color;
       font-weight: 800;
@@ -29,21 +29,31 @@ h1 {
 }
 
 @media screen and (max-width: $size_sm) {
+  p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
   .homeEditorContent {
+    h1 {
+      margin-bottom: 0;
+    }
+
     h2 {
         color: $secondary_text_color;
         font-weight: 800;
         font-size: 40px;
         line-height: 40px;
-        margin-bottom: 1.1rem;
+        margin: 0.8rem 0;
     }
 
     p {
         color: $primary_light_text_color;
         font-weight: 600;
-        font-size: 16px;
+        font-size: 20px;
     }
   }
+
 }
 
 h2 {
@@ -51,6 +61,19 @@ h2 {
     line-height: 44px;
     font-weight: 800;
     margin-bottom: 1.1rem;
+}
+
+@media (min-width: $size_sm) and (max-width: $size_md) {
+  h1,h2,h3,h4,h5,h6 {
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 2.5rem;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 28px;
+  }
 }
 
 .homeGetStrong {
@@ -283,3 +306,12 @@ a:active {
   color: $link_active_color;
 }
 
+.owl-dot {
+  position: relative;
+}
+
+.owl-dot::after {
+  content: attr(aria-label);
+  position: absolute;
+  left: -9999px; /* Visually hides the content */
+}

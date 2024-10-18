@@ -1,0 +1,89 @@
+
+
+@media screen and (min-width: $size_md) {
+    .schdulePages_wrapper {
+        p {
+            margin: 0 25%;
+        }
+    }
+}
+
+
+.tableWrapper {
+    -webkit-box-shadow: 0px -1px 23px -1px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px -1px 23px -1px rgba(0,0,0,0.1);
+    box-shadow: 0px -1px 23px -1px rgba(0,0,0,0.1);
+}
+
+thead {
+    tr {
+        th {
+            width: 12.7%;
+            padding: 25px 10px;
+        }
+    }
+}
+
+.dynamicTable {
+    th {
+        font-weight: 500;
+        font-size: 18px;
+        color: $primary_light_text_color;
+    }
+}
+
+tr:nth-of-type(2n) {
+    background-color: #FAFAFA;
+}
+
+tr:not(:first-of-type):hover {
+    background-color: #FAFAFA;
+}
+
+.scheduleTable thead:nth-of-type(2n) {
+    background-color: #FAFAFA;
+}
+
+.scheduleTable thead:not(:first-of-type):hover {
+    background-color: #FAFAFA;
+}
+
+.daysTable {
+    th {
+        color: $secondary_text_color;
+    }
+}
+
+.daysTable_wrapepr {
+        border-bottom: 4px solid $secondary_text_color;
+}
+
+.schedulePagesPurpleDeco {
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    z-index: -1;
+    scale: 0.5;
+}
+
+.schedulePagesGreenDeco {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    z-index: -1;
+} 
+
+.tableWrapper {
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    white-space: nowrap;
+
+}

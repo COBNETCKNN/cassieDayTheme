@@ -29,13 +29,19 @@
 /*--------------------------------------------------------------
 # Styling for blocks
 --------------------------------------------------------------*/
-@import "blocks/home_hero";
-@import "blocks/steps_cards";
-@import "blocks/get_strong";
-@import "blocks/programs_section";
-@import "blocks/reviews";
-@import "blocks/cta_banner";
-@import "blocks/guide_section";
+@import "blocks/homepage/home_hero";
+@import "blocks/homepage/steps_cards";
+@import "blocks/homepage/get_strong";
+@import "blocks/homepage/programs_section";
+@import "blocks/homepage/reviews";
+@import "blocks/homepage/cta_banner";
+@import "blocks/homepage/guide_section";
+
+@import "blocks/pages/pages_elements";
+@import "blocks/pages/hero_section";
+@import "blocks/pages/schedule_section";
+@import "blocks/pages/class_cards";
+@import "blocks/pages/cta_banner";
 
 body {
     overflow-x: hidden;

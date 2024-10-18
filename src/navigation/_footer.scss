@@ -1,12 +1,11 @@
-.footerCopyright_link:hover {
-    text-decoration: underline;
-}
+.footerCopyright {
 
-.footerCopyright_link {
-    color: $primary_color;
-
-    span {
+    a {
         color: $primary_color;
+    
+        span {
+            color: $primary_color;
+        }
     }
 }
 
@@ -115,20 +114,21 @@
 }
 
 .addressLink {
-    span {
+    div {
         color: $footer_link_color;
         transition: color 0.3s ease-in-out 0.1s; // Adding transition delay of 0.1s
+        width: 100%;
     }
 }
 
 .addressLink:hover {
-    span {
+    div {
         color: $footer_link_hover_color;
     }
 }
 
 .addressLink:active {
-    span {
+    div {
         color: $footer_link_active_color;
     }
 }
@@ -139,6 +139,18 @@
 
 .footerInfo_contact__heading {
     color: $primary_light_text_color;
+}
+
+@media screen and (max-width: $size_md) {
+    .footerLogo {
+        max-width: 112px;
+    }
+
+    .footerPartnerWrapper {
+        a {
+            max-width: 90px;
+        }
+    }
 }
 
 @media screen and (max-width: $size_lg) {
@@ -228,3 +240,4 @@
         vertical-align: middle;
     }
 }
+

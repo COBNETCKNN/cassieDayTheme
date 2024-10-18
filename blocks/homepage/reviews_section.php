@@ -49,7 +49,7 @@ if ($showSection) { ?>
             }
         ?>
 
-        <div class="homeReviews_content mx-20 md:mx-0" style="text-align: <?php echo $alignment_style; ?>;">
+        <div class="homeReviews_content md:mx-0" style="text-align: <?php echo $alignment_style; ?>;">
             <?php echo $reviewsEditor; ?>
         </div>
         <!-- Reviews Repeater -->
@@ -83,7 +83,7 @@ if ($showSection) { ?>
                                                     </clipPath>
                                                     </defs>
                                                 </svg>
-                                                <h5 class="reviewerName ml-5"><?php echo $reviewerName; ?></h5>  
+                                                <div class="reviewerName ml-5"><?php echo $reviewerName; ?></div>  
                                             </div>
                                             <?php endwhile; ?>
                                         <?php endif; ?>

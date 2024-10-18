@@ -122,6 +122,31 @@
     .programsDecoration {
         top: 40%;
     }
+
+    .homePrograms_content {
+        display: flex;
+        justify-content: center;
+
+        h1,h2,h3,h4,h5,h6 {
+            width: 80%;
+            font-size: 30px;
+            line-height: 36px;
+            font-weight: 800;
+        }
+    }
+
+    .programs_imageContent__contentWrapper {
+        h1,h2,h3,h4,h5,h6 {
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+}
+
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .homePrograms_content {
+        margin-bottom: 5rem;
+    }
 }
 
 @media screen and (max-width: $size_lg) {

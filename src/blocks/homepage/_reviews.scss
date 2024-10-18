@@ -46,7 +46,7 @@
     color: $primary_text_color;
 }
 
-@media screen and (max-width: $size_md) {
+@media screen and (max-width: $size_sm) {
     .reviewsContent_wrapper {
         padding: 17rem 2rem 2rem 2rem;
         min-height: 700px;
@@ -60,7 +60,15 @@
     }
 
     .homeReviews_content {
-        margin-bottom: 2.5rem;
+
+        h1,h2,h3,h4,h5,h6 {
+            font-size: 30px;
+            line-height: 36px;
+            font-weight: 800;
+            width: 70%; /* Reduce width */
+            margin: 0 auto 2.5rem auto; /* Center the heading block */
+            text-align: center; /* Center the text inside the heading */
+        }
     }
 
     .reviewsCarouselGreenDeco {
@@ -74,4 +82,43 @@
         right: -70%;
     }
 
+    .reviewParagraph {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+@media (min-width: 640px) and (max-width: $size_md) {
+    .homeReviews_content {
+        h1,h2,h3,h4,h5,h6 {
+            width: 40% !important; /* Reduce width */
+        }
+    }
+}
+
+@media (min-width: $size_sm) and (max-width: $size_md) {
+    .homeReviews_content {
+        h1,h2,h3,h4,h5,h6 {
+            width: 55%; /* Reduce width */
+            margin: 0 auto 2.5rem auto; /* Center the heading block */
+            text-align: center; /* Center the text inside the heading */
+        }
+    }
+
+    .reviewImage_wrapper {
+        position: absolute;
+        left: 30%;
+        top: -20%;
+        margin-left: 0;
+    }
+
+    .reviewsContent_wrapper {
+        padding-top: 13rem;
+    }
+
+    .reviewsCarouselPurpleDeco {
+        scale: 0.6;
+        top: 30%;
+        left: 40%;
+    }
 }

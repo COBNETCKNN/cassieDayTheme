@@ -1,0 +1,75 @@
+#heroPages {
+    background: linear-gradient(0deg, #FEF1FA, #FEF1FA),
+linear-gradient(0deg, rgba(255, 255, 255, 0.67), rgba(255, 255, 255, 0.67));
+}
+
+.heroPages_imageBorderWrapper {
+    img {
+        border-radius: 50%;
+        border: 16.28px solid $secondary_color;
+        display: block;
+    }
+}
+
+.heroPages_wrapper {
+    h1,h2,h3,h4,h5,h6 {
+        font-size: 48px;
+        font-weight: 800;
+        line-height: 58px;
+        color: $secondary_text_color;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+        color: $primary_light_text_color;
+    }
+}
+
+@media screen and (max-width: $size_sm) {
+    .heroPages_wrapper {
+        h1,h2,h3,h4,h5,h6 {
+            font-size: 40px;
+            line-height: 48px;
+        }
+    
+        p {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+}
+
+@media screen and (min-width: $size_lg) {
+    .heroPages_wrapper {
+        h1,h2,h3,h4,h5,h6 {
+            width: 80%;
+        }
+    
+        p {
+            width: 90%;
+        }
+    }
+}
+
+.pagesHeroPinkDeco {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+}
+
+.pagesHeroPurpleDeco {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+@media screen and (max-width: $size_lg) {
+    .heroPages_wrapper {
+        text-align: center;
+    }
+}

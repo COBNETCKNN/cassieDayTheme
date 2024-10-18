@@ -8,12 +8,34 @@ function theme_colors() {
     //Theme Main Colors
     if( have_rows('theme_colors', 'option') ):
         while( have_rows('theme_colors', 'option') ): the_row();
-
+    
             $primary_color = get_sub_field('primary_color', 'option');
             $secondary_color = get_sub_field('secondary_color', 'option');
             $tertiary_color = get_sub_field('tertiary_color', 'option');
             $quaternary_color = get_sub_field('quaternary_color', 'option');
-
+    
+            // Convert hex to RGB function
+            function hexToRgb($hex) {
+                $hex = str_replace('#', '', $hex);
+    
+                if (strlen($hex) === 3) {
+                    $r = hexdec(str_repeat($hex[0], 2));
+                    $g = hexdec(str_repeat($hex[1], 2));
+                    $b = hexdec(str_repeat($hex[2], 2));
+                } else {
+                    $r = hexdec(substr($hex, 0, 2));
+                    $g = hexdec(substr($hex, 2, 2));
+                    $b = hexdec(substr($hex, 4, 2));
+                }
+    
+                return "$r, $g, $b"; // Return as 'R, G, B'
+            }
+    
+            // Convert each color to RGB
+            $primary_rgb = hexToRgb($primary_color);
+            $secondary_rgb = hexToRgb($secondary_color);
+            $tertiary_rgb = hexToRgb($tertiary_color);
+            $quaternary_rgb = hexToRgb($quaternary_color);
         endwhile;
     endif;
 
@@ -46,6 +68,9 @@ function theme_colors() {
             --secondary-color: $secondary_color;
             --tertiary-color: $tertiary_color;
             --quaternary-color: $quaternary_color;
+            --primary-color-rgb: $primary_rgb;
+            --secondary-color-rgb: $secondary_rgb;
+            --tertiary-color-rgb: $tertiary_rgb;
             --primary-section-color: $primary_section_color;
             --secondary-section-color: $secondary_section_color;
             --primary-text-color: $primary_text_color;

@@ -66,6 +66,12 @@ tr:not(:first-of-type):hover {
     scale: 0.5;
 }
 
+@media screen and (max-width: $size_md) {
+    .schedulePagesPurpleDeco {
+        display: none;
+    }
+}
+
 .schedulePagesGreenDeco {
     position: absolute;
     right: 5%;

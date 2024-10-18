@@ -7,6 +7,9 @@ $primary_color: var(--primary-color);
 $secondary_color: var(--secondary-color);
 $tertiary_color: var(--tertiary-color);
 $quaternary_color: var(--quaternary-color);
+$primary_color_rgb : var(--primary-color-rgb);
+$secondary_color_rgb: var(--secondary-color-rgb);
+$tertiary_color_rgb: var(--tertiary-color-rgb);
 
 .bg-primary {
     background-color: $primary_color;

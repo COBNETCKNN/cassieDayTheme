@@ -48,7 +48,7 @@ if ($showSection) { ?>
                 $alignment_style = 'right';
             }
         ?>
-        <div class="schdulePages my-auto relative" style="text-align: <?php echo $alignment_style; ?>;">
+        <div class="schdulePages my-auto relative mb-5 lg:mb-0" style="text-align: <?php echo $alignment_style; ?>;">
             <div class="pagesEditor schdulePages_wrapper relative mx-5 lg:mx-0">
                 <!-- Content -->
                 <?php echo $editorContent; ?>

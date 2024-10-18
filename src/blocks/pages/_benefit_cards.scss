@@ -1,0 +1,153 @@
+#pageBenefitCards {
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%);
+}
+
+@media screen and (min-width: $size_lg) {
+    .pagesBenefitCards_wrapper {
+        p {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+    }
+}
+
+@media screen and (max-width: $size_sm) {
+    .pagesBenefitCards_wrapper {
+        h1,h2,h3,h4,h5,h6 {
+            margin-left: 15%;
+            margin-right: 15%;
+        }
+    }
+}
+
+@media (min-width: $size_sm) and (max-width: $size_md) {
+    .pagesBenefitCards_wrapper {
+        h1,h2,h3,h4,h5,h6 {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+    }
+}
+
+.benefitCard {
+    min-height: 450px;
+    box-shadow: 2px 4px 16px 0px #00000012;
+}
+
+@media (min-width: $size_sm) and (max-width: $size_md) {
+    .benefitCard {
+        min-height: 350px;
+    }
+}
+
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .benefitCard {
+        min-height: 300px;
+    }
+}
+
+@media (min-width: $size_lg) and (max-width: $size_xl) {
+    .benefitCard {
+        min-height: 530px;
+    }
+}
+
+@media (min-width: $size_xl) and (max-width: $size_2xl) {
+    .benefitCard {
+        min-height: 500px;
+    }
+}
+
+.benefitCardNumber {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.benefitNumber {
+    font-size: 24px;
+    font-weight: 800;
+    border-radius: 50%;
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.benefitCardNumber01,
+.benefitCardNumber04 {
+    .benefitNumber {
+        background-color: $secondary_color;
+    }
+
+    .benefitNumberShadow {
+        background-color: rgb($secondary_color_rgb, 0.5);
+        z-index: -1;
+        border-radius: 50%;
+    }
+}
+
+.benefitCardNumber02,
+.benefitCardNumber05 {
+    .benefitNumber {
+        background-color: $primary_color;
+    }
+
+    .benefitNumberShadow {
+        background-color: rgb($primary_color_rgb, 0.5);
+        z-index: -1;
+        border-radius: 50%;
+    }
+}
+
+.benefitCardNumber03,
+.benefitCardNumber06 {
+    .benefitNumber {
+        background-color: $tertiary_color;
+    }
+
+    .benefitNumberShadow {
+        background-color: rgb($tertiary_color_rgb, 0.5);
+        z-index: -1;
+        border-radius: 50%;
+    }
+}
+
+.cardBorder01 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background: linear-gradient(221.96deg, $secondary_color -13.86%, rgba(255, 44, 175, 0.1) 92.88%);
+    border-radius: 1.5rem
+}
+
+.cardBorder02 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background: linear-gradient(221.96deg, $primary_color -13.86%, rgba(255, 44, 175, 0.1) 92.88%);
+    border-radius: 1.5rem
+}
+
+.cardBorder03 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background: linear-gradient(221.96deg, $tertiary_color -13.86%, rgba(255, 44, 175, 0.1) 92.88%);
+    border-radius: 1.5rem
+}
+
+.benefitCardsDeco {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}

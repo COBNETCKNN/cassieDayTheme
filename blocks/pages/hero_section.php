@@ -21,7 +21,7 @@ if ($showSection) { ?>
 <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> py-24 relative">
     <div class="container mx-auto w-full h-full flex justify-center items-center">
         <div class="w-full mx-5 lg:mx-16">
-            <div class="grid lg:grid-cols-5 gap-14 lg:gap-5 font-plus relative z-10">
+            <div class="pageHomeHeroGrid grid lg:grid-cols-5 gap-14 lg:gap-5 font-plus relative">
                 <?php
                     $editorContent = get_sub_field('content_editor');
                     $alignment = get_sub_field('align_content');

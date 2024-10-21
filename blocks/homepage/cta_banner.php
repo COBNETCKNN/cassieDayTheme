@@ -32,7 +32,7 @@ if ($showSection) { ?>
 
  <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> pt-32 bg-section-primary font-plus text-secondary">
     <div class="container mx-auto relative">
-        <div class="bannerWrapper bg-second-gradient py-20 px-5 rounded-2xl mx-3 md:mx-0">
+        <div class="bannerWrapper py-20 px-5 rounded-2xl mx-3 md:mx-0">
             <div class="banner_content relative z-10" style="text-align: <?php echo $alignment_style; ?>;">
                 <?php              
                     $reviewsEditor = get_sub_field('content_editor');

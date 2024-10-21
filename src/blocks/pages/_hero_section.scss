@@ -1,12 +1,16 @@
 #heroPages {
-    background: linear-gradient(0deg, #FEF1FA, #FEF1FA),
-linear-gradient(0deg, rgba(255, 255, 255, 0.67), rgba(255, 255, 255, 0.67));
+    background: linear-gradient(0deg, rgb($primary_color_rgb, 0.02), rgb($primary_color_rgb, 0.02)),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.67), rgba(255, 255, 255, 0.67));    
+}
+
+.pageHomeHeroGrid {
+    z-index: 5;
 }
 
 .heroPages_imageBorderWrapper {
     img {
         border-radius: 50%;
-        border: 16.28px solid $secondary_color;
+        border: 16.28px solid rgb($secondary_color_rgb, 0.6);
         display: block;
     }
 }
@@ -59,6 +63,9 @@ linear-gradient(0deg, rgba(255, 255, 255, 0.67), rgba(255, 255, 255, 0.67));
     bottom: 0;
     left: 0;
 
+    ellipse {
+        fill: rgb($primary_color_rgb, 0.2);
+    }
 }
 
 .pagesHeroPurpleDeco {
@@ -66,10 +73,32 @@ linear-gradient(0deg, rgba(255, 255, 255, 0.67), rgba(255, 255, 255, 0.67));
     top: 0;
     right: 0;
 
+    ellipse {
+        fill: $secondary_color;
+    }
+
 }
 
 @media screen and (max-width: $size_lg) {
     .heroPages_wrapper {
         text-align: center;
+    }
+}
+
+#heroPages {
+    .pagesHeroPinkDeco {
+        position: absolute;
+        bottom: 0;
+        left: auto;
+        right: -10%;
+        transform: rotate(-0.25turn);
+    }
+
+    .pagesHeroPurpleDeco {
+        position: absolute;
+        top: 0;
+        right: auto;
+        left: -10%;
+        transform: rotate(-0.25turn);
     }
 }

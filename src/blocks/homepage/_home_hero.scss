@@ -1,5 +1,6 @@
 #heroHome {
     overflow: hidden;
+    background: linear-gradient(133.89deg, rgba(254, 241, 250, 0.65) -12.62%, rgba(240, 239, 248, 0.15) 61.05%);
 }
 
 .homeHero_imageWrapper {
@@ -11,14 +12,14 @@
     display: inline-block;
     border-radius: 50%;
     padding: 20px;
-    border: 0.5px solid $secondary_color;
+    border: 0.5px solid rgb($secondary_color_rgb, 0.6);
     position: relative;
     box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.1);   
 }
 
 .imageBorderWrapper img {
     border-radius: 50%;
-    border: 16.28px solid $secondary_color;
+    border: 16.28px solid rgb($secondary_color_rgb, 0.6);
     display: block;
 }
 
@@ -43,11 +44,11 @@
     position: absolute;
     top: -20%;
     left: 0;
-    fill: $quaternary_color;
+    fill: rgb($primary_color_rgb, 0.7);
     z-index: 1;
 
     ellipse {
-        fill: $quaternary_color;
+        fill: rgb($primary_color_rgb, 0.7);
         opacity: 0.1;
     }
 }

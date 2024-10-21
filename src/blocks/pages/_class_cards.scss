@@ -40,14 +40,14 @@
               
             &:before {
         
-              background: $secondary_button_hover_darker;
+              background: black;
               transition: 0.6s ease-in;
               transition-delay: .1s;
             }
         
             &:after {
         
-              background: $secondary_button_hover_dark;
+              background: black;
               transition: 0.8s ease;
               transition-delay: .4s;
             }
@@ -128,7 +128,7 @@
 
 .classPages_imageContent__coloredBackground_layout-1,
 .classPages_imageContent__coloredBackground_layout-4 {
-    background-color: $quaternary_color;
+    background-color: rgb($primary_color_rgb, 0.5);
     max-width: none;
     width: 350px;
     height: 290px;
@@ -191,7 +191,7 @@
 
     .classPages_imageContent__coloredBackground_layout-1,
     .classPages_imageContent__coloredBackground_layout-4 {
-        background-color: $quaternary_color;
+        background-color: rgb($primary_color_rgb, 0.5);
         max-width: none;
         width: 100%;
         height: 100%;
@@ -256,7 +256,7 @@
 
     .classPages_imageContent__coloredBackground_layout-1,
     .classPages_imageContent__coloredBackground_layout-4 {
-        background-color: $quaternary_color;
+        background-color: rgb($primary_color_rgb, 0.5);
         max-width: none;
         width: 100%;
         height: 100%;

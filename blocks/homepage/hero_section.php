@@ -17,7 +17,7 @@ $showSection = get_sub_field('show_section');
 $showSprayDecoration = get_sub_field('show_section_spray_color_decoration');
 if ($showSection) { ?>
 
-<section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> lg:h-[90vh] w-full bg-first-gradient relative py-14 lg:py-0">
+<section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> lg:h-[90vh] w-full relative py-14 lg:py-0">
     <div class="container mx-auto w-full h-full flex justify-center items-center">
         <div class="w-full mx-5 lg:mx-16">
             <div class="grid lg:grid-cols-2 gap-14 font-plus">
@@ -38,7 +38,7 @@ if ($showSection) { ?>
                     }
                 ?>
                 <div class="homeEditorContent my-auto relative" style="text-align: <?php echo $alignment_style; ?>;">
-                    <div class="homeEditorContent_wrapper relative">
+                    <div class="homeEditorContent_wrapper relative z-10">
                         <!-- Content -->
                         <?php echo $editorContent; ?>
                         <!-- Button -->

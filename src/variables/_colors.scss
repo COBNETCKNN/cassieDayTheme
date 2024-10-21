@@ -6,7 +6,6 @@
 $primary_color: var(--primary-color);
 $secondary_color: var(--secondary-color);
 $tertiary_color: var(--tertiary-color);
-$quaternary_color: var(--quaternary-color);
 $primary_color_rgb : var(--primary-color-rgb);
 $secondary_color_rgb: var(--secondary-color-rgb);
 $tertiary_color_rgb: var(--tertiary-color-rgb);
@@ -21,10 +20,6 @@ $tertiary_color_rgb: var(--tertiary-color-rgb);
 
 .bg-tertiary {
     background-color: $tertiary_color;
-}
-
-.bg-quaternary {
-    background-color: $quaternary_color;
 }
 
 //Section Background
@@ -65,31 +60,22 @@ $hero_preheading_color: var(--hero-preheading-color);
 //Primary Button
 $primary_button_text_color: var(--primary-button-text-color);
 $primary_button_background_color: var(--primary-button-background-color);
-$primary_button_hover_dark: var(--primary-button-hover-dark);
-$primary_button_hover_darker: var(--primary-button-hover-darker);
 
 //Secondary Button
 $secondary_button_text_color: var(--secondary-button-text-color);
 $secondary_button_background_color: var(--secondary-button-background-color);
-$secondary_button_hover_dark: var(--secondary-button-hover-dark);
-$secondary_button_hover_darker: var(--secondary-button-hover-darker);
 
 //Banner Button
 $banner_button_text_color: var(--banner-button-text-color);
 $banner_button_background_color: var(--banner-button-background-color);
-$banner_button_hover_dark: var(--banner-button-hover-dark);
-$banner_button_hover_darker: var(--banner-button-hover-darker);
 
 //Header Button
 $header_button_text_color: var(--header-button-text-color);
 $header_button_background_color: var(--header-button-background-color);
-$header_button_hover_dark: var(--header-button-hover-dark);
-$header_button_hover_darker: var(--header-button-hover-darker);
 
 //Link Colors
 $link_color: var(--link-color);
-$link_hover_color: var(--link-hover-color);
-$link_active_color: var(--link-active-color);
+$link_color_rgb: var(--link-color-rgb);
 
 //Footer Links Colors
 $footer_link_color: var(--footer-link-color);

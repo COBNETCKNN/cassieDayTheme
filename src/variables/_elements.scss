@@ -6,7 +6,7 @@
   h1 {
     span {
         text-transform: uppercase;
-        color: $hero_preheading_color;
+        color: color-mix(in srgb, var(--secondary-color) 100%, rgba(63, 27, 192, 0.836) 50%);
         font-size: 16px;
         font-weight: 700;
         margin-bottom: 1rem;
@@ -115,14 +115,14 @@ button {
           
         &:before {
     
-          background: $primary_button_hover_darker;
+          background: color-mix(in srgb, $primary_button_background_color 50%, rgba(0, 0, 0, 0.438) 55%);
           transition: 0.6s ease-in;
           transition-delay: .1s;
         }
     
         &:after {
     
-          background: $primary_button_hover_dark;
+          background: color-mix(in srgb, $primary_button_background_color 100%, rgba(0, 0, 0, 0.596) 15%);
           transition: 0.8s ease;
           transition-delay: .4s;
         }
@@ -165,14 +165,14 @@ button {
           
         &:before {
     
-          background: $secondary_button_hover_darker;
+          background: color-mix(in srgb, $secondary_button_background_color 50%, rgba(0, 0, 0, 0.438) 55%);
           transition: 0.6s ease-in;
           transition-delay: .1s;
         }
     
         &:after {
     
-          background: $secondary_button_hover_dark;
+          background: color-mix(in srgb, $secondary_button_background_color 100%, rgba(0, 0, 0, 0.596) 15%);
           transition: 0.8s ease;
           transition-delay: .4s;
         }
@@ -214,14 +214,14 @@ button {
           
         &:before {
     
-          background: $banner_button_hover_dark;
+          background: color-mix(in srgb, $banner_button_background_color 100%, rgba(216, 216, 216, 0.596) 55%);
           transition: 0.6s ease-in;
           transition-delay: .1s;
         }
     
         &:after {
     
-          background: $banner_button_hover_darker;
+          background: color-mix(in srgb, $banner_button_background_color 100%, rgba(0, 0, 0, 0.596) 45%);
           transition: 0.8s ease;
           transition-delay: .4s;
         }
@@ -263,14 +263,14 @@ button {
           
         &:before {
     
-          background: $header_button_hover_dark;
+          background: color-mix(in srgb, $header_button_background_color 100%, rgba(235, 218, 218, 0.877) 55%);
           transition: 0.6s ease-in;
           transition-delay: .1s;
         }
     
         &:after {
     
-          background: $header_button_hover_darker;
+          background: color-mix(in srgb, $header_button_background_color 100%, rgba(255, 252, 252, 0.986) 50%);
           transition: 0.8s ease;
           transition-delay: .4s;
         }
@@ -299,11 +299,11 @@ a {
 }
 
 a:hover {
-  color: $link_hover_color;
+  color: rgb($link_color_rgb, 0.7);
 }
 
 a:active {
-  color: $link_active_color;
+  color: rgb($link_color_rgb, 0.9);
 }
 
 .owl-dot {

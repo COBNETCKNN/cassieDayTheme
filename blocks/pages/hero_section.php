@@ -15,10 +15,11 @@ $section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '
 
 $showSection = get_sub_field('show_section');
 $showSprayDecoration = get_sub_field('show_section_spray_color_decoration');
+global $post;
 
 if ($showSection) { ?>
 
-<section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> py-24 relative">
+<section id="<?php echo $section_id; ?>" class="heroSection <?php echo $section_class; ?> <?php echo $post->post_name; ?>HeroSection py-24 relative">
     <div class="container mx-auto w-full h-full flex justify-center items-center">
         <div class="w-full mx-5 lg:mx-16">
             <div class="pageHomeHeroGrid grid lg:grid-cols-5 gap-14 lg:gap-5 font-plus relative">
@@ -47,7 +48,7 @@ if ($showSection) { ?>
                     </div>
                 </div>
                 <!-- Featured Image --> 
-                <div class="flex justify-center lg:justify-end lg:col-span-2">
+                <div class="flex justify-center lg:justify-end lg:col-span-2 <?php echo $post->post_name; ?>ImageWrapper">
                     <?php
                         $featuredImage = get_sub_field('featured_image');
                         if( $featuredImage ):

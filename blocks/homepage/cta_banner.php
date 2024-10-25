@@ -32,8 +32,8 @@ if ($showSection) { ?>
 
  <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> pt-32 bg-section-primary font-plus text-secondary">
     <div class="container mx-auto relative">
-        <div class="bannerWrapper py-20 px-5 rounded-2xl mx-3 md:mx-0">
-            <div class="banner_content relative z-10" style="text-align: <?php echo $alignment_style; ?>;">
+        <div class="bannerWrapperrounded-2xl mx-3 md:mx-0">
+            <div class="banner_content relative py-20 px-5 " style="text-align: <?php echo $alignment_style; ?>;">
                 <?php              
                     $reviewsEditor = get_sub_field('content_editor');
                     $alignment = get_sub_field('align_content');
@@ -56,15 +56,16 @@ if ($showSection) { ?>
                         <?php get_template_part('partials/form', 'links-button'); ?>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- Banner Decoration -->
-        <?php 
-        $sectionDecoration = get_sub_field('show_section_decoration');
+                <!-- Banner Decoration -->
+                <?php 
+                $sectionDecoration = get_sub_field('show_section_decoration');
 
-        if($sectionDecoration) { ?>
-            <img class="bannerDecoration" src="<?php echo get_template_directory_uri() . '/assets/svgs/banner_decoration.svg'; ?>" alt="Decorative SVG"/>
-        <?php } ?>
+                if($sectionDecoration) { ?>
+                    <img class="bannerDecoration" src="<?php echo get_template_directory_uri() . '/assets/svgs/banner_decoration.svg'; ?>" alt="Decorative SVG"/>
+                <?php } ?>
+            </div>
+            <div class="bannerHideLine w-full h-full absolute top-0 left-0 bg-white"></div>
+        </div>
     </div>
  </section>
 

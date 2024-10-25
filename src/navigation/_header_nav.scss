@@ -21,12 +21,20 @@ header {
     visibility: visible; /* Interactable */
 }
 
-.sub-menu {
-    li {
-        padding: 10px 0;
-        a {
-            padding: 5px 0;
-            color: $primary_text_color;
+.menu-item {
+    position: relative; // Keep context for absolute positioning
+
+    .sub-menu {
+        display: none;
+        position: absolute;
+        top: 120%; // Directly below without gap
+
+        li {
+            padding: 10px 0;
+            a {
+                padding: 5px 0;
+                color: $primary_text_color;
+            }
         }
     }
 }
@@ -78,9 +86,19 @@ header {
         }
 
         a:hover {
-            color: $secondary_text_color;
+            color: $primary_color;
         }
     }
+}
+
+.current_page_item {
+    a {
+        color: $primary_color !important;
+    }
+}
+
+.menu-item-has-children > a {
+    padding-bottom: 10px;
 }
 
 

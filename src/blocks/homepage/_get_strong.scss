@@ -23,6 +23,10 @@
 }
 
 .getStrongContent_wrapper {
+    h1,h2,h3,h4,h5,h6 {
+        margin-bottom: 1.6rem;
+    }
+
     p {
         color: $primary_light_text_color;
     }

@@ -163,8 +163,6 @@ function theme_colors() {
         while( have_rows('footer_links', 'option') ): the_row();
 
             $footer_link_color = get_sub_field('link_color', 'option');
-            $footer_link_hover_color = get_sub_field('link_hover_color', 'option');
-            $footer_link_active_color = get_sub_field('link_active_color', 'option');
 
         endwhile;
     endif;
@@ -173,8 +171,6 @@ function theme_colors() {
     echo "<style>
     :root {
         --footer-link-color: $footer_link_color;
-        --footer-link-hover-color: $footer_link_hover_color;
-        --footer-link-active-color: $footer_link_active_color;
     }
     </style>";
 

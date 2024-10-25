@@ -14,23 +14,19 @@ function load_popup_form_content() {
             ob_start();
   
             // Get custom fields
-            $formTitle = get_field('form_title', $form_id);
-            $formDescription = get_field('form_description', $form_id);
+            $formContent = get_field('form_content', $form_id);
             $formURL = get_field('form_url', $form_id);
             $formID = get_field('form_id', $form_id); 
             
             // Output the HTML with the retrieved fields
-            if ($formTitle) {
-                echo '<h3>' . esc_html($formTitle) . '</h3>';
-            }
-  
-            if ($formDescription) {
-                echo '<div>' . esc_html($formDescription) . '</div>';
+            if ($formContent) {
+                echo '<div class="formContentWrapper">' . $formContent . '</div>';
             }
   
             // Iframe for form
             if ($formURL) {
                 echo '<iframe src="' . esc_url($formURL) . '" style="border:none;width:100%;" scrolling="no" id="' . esc_attr($formID) . '"></iframe>';
+                echo '<div class="formTerms">By providing your phone number, you agree to receive text messages from Kilo Gym</div>';
             }
   
             // Get the buffered content as a string

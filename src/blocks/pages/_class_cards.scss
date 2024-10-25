@@ -37,20 +37,20 @@
               transform: translate(-50%, -50%) scale(0);
               border-radius: 50%;
             }
-              
+            
             &:before {
-        
-              background: black;
-              transition: 0.6s ease-in;
-              transition-delay: .1s;
-            }
-        
-            &:after {
-        
-              background: black;
-              transition: 0.8s ease;
-              transition-delay: .4s;
-            }
+    
+                background: color-mix(in srgb, $secondary_button_background_color 50%, rgba(0, 0, 0, 0.438) 55%);
+                transition: 0.6s ease-in;
+                transition-delay: .1s;
+              }
+          
+              &:after {
+          
+                background: color-mix(in srgb, $secondary_button_background_color 100%, rgba(0, 0, 0, 0.596) 15%);
+                transition: 0.8s ease;
+                transition-delay: .4s;
+              }
         
             &:hover {
         

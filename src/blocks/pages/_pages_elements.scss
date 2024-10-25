@@ -39,3 +39,19 @@
 #heroPages, #schedulePages, #classesPages, #pagesBanner, #pagesBenefitCards {
     overflow: hidden;
 }
+
+.aboutImageWrapper > .heroPages_imageWrapper > .heroPages_imageBorderWrapper {
+    img {
+    border: 16.28px solid rgb($tertiary_color_rgb, 0.4);
+    }
+}
+
+.drop-inImageWrapper {
+    .heroPages_imageWrapper {
+        .heroPages_imageBorderWrapper {
+            img {
+                border: 16.28px solid rgb($tertiary_color_rgb, 0.6);
+            }
+        }
+    }
+}

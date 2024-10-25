@@ -2,18 +2,48 @@
     font-family: "Plus Jakarta Sans", "sans-serif";
     text-align: center;
 
-    h3 {
-        color: $secondary_text_color;
-        font-size: 30px;
-        font-weight: 800;
-        line-height: 2rem; 
-        margin-bottom: 1.2rem;
+    .formContentWrapper {
+        h1,h2,h3,h4,h5,h6 {
+            color: $secondary_text_color;
+            font-size: 30px;
+            line-height: 36px;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+        }
+
+        div {
+            color: $primary_text_color;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+        }
+    }
+}
+
+.formTerms {
+    font-family: "Plus Jakarta Sans", "sans-serif";
+    color: $primary_text_color;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    margin-top: 1.5rem;
+}
+
+#close-popup:hover svg path {
+    fill: #A7B4B8;
+  }
+
+@media screen and (min-width: $size_lg) {
+    .formContentWrapper {
+        h1,h2,h3,h4,h5,h6 {
+            margin-right: 18%;
+            margin-left: 18%;
+        }
     }
 
-    div {
-        color: $primary_text_color;
-        font-size: 20px;
-        font-weight: 500;
-        margin-bottom: 1.2rem;
+    .formTerms {
+        margin-left: 13%;
+        margin-right: 13%;
     }
 }

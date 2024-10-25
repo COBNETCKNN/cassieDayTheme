@@ -19,7 +19,7 @@ $header_fixed = $header_settings && $header_settings['header_fixed_header'] ? 'h
 $header_class = 'py-5 ' . $header_fixed;
 ?>
 
-<header class="<?php echo esc_attr($header_class); ?> relative">
+<header class="<?php echo esc_attr($header_class); ?> header relative">
     <div class="container mx-auto h-auto">
         <div class="flex justify-between items-center mx-7 lg:mx-0">
             <!-- Logo -->

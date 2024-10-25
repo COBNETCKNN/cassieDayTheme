@@ -43,6 +43,15 @@
 @import "blocks/pages/class_cards";
 @import "blocks/pages/cta_banner";
 @import "blocks/pages/benefit_cards";
+@import "blocks/pages/team_cards";
+@import "blocks/pages/two_column_section";
+@import "blocks/pages/embed_code_section";
+
+@import "blocks/blog/blog_archive";
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     overflow-x: hidden;
@@ -53,9 +62,9 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 9999;
+    z-index: 45;
     background-color: #fff; /* Change this to match your design */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Optional shadow */
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05); /* Optional shadow */
 }
 
 

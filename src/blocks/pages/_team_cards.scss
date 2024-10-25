@@ -1,0 +1,103 @@
+@media screen and (min-width: $size_md) {
+    .pagesTeamCards_wrapper p {
+        margin: 0 20%;
+    }
+}
+
+#pagesTeamCards {
+    background: linear-gradient(180deg, #FFFFFF 2.35%, #FAFBFC 83.93%);
+}
+
+.coachesRepeater {
+    box-shadow: 0px 4px 31px -6px #00000012;
+    border-radius: 20px;
+}
+
+.coachImage {
+    img {
+        border-radius: 50%;
+        box-shadow: 0px 2.35px 65.89px 0px #00000021;
+    }
+}
+
+.coachName {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 32px;
+}
+
+.CoachPosition {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.coachBio {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    color: $primary_text_color;
+}
+
+.coachesPosition1, .coachesPosition4, .coachesPosition7, .coachesPosition10, .coachesPosition13, .coachesPosition16, .coachessPosition19 {
+    color: rgb($primary_color_rgb, 0.6);
+}
+
+.coachesPosition2, .coachesPosition5, .coachesPosition8, .coachesPosition11, .coachesPosition14, .coachesPosition17, .coachesPosition20 {
+    color: $tertiary_color;
+}
+
+.coachesPosition3, .coachesPosition6, .coachesPosition9, .coachesPosition12, .coachesPosition15, .coachesPosition18, .coachesPosition21 {
+    color: $secondary_color;
+}
+
+@media screen and (min-width: $size_lg) {
+    .coachesRepeaterLayout2, .coachesRepeaterLayout4, .coachesRepeaterLayout6, .coachesRepeaterLayout8, .coachesRepeaterLayout10, .coachesRepeaterLayout12, .coachesRepeaterLayout14, .coachesRepeaterLayout16, .coachesRepeaterLayout18, .coachesRepeaterLayout20, .coachesRepeaterLayout22, .coachesRepeaterLayout24, .coachesRepeaterLayout26, .coachesRepeaterLayout28, .coachesRepeaterLayout30 {
+        .coachesGrid {
+            .coachImage_wrapper {
+                order: 2;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: $size_lg) {
+    .coachesRepeaterLayout2, .coachesRepeaterLayout4, .coachesRepeaterLayout6, .coachesRepeaterLayout8, .coachesRepeaterLayout10, .coachesRepeaterLayout12, .coachesRepeaterLayout14, .coachesRepeaterLayout16, .coachesRepeaterLayout18, .coachesRepeaterLayout20, .coachesRepeaterLayout22, .coachesRepeaterLayout24, .coachesRepeaterLayout26, .coachesRepeaterLayout28, .coachesRepeaterLayout30 {
+        .coachesGrid {
+            .coachImage_wrapper {
+                order: 1;
+            }
+        }
+    }
+}
+
+.coachCardBackgroundDeco {
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.coachCardBackgroundDeco1, .coachCardBackgroundDeco4, .coachCardBackgroundDeco7, .coachCardBackgroundDeco10, .coachCardBackgroundDeco13, .coachCardBackgroundDeco16, .coachCardBackgroundDeco19 {
+    background-color: rgb($primary_color_rgb, 0.6);
+    right: 5%;
+}
+
+.coachCardBackgroundDeco2, .coachCardBackgroundDeco5, .coachCardBackgroundDeco8, .coachCardBackgroundDeco11, .coachCardBackgroundDeco14, .coachCardBackgroundDeco17, .coachCardBackgroundDeco20 {
+    background-color: $tertiary_color;
+    left: 5%;
+}
+
+.coachCardBackgroundDeco3, .coachCardBackgroundDeco6, .coachCardBackgroundDeco9, .coachCardBackgroundDeco12, .coachCardBackgroundDeco14, .coachCardBackgroundDeco18, .coachCardBackgroundDeco21 {
+    background-color: $secondary_color;
+    right: 5%;
+}
+
+.coachesDeco {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    z-index: 1;
+}
+

@@ -71,7 +71,7 @@ if ($showSection) { ?>
                         <div class="h-fit w-full relative">
                             <div class="benefitCard benefitCardLayout<?php echo $formattedIndex; ?> py-10 px-5 rounded-3xl m-0.5 relative z-10 bg-white">
                                 <!-- Title -->
-                                <div class="flex justify-center items-center mx-3 mb-10">
+                                <div class="flex justify-start items-center mx-3 mb-10">
                                     <div class="benefitCardNumber relative benefitCardNumber<?php echo $formattedIndex; ?>">
                                         <div class="benefitNumber w-full h-full">
                                             <?php echo $formattedIndex; ?>

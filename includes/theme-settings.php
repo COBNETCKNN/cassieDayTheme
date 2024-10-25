@@ -44,3 +44,4 @@ add_filter( 'use_widgets_block_editor', '__return_false' );
 
 //Theme Supports
 add_theme_support( 'title-tag' );
+add_theme_support('post-thumbnails', array('post'));

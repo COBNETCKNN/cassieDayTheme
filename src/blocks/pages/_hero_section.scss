@@ -32,6 +32,12 @@
     }
 }
 
+@media screen and (min-width: $size_lg) {
+    .heroPages_wrapper {
+        margin-right: 13%;
+    }
+}
+
 @media screen and (max-width: $size_sm) {
     .heroPages_wrapper {
         h1,h2,h3,h4,h5,h6 {
@@ -62,6 +68,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    transform: scale(1.5);
 
     ellipse {
         fill: rgb($primary_color_rgb, 0.2);
@@ -72,6 +79,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    transform: scale(1.5);
 
     ellipse {
         fill: $secondary_color;
@@ -89,16 +97,58 @@
     .pagesHeroPinkDeco {
         position: absolute;
         bottom: 0;
-        left: auto;
-        right: -10%;
-        transform: rotate(-0.25turn);
+        left: 0;
     }
 
     .pagesHeroPurpleDeco {
         position: absolute;
         top: 0;
-        right: auto;
-        left: -10%;
-        transform: rotate(-0.25turn);
+        right: 0;
+    }
+}
+
+.drop-inHeroSection {
+    .pagesHeroPinkDeco {
+        fill: rgb($tertiary_color_rgb, 0.7);
+
+        ellipse {
+            fill: rgb($tertiary_color_rgb, 0.7);
+        }
+    }
+}
+
+.aboutHeroSection {
+    .pagesHeroPinkDeco {
+        fill: rgb($secondary_color_rgb, 0.7);
+
+        ellipse {
+            fill: rgb($secondary_color_rgb, 0.7);
+        }
+    }
+
+    .pagesHeroPurpleDeco {
+        fill: rgb($tertiary_color_rgb, 0.7);
+
+        ellipse {
+            fill: rgb($tertiary_color_rgb, 0.7);
+        }
+    }
+}
+
+.programHeroSection {
+    .pagesHeroPinkDeco {
+        fill: rgb($secondary_color_rgb, 0.7);
+
+        ellipse {
+            fill: rgb($secondary_color_rgb, 0.7);
+        }
+    }
+
+    .pagesHeroPurpleDeco {
+        fill: rgb($primary_color_rgb, 0.3);
+
+        ellipse {
+            fill: rgb($primary_color_rgb, 0.3);
+        }
     }
 }

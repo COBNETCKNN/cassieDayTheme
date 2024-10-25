@@ -8,3 +8,22 @@
 .pagesBanner {
     margin-top: -13%;
 }
+
+.ctaBannerPage_content__wrapper {
+    h1,h2,h3,h4,h5,h6,p,button {
+        position: relative;
+        z-index: 15;
+
+    }
+}
+
+.online-training-2Banner {
+    .bannerDecoration {
+        left: 3%;
+        scale: 0.85;
+        z-index: 10;
+        top: auto;
+        bottom: -20%;
+        transform: rotate(180deg);
+    }
+}

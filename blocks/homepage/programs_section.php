@@ -67,7 +67,7 @@ if ($showSection) { ?>
             $imageContentFeaturedImageSize = 'programs-featured';
         ?>
         
-        <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 my-7 lg:my-24 mx-5 md:mx-0">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-32 my-7 lg:my-24 mx-5 md:mx-0">
             <div class="programs_imageContent__imageWrapper my-auto relative">
                 <div class="programsImageContent_image relative z-10">
                     <?php 
@@ -79,7 +79,7 @@ if ($showSection) { ?>
                 <!-- Background Colored Div -->
                 <div class="imageContent_coloredBackground layout-<?php echo $layout_count; ?>"></div>
             </div>
-            <div class="programs_imageContent__contentWrapper my-auto">
+            <div class="programs_imageContent__contentWrapper my-auto relative z-10">
                 <?php if( have_rows('image_content_group') ): ?>
                     <?php while( have_rows('image_content_group') ): the_row(); 
                         $imageContentEditor = get_sub_field('image_content_editor');
@@ -127,10 +127,10 @@ if ($showSection) { ?>
 
         <!-- Content Image Layout -->
         <?php elseif( $layout == 'content_image' ): ?>
-            <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 my-24 mx-5 md:mx-0">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-32 my-24 mx-5 md:mx-0">
                 <!-- Content -->
                 <div class="relative order-last lg:order-none">
-                    <div class="programs_imageContent__contentWrapper my-auto">
+                    <div class="programs_imageContent__contentWrapper my-auto relative z-10">
                         <?php if( have_rows('content_image_group') ): ?>
                             <?php while( have_rows('content_image_group') ): the_row(); 
                                 $contentImageEditor = get_sub_field('content_image_editor');

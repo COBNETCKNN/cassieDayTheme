@@ -1,3 +1,7 @@
+footer {
+    overflow: hiddeN;
+}
+
 .footerCopyright {
 
     a {
@@ -5,6 +9,14 @@
     
         span {
             color: $primary_color;
+        }
+    }
+}
+
+.footerPartnerWrapper {
+    a {
+        img {
+            max-width: 137px;
         }
     }
 }
@@ -51,7 +63,7 @@
         }
 
         a:hover {
-            color: $footer_link_hover_color;
+            color: $primary_color;
         }
     }
 }
@@ -106,11 +118,11 @@
 }
 
 .contactInfo_link:hover {
-    color: $footer_link_hover_color;
+    color: $primary_color;
 }
 
 .contactInfo_link:active {
-    color: $footer_link_active_color;
+    color: $primary_color;
 }
 
 .addressLink {
@@ -123,13 +135,13 @@
 
 .addressLink:hover {
     div {
-        color: $footer_link_hover_color;
+        color: $primary_color;
     }
 }
 
 .addressLink:active {
     div {
-        color: $footer_link_active_color;
+        color: $primary_color;
     }
 }
 
@@ -148,7 +160,10 @@
 
     .footerPartnerWrapper {
         a {
-            max-width: 90px;
+            img {
+                max-width: 90px;
+            }
+
         }
     }
 }

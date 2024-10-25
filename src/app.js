@@ -57,15 +57,127 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    // Toggle submenu visibility on arrow click
-    // Attach click event to parent links containing an arrow
-    $('.mobile-menu-list li:has(.sub-menu) > a').on('click', function (e) {
-        e.preventDefault(); // Prevent default anchor behavior
+    // Toggle submenu visibility on .down-arrow click
+    $('.mobile-menu-list li:has(.sub-menu) > a .down-arrow').on('click', function (e) {
+        e.preventDefault(); // Prevent default behavior of <a> tag
+        e.stopPropagation(); // Stop event from bubbling up to <a>
 
-        const submenu = $(this).siblings('.sub-menu'); // Target sibling sub-menu
-        const arrow = $(this).find('.arrow'); // Find the arrow inside the clicked item
+        const submenu = $(this).closest('a').siblings('.sub-menu'); // Target sibling submenu
+        const arrow = $(this); // Arrow is the clicked element
 
-        submenu.slideToggle(300); // Toggle submenu visibility
+        submenu.slideToggle(500); // Toggle submenu visibility
         arrow.toggleClass('open'); // Rotate arrow
     });
+});
+
+//Show more function that expands biography paragraphs on Coaches section
+jQuery(document).ready(function ($) {
+    $('.coachBioContent').each(function () {
+        const $bioContent = $(this);
+        const fullText = $bioContent.text().trim();
+        const excerpt = fullText.split(' ').slice(0, 50).join(' ') + '...';
+
+        // Store full text and excerpt in data attributes
+        $bioContent.data('full-text', fullText).data('excerpt', excerpt);
+
+        // Display the excerpt by default
+        $bioContent.text(excerpt);
+    });
+
+    $('.toggleBioBtn').on('click', function () {
+        const $bioWrapper = $(this).closest('.coachBioWrapper');
+        const $bioContent = $bioWrapper.find('.coachBioContent');
+        const isExpanded = $bioContent.hasClass('expanded');
+
+        // Toggle between full text and excerpt with animation
+        $bioContent.stop().slideUp(0, function () {
+            const newText = isExpanded 
+                ? $bioContent.data('excerpt') 
+                : $bioContent.data('full-text');
+            $bioContent.text(newText).slideDown(0); // Animate the new text
+        });
+
+        // Toggle button text and expanded class
+        $(this).text(isExpanded ? 'Show More' : 'Show Less');
+        $bioContent.toggleClass('expanded');
+    });
+});
+
+//Adjust width and height of wrapper div inside code embed sections
+jQuery(document).ready(function ($) {
+    function resizeEmbeddedContent() {
+        $('.embededCodeWrapper iframe').each(function () {
+            var iframe = $(this);
+
+            // Apply iFrame Resizer with options
+            iframe.iFrameResize({
+                checkOrigin: false,  // Skip origin checking if cross-origin iframes are embedded
+                log: true,           // Enable logging for debugging purposes
+                sizeHeight: true,    // Automatically adjust height
+                sizeWidth: true      // Automatically adjust width
+            });
+        });
+    }
+
+    // Call the function initially and whenever an iframe loads
+    $('.embededCodeWrapper iframe').on('load', function () {
+        resizeEmbeddedContent();
+    });
+
+    // Optional: Recheck and resize on window resize
+    $(window).on('resize', function () {
+        resizeEmbeddedContent();
+    });
+});
+
+//Function that adds margin to the hero section if Header is selected to be in fixed position through Theme Settings
+jQuery(document).ready(function ($) {
+    function adjustHeroPosition() {
+        const header = $('.header');
+        const hero = $('.heroSection');
+        const adminBar = $('#wpadminbar');
+        let newMarginTop = '0'; // Default margin
+
+        if (adminBar.length) {
+            newMarginTop = '60px'; // Admin bar is present
+        } else if (header.hasClass('header-fixed')) {
+            newMarginTop = header.outerHeight() + 'px'; // Header is fixed
+        }
+
+        // Only update margin if it has changed to avoid unnecessary repaints
+        if (hero.css('margin-top') !== newMarginTop) {
+            hero.css('margin-top', newMarginTop);
+        }
+    }
+
+    // Throttle function to prevent excessive calls on scroll
+    function throttle(func, limit) {
+        let lastFunc;
+        let lastRan;
+        return function () {
+            const context = this;
+            const args = arguments;
+            if (!lastRan) {
+                func.apply(context, args);
+                lastRan = Date.now();
+            } else {
+                clearTimeout(lastFunc);
+                lastFunc = setTimeout(function () {
+                    if (Date.now() - lastRan >= limit) {
+                        func.apply(context, args);
+                        lastRan = Date.now();
+                    }
+                }, limit - (Date.now() - lastRan));
+            }
+        };
+    }
+
+    // Run adjustHeroPosition on load and resize events
+    $(window).on('load resize', adjustHeroPosition);
+
+    // Throttle scroll event to reduce jittering
+    $(window).on('scroll', throttle(adjustHeroPosition, 100));
+
+    // Initial adjustment
+    adjustHeroPosition();
 });

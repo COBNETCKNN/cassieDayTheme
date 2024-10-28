@@ -20,13 +20,13 @@ $showShapeDecoration = get_sub_field('show_section_decoration');
 $spacing = get_sub_field('spacing');
 
 // Fallback function to provide a default value
-function get_spacing_value_benefit_cards($spacing, $key, $default = '0px 0px 0px 0px') {
+function get_spacing_value_team_cards($spacing, $key, $default = '0px 0px 0px 0px') {
     return isset($spacing[$key]) && !empty($spacing[$key]) ? $spacing[$key] : $default;
 }
 
-$desktopSpacing = get_spacing_value_benefit_cards($spacing, 'desktop', '100px 0px 100px 0px');
-$tabletSpacing = get_spacing_value_benefit_cards($spacing, 'tablet', '50px 0px 50px 0px');
-$mobileSpacing = get_spacing_value_benefit_cards($spacing, 'mobile', '30px 0px 30px 0px');
+$desktopSpacing = get_spacing_value_team_cards($spacing, 'desktop', '100px 0px 100px 0px');
+$tabletSpacing = get_spacing_value_team_cards($spacing, 'tablet', '50px 0px 50px 0px');
+$mobileSpacing = get_spacing_value_team_cards($spacing, 'mobile', '30px 0px 30px 0px');
 
 if ($showSection) { ?>
 

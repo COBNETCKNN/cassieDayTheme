@@ -21,13 +21,13 @@ $spacing = get_sub_field('spacing');
 global $post;
 
 // Fallback function to provide a default value
-function get_spacing_value_banner($spacing, $key, $default = '0px 0px 0px 0px') {
+function get_spacing_value_pagesBanner($spacing, $key, $default = '0px 0px 0px 0px') {
     return isset($spacing[$key]) && !empty($spacing[$key]) ? $spacing[$key] : $default;
 }
 
-$desktopSpacing = get_spacing_value_banner($spacing, 'desktop', '100px 0px 100px 0px');
-$tabletSpacing = get_spacing_value_banner($spacing, 'tablet', '50px 0px 50px 0px');
-$mobileSpacing = get_spacing_value_banner($spacing, 'mobile', '30px 0px 30px 0px');
+$desktopSpacing = get_spacing_value_pagesBanner($spacing, 'desktop', '100px 0px 100px 0px');
+$tabletSpacing = get_spacing_value_pagesBanner($spacing, 'tablet', '50px 0px 50px 0px');
+$mobileSpacing = get_spacing_value_pagesBanner($spacing, 'mobile', '30px 0px 30px 0px');
 
 if ($showSection) { ?>
 

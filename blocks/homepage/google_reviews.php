@@ -61,7 +61,7 @@ if ($showSection) { ?>
              <div class="googleReviewsEmbeddedCode_wrapper">
                 <?php 
                     $embeddedCode = get_sub_field('embed_code');
-                    echo esc_html($embeddedCode);
+                    echo $embeddedCode;
                 ?>
              </div>
         </div>

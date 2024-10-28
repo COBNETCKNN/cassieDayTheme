@@ -182,20 +182,19 @@ jQuery(document).ready(function ($) {
     adjustHeroPosition();
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const togglers = document.querySelectorAll('[data-toggle]');
-    
-      togglers.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-           const selector = e.currentTarget.dataset.toggle
-           const block = document.querySelector(`${selector}`);
-          if (e.currentTarget.classList.contains('active')) {
-            block.style.maxHeight = '';
-          } else {
-            block.style.maxHeight = block.scrollHeight + 'px';
-          }
-            
-           e.currentTarget.classList.toggle('active')
-        })
-      })
-      })
+var acc = document.getElementsByClassName("accordion");
+
+for (var i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function () {
+    var panel = this.nextElementSibling;
+    var icon = this.querySelector(".accordionIcon"); // Get the icon inside the accordion
+
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+      icon.classList.remove("rotate-180"); // Remove rotation when closing
+    } else {
+      panel.style.display = "block";
+      icon.classList.add("rotate-180"); // Add rotation when opening
+    }
+  });
+}

@@ -4,16 +4,16 @@
 function cassieDay_files() {
 
     //Enqueue CSS files
-    wp_enqueue_style('mainCSS', get_template_directory_uri() . '/css/main.css', array(), '3.5');
-    wp_enqueue_style('owlCarousel', get_template_directory_uri() . '/assets/owlCarousel/owl.carousel.min.css', array(), '3.5');
+    wp_enqueue_style('mainCSS', get_template_directory_uri() . '/css/main.css', array(), '3.6');
+    wp_enqueue_style('owlCarousel', get_template_directory_uri() . '/assets/owlCarousel/owl.carousel.min.css', array(), '3.6');
 
     //Enqueue JS files
     wp_enqueue_script('jquery');
-    wp_enqueue_script('mainJS', get_stylesheet_directory_uri() . '/js/main.js', array(), 3.5, true);
-    wp_enqueue_script('owlCarouselJS', get_stylesheet_directory_uri(). '/assets/owlCarousel/owl.carousel.min.js', array(), 3.5, true);
+    wp_enqueue_script('mainJS', get_stylesheet_directory_uri() . '/js/main.js', array(), 3.6, true);
+    wp_enqueue_script('owlCarouselJS', get_stylesheet_directory_uri(). '/assets/owlCarousel/owl.carousel.min.js', array(), 3.6, true);
     wp_enqueue_script('popup-form-handler', get_template_directory_uri() . '/js/popup-handler.js', array('jquery'), null, true);
     wp_enqueue_script('form-resizes', get_template_directory_uri() . '/js/resizever2.js', array(), null, true);
-    wp_enqueue_script('ajax-popup', get_stylesheet_directory_uri() . '/js/popup-handler.js', array(), 3.5, true );
+    wp_enqueue_script('ajax-popup', get_stylesheet_directory_uri() . '/js/popup-handler.js', array(), 3.6, true );
 
     // Localize ajaxurl and pass it to the JavaScript file
     wp_localize_script('popup-form-handler', 'ajax_object', array(

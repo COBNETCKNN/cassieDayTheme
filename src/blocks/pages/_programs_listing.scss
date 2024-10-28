@@ -1,0 +1,246 @@
+.pagesProgramListings {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F0F0F0 100%);
+}
+
+.programListings_button__wrapper {
+    button {
+        background-color: $secondary_button_background_color;
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.5rem;
+    
+            &:before, &:after {
+              content: '';
+              position: absolute;
+              height: 1px;
+              width: 1px;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%) scale(0);
+              border-radius: 50%;
+            }
+              
+            &:before {
+        
+              background: color-mix(in srgb, $secondary_button_background_color 50%, rgba(0, 0, 0, 0.438) 55%);
+              transition: 0.6s ease-in;
+              transition-delay: .1s;
+            }
+        
+            &:after {
+        
+              background: color-mix(in srgb, $secondary_button_background_color 100%, rgba(0, 0, 0, 0.596) 15%);
+              transition: 0.8s ease;
+              transition-delay: .4s;
+            }
+        
+            &:hover {
+        
+              &:before, &:after {
+        
+                transform: translate(-50%, -50%) scale(310);
+              }
+            }
+    
+            a {
+                position: relative;
+                z-index: 10;
+                color: $secondary_button_text_color;
+                font-size: 14px;
+                line-height: 17.64px;
+                font-weight: 800;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+    
+            a:hover {
+              color: $secondary_button_text_color;
+            }
+    }
+}
+
+.programListings_wrapper {
+    h1,h2,h3,h4,h5,h6 {
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 36px;
+        color: $secondary_text_color;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 28px;
+        color: $primary_light_text_color;
+    }
+}
+
+.programListings {
+    box-shadow: 5px 0px 31px -6px #00000012;
+}
+
+.programListing_image {
+    width: 350px;
+    height: 300px;
+
+    .programListinImage_wrapper {    
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 20;
+            width: 350px;
+            height: 300px;
+        }
+    }
+}
+
+.programListing_image-1, .programListing_image-3, .programListing_image-5, .programListing_image-7, .programListing_image-9, .programListing_image-11, .programListing_image-13, .programListing_image-15, .programListing_image-17, .programListing_image-19, .programListing_image-21 {
+    .programListinImage_wrapper {
+        img {
+            border-radius: 20px 160px 160px 20px;
+        }
+    }
+}
+
+.programListing_image__deco-1, .programListing_image__deco-3, .programListing_image__deco-5, .programListing_image__deco-7, .programListing_image__deco-9, .programListing_image__deco-11, .programListing_image__deco-13, .programListing_image__deco-15, .programListing_image__deco-17, .programListing_image__deco-19, .programListing_image__deco-21 {
+    z-index: 10;
+    border-radius: 20px 160px 160px 20px;
+    right: -5%;
+}
+
+.programListing_image__deco-1, .programListing_image__deco-4, .programListing_image__deco-7, .programListing_image__deco-10, .programListing_image__deco-13, .programListing_image__deco-16, .programListing_image__deco-19, .programListing_image__deco-23, .programListing_image__deco-26, .programListing_image__deco-29, .programListing_image__deco-32 {
+    background-color: rgb($primary_color_rgb, 0.6);
+}
+
+.programListing_image__deco-2, .programListing_image__deco-5, .programListing_image__deco-8, .programListing_image__deco-11, .programListing_image__deco-14, .programListing_image__deco-17, .programListing_image__deco-20, .programListing_image__deco-24, .programListing_image__deco-27, .programListing_image__deco-30, .programListing_image__deco-33 {
+    background-color: $secondary_color;
+}
+
+.programListing_image__deco-3, .programListing_image__deco-6, .programListing_image__deco-9, .programListing_image__deco-12, .programListing_image__deco-15, .programListing_image__deco-18, .programListing_image__deco-21, .programListing_image__deco-25, .programListing_image__deco-28, .programListing_image__deco-31, .programListing_image__deco-34 {
+    background-color: $tertiary_color;
+}
+
+.programListing_image-2, .programListing_image-4, .programListing_image-6, .programListing_image-8, .programListing_image-10, .programListing_image-12, .programListing_image-14, .programListing_image-16, .programListing_image-18, .programListing_image-20, .programListing_image-22 {
+    .programListinImage_wrapper {
+        img {
+            border-radius: 160px 20px 20px 160px;
+        }
+    }
+}
+
+.programListing_image__deco-2, .programListing_image__deco-4, .programListing_image__deco-6, .programListing_image__deco-8, .programListing_image__deco-10, .programListing_image__deco-12, .programListing_image__deco-14, .programListing_image__deco-16, .programListing_image__deco-18, .programListing_image__deco-20, .programListing_image__deco-22 {
+    z-index: 10;
+    border-radius: 160px 20px 20px 160px;
+    left: -5%;
+}
+
+.programListings {
+    min-height: 370px;
+}
+
+.programListingsDeco {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    z-index: 1;
+    transform: scale(1.8);
+}
+
+.programListings {
+    position: relative;
+    z-index: 2;
+}
+
+@media screen and (min-width: $size_lg) {
+    .programListingsGrid-2, .programListingsGrid-4, .programListingsGrid-6, .programListingsGrid-8, .programListingsGrid-10, .programListingsGrid-12, .programListingsGrid-14, .programListingsGrid-16, .programListingsGrid-18, .programListingsGrid-20, .programListingsGrid-22 {
+        .programListings_featuredImage__wrapper {
+            order: 2;
+        }
+    
+        .programListings_content__wrapper {
+            order: 1;
+    
+            .programListings_wrapper {
+                margin-right: 25%;
+            }
+        }
+    }
+    
+    .programListingsGrid-1, .programListingsGrid-3, .programListingsGrid-5, .programListingsGrid-7, .programListingsGrid-9, .programListingsGrid-11, .programListingsGrid-13, .programListingsGrid-15, .programListingsGrid-17, .programListingsGrid-19, .programListingsGrid-21 {
+        .programListings_featuredImage__wrapper {
+            order: 1;
+        }
+    
+        .programListings_content__wrapper {
+            order: 2;
+    
+            .programListings_wrapper {
+                margin-left: 25%;
+            }
+        }
+    }
+
+    .programListinImage_wrapper-2, .programListinImage_wrapper-4, .programListinImage_wrapper-6, .programListinImage_wrapper-8, .programListinImage_wrapper-10, .programListinImage_wrapper-12, .programListinImage_wrapper-14, .programListinImage_wrapper-16, .programListinImage_wrapper-18, .programListinImage_wrapper-20, .programListinImage_wrapper-22 {
+        position: absolute;
+        top: 0;
+        left: -55%;
+    }
+}
+
+@media screen and (max-width: $size_md) {
+    .programListings {
+        padding-top: 8rem;
+        margin-top: -25%;
+    }
+}
+
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .programListings {
+        padding-top: 8rem;
+        margin-top: -18%;
+    }
+}
+
+@media screen and (max-width: $size_sm) {
+    .programListing_image {
+        width: 250px;
+        height: 200px;
+    }
+
+    .programListinImage_wrapper {
+        img {
+            width: 250px !important;
+            height: 200px !important;
+        }
+    }
+
+    .programListings {
+        padding-top: 6rem;
+        margin-top: -30%;
+    }
+
+    .programListings_wrapper {
+        h1,h2,h3,h4,h5,h6 {
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 30px;
+            color: $secondary_text_color;
+            margin-bottom: 1rem;
+        }
+    
+        p {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            color: $primary_light_text_color;
+        }
+    }
+}
+

@@ -82,11 +82,11 @@ header {
 #menu-header-menu {
     li {
         a {
-            color: $primary_text_color;
+            color: $primary_text_color !important;
         }
 
         a:hover {
-            color: $primary_color;
+            color: $primary_color !important;
         }
     }
 }

@@ -40,7 +40,7 @@ if ($showSection) { ?>
                     }
                 ?>
                 <div class="heroPages my-auto relative lg:col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
-                    <div class="heroPages_wrapper relative">
+                    <div class="heroPages_wrapper <?php echo $post->post_name; ?>-heroPages relative ">
                         <!-- Content -->
                         <?php echo $editorContent; ?>
                         <!-- Button -->

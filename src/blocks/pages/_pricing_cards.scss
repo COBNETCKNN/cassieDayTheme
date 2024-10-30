@@ -1,0 +1,195 @@
+#pagesPricingCards {
+    background: linear-gradient(180deg, #FFFFFF 10.02%, #F6F8F9 100%);
+}
+
+.packageName {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 800;
+    color: $secondary_text_color;
+    text-transform: uppercase;
+}
+
+.classesWrapper {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 800;
+}
+
+.classSpan {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+}
+
+.classesNumber {
+    padding: 10px 37px;
+    border: 1px solid $primary_text_color;
+    border-radius: 50px;
+}
+
+.packageCard_topSection {
+    background-color: rgb($tertiary_color_rgb, 0.5);
+    border-radius: 1.5rem;
+    z-index: 20;
+}
+
+.packagePrice {
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 800;
+}
+
+.priceSuffix {
+    font-size: 24px;
+    line-height: 42px;
+    font-weight: 500;
+    color: $primary_light_text_color;
+}
+
+.packageFeatures_item {
+    font-size: 20px;
+    line-height: 38px;
+    font-weight: 500;
+    color: $primary_text_color;
+}
+
+.packageFeatureIcon {
+    min-width: 25px;
+    min-height: 25px;
+    margin-top: 0.5rem;
+    margin-right: 0.7rem;
+}
+
+.packageCard_wrapper {
+    box-shadow: 0px 16px 20px -9px #00000017;
+    border-radius: 1.5rem;
+}
+
+.packageCardContent_wrapper {
+    padding: 1px;
+}
+
+.packageCard_bottomSection {
+    border-radius: 0 0 1.5rem 1.5rem;
+    margin-top: -5%;
+}
+
+.packageCardsBorderDiv {
+    z-index: 1;
+    border-radius: 1.5rem;
+}
+
+.packageCard_topSection {
+    position: relative; 
+    overflow: hidden;
+}
+
+.packageCardBackground {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.packageCardTopSectionContent_wrapper {
+    z-index: 2; /* Ensures it's above the background */
+    position: relative; /* Needed for proper stacking */
+
+}
+
+.packageCardDescriptionWrapper {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.packageCard_wrapper {
+    height: fit-content;
+}
+
+@media screen and (min-width: $size_lg) {
+    .packageCard_bottomSection {
+        min-height: 500px;
+    }
+}
+
+.packageCardTopSectionContent_wrapper-1, .packageCardTopSectionContent_wrapper-4 {
+    background-color: rgb($tertiary_color_rgb, 0.5);
+}
+
+.packageCardTopSectionContent_wrapper-2, .packageCardTopSectionContent_wrapper-5 {
+    background-color: rgb($secondary_color_rgb, 0.5);
+}
+
+.packageCardTopSectionContent_wrapper-3, .packageCardTopSectionContent_wrapper-6 {
+    background-color: rgb($primary_color_rgb, 0.5);
+}
+
+.packagePrice-1, .packagePrice-4 {
+    color: $tertiary_color;
+}
+
+.packagePrice-2, .packagePrice-5 {
+    color: $secondary_color;
+}
+
+.packagePrice-3, .packagePrice-6 {
+    color: $primary_color;
+}
+
+.packageFeatures-1, .packageFeatures-4 {
+    li {
+        svg {
+            path {
+                fill: $tertiary_color;
+            }
+        }
+    }
+}
+
+.packageFeatures-2, .packageFeatures-5 {
+    li {
+        svg {
+            path {
+                fill: $secondary_color;
+            }
+        }
+    }
+}
+
+.packageFeatures-3, .packageFeatures-6 {
+    li {
+        svg {
+            path {
+                fill: $primary_color;
+            }
+        }
+    }
+}
+
+.packageCardsBorderDiv-1, .packageCardsBorderDiv-4 {
+    background: linear-gradient(209.35deg, rgba(132, 162, 172, 0.1) 31.34%, $tertiary_color 103.91%);
+}
+
+.packageCardsBorderDiv-2, .packageCardsBorderDiv-5 {
+    background: linear-gradient(209.35deg, rgba(255, 202, 240, 0.1) 31.34%, $secondary_color 103.91%);
+}
+
+.packageCardsBorderDiv-3, .packageCardsBorderDiv-6 {
+    background: linear-gradient(209.35deg, rgba(187, 182, 223, 0.1) 31.34%, $primary_color 103.91%);
+}
+
+.packageCard_wrapper.highlighted {
+    border: 2px solid #FFD700; /* Golden border */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transform: scale(1.05); /* Slight zoom effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.packageCard_wrapper.highlighted:hover {
+    transform: scale(1.08); /* Slightly more zoom on hover */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}

@@ -36,10 +36,10 @@
     position: absolute;
     top: -45%;
     left: -45%;
-    fill: $secondary_color;
+    fill: rgb($secondary_color_rgb, 0.5);
 
     ellipse {
-        fill: $secondary_color;
+        fill: rgb($secondary_color_rgb, 0.5);
         opacity: 0.5;
     }
 }

@@ -42,7 +42,7 @@
 }
 
 .coachesPosition1, .coachesPosition4, .coachesPosition7, .coachesPosition10, .coachesPosition13, .coachesPosition16, .coachessPosition19 {
-    color: rgb($primary_color_rgb, 0.6);
+    color: $primary_color;
 }
 
 .coachesPosition2, .coachesPosition5, .coachesPosition8, .coachesPosition11, .coachesPosition14, .coachesPosition17, .coachesPosition20 {
@@ -80,7 +80,7 @@
 }
 
 .coachCardBackgroundDeco1, .coachCardBackgroundDeco4, .coachCardBackgroundDeco7, .coachCardBackgroundDeco10, .coachCardBackgroundDeco13, .coachCardBackgroundDeco16, .coachCardBackgroundDeco19 {
-    background-color: rgb($primary_color_rgb, 0.6);
+    background-color: $primary_color;
     right: 5%;
 }
 

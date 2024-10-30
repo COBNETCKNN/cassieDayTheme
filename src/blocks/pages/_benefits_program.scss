@@ -1,0 +1,144 @@
+
+#pagesProgramBenefits {
+    background: linear-gradient(180deg, #FFFFFF 33.03%, #F6F8F9 121.32%);
+}
+
+@media screen and (min-width: $size_lg) {
+    .programBenefits_wrapper {
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+}
+
+.benefitCard_number__wrapper {
+    min-width: 110px;
+    height: 110px;
+    border-radius: 50%;
+
+    .benefitCard_number_thickBackground {
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+
+        span {
+            font-size: 36px;
+            line-height: 44px;
+            font-weight: 800;
+            color: white;
+        }
+    }
+}
+
+.benefitCardTitle {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    color: $primary_light_text_color;
+    margin-left: 1.5rem;
+}
+
+.benefitCard_content__wrapper {
+    padding: 1px;
+    box-shadow: 8px 6px 32px 0px #0000000F;
+    border-radius: 50px 15px 15px 50px;
+    border-width: 1px 1px 1px 0;
+}
+
+.benefitCard_content {
+    border-radius: 50px 15px 15px 50px;
+    padding: 7px 15px 7px 7px;
+}
+
+.benefitCardBorderDiv {
+    z-index: -1;
+    padding: 7px 15px 7px 7px;
+    border-radius: 50px 15px 15px 50px;
+}
+
+.benefitCardBorderDiv-1, .benefitCardBorderDiv-5 {
+    background: linear-gradient(90deg, rgba(187, 182, 223, 0) 0%, $secondary_color 100%);
+}
+
+.benefitCardBorderDiv-2, .benefitCardBorderDiv-6 {
+    background: linear-gradient(90deg, rgba(187, 182, 223, 0) 0%, rgb($primary_color_rgb, 0.3) 100%);
+}
+
+.benefitCardBorderDiv-3, .benefitCardBorderDiv-7 {
+    background: linear-gradient(90deg, rgba(187, 182, 223, 0) 0%, $tertiary_color 100%);
+}
+
+.benefitCardBorderDiv-4, .benefitCardBorderDiv-8 {
+    background: linear-gradient(90deg, rgba(187, 182, 223, 0) 0%, #84A2AC 100%);
+}
+
+
+.benefitCard_number__wrapper-1, .benefitCard_number__wrapper-5 {
+    background-color: rgb($secondary_color_rgb, 0.2);
+
+    .benefitCard_number_thickBackground {
+        background-color: rgb($secondary_color_rgb, 1);
+    }
+}
+
+.benefitCard_number__wrapper-2, .benefitCard_number__wrapper-6 {
+    background-color: rgb($primary_color_rgb, 0.2);
+
+    .benefitCard_number_thickBackground {
+        background-color: rgb($primary_color_rgb, 1);
+    }
+}
+
+.benefitCard_number__wrapper-3, .benefitCard_number__wrapper-7 {
+    background-color: rgb($tertiary_color_rgb, 0.2);
+
+    .benefitCard_number_thickBackground {
+        background-color: rgb($tertiary_color_rgb, 1);
+    }
+}
+
+.benefitCard_number__wrapper-4, .benefitCard_number__wrapper-8 {
+    background-color: rgb($secondary_color_rgb, 0.2);
+
+    .benefitCard_number_thickBackground {
+        background-color: rgb($secondary_color_rgb, 1);
+    }
+}
+
+.benefitCard_content__wrapper-1 {
+    order: 1;
+}
+
+.benefitCard_content__wrapper-2 {
+    order: 3;
+}
+
+.benefitCard_content__wrapper-3 {
+    order: 5;
+}
+
+.benefitCard_content__wrapper-4 {
+    order: 7;
+}
+
+.benefitCard_content__wrapper-5 {
+    order: 2;
+}
+
+.benefitCard_content__wrapper-6 {
+    order: 4;
+}
+
+.benefitCard_content__wrapper-7 {
+    order: 6;
+}
+
+.benefitCard_content__wrapper-8 {
+    order: 8;
+}
+
+.programBenefitsDeco {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}

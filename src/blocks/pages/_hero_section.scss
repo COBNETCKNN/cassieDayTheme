@@ -10,7 +10,7 @@
 .heroPages_imageBorderWrapper {
     img {
         border-radius: 50%;
-        border: 16.28px solid rgb($secondary_color_rgb, 0.6);
+        border: 16.28px solid rgb($secondary_color_rgb, 0.3);
         display: block;
     }
 }
@@ -82,7 +82,7 @@
     transform: scale(1.5);
 
     ellipse {
-        fill: $secondary_color;
+        fill: rgb($secondary_color_rgb, 0.5);
     }
 
 }
@@ -109,28 +109,28 @@
 
 .drop-inHeroSection {
     .pagesHeroPinkDeco {
-        fill: rgb($tertiary_color_rgb, 0.7);
+        fill: rgb($tertiary_color_rgb, 0.5);
 
         ellipse {
-            fill: rgb($tertiary_color_rgb, 0.7);
+            fill: rgb($tertiary_color_rgb, 0.5);
         }
     }
 }
 
 .aboutHeroSection {
     .pagesHeroPinkDeco {
-        fill: rgb($secondary_color_rgb, 0.7);
+        fill: rgb($secondary_color_rgb, 0.5);
 
         ellipse {
-            fill: rgb($secondary_color_rgb, 0.7);
+            fill: rgb($secondary_color_rgb, 0.5);
         }
     }
 
     .pagesHeroPurpleDeco {
-        fill: rgb($tertiary_color_rgb, 0.7);
+        fill: rgb($tertiary_color_rgb, 0.5);
 
         ellipse {
-            fill: rgb($tertiary_color_rgb, 0.7);
+            fill: rgb($tertiary_color_rgb, 0.5);
         }
     }
 }
@@ -155,11 +155,11 @@
 
 .programsHeroSection {
     .pagesHeroPinkDeco {
-        fill: $secondary_color;
+        fill: rgb($secondary_color_rgb, 0.5);
 
         g {
             ellipse {
-                fill: $secondary_color;
+                fill: rgb($secondary_color_rgb, 0.5);
             } 
         }
     }
@@ -170,5 +170,31 @@
         ellipse {
             fill: rgb($primary_color_rgb, 0.3);
         }
+    }
+}
+
+.pricingHeroSection {
+    .pagesHeroPinkDeco {
+        fill: rgb($tertiary_color_rgb, 0.5);
+
+        g {
+            ellipse {
+                fill: rgb($tertiary_color_rgb, 0.5);
+            } 
+        }
+    }
+
+    .pagesHeroPurpleDeco {
+        fill: rgb($primary_color_rgb, 0.3);
+
+        ellipse {
+            fill: rgb($primary_color_rgb, 0.3);
+        }
+    }
+}
+
+@media screen and (min-width: $size_lg) {
+    .corporate-wellness-heroPages {
+        margin-right: 5%;
     }
 }

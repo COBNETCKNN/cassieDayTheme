@@ -1,0 +1,66 @@
+#pagesWhatWeHelpWith {
+    background: linear-gradient(0deg, #F6F8F9, #F6F8F9),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45));
+}
+
+.supportItemTitle {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    color: $primary_light_text_color;
+}
+
+.supportItemIcon {
+    path {
+        fill: $tertiary_color;
+    }
+}
+
+@media screen and (max-width: $size_lg) {
+    .pagesWhatWeHelpWith {
+        text-align: center !important;
+    }
+
+    .supportItemTitle {
+        margin-bottom: 0;
+    }
+
+    .guideFeatured_wrapper {
+        order: 2;
+    }
+
+    .whatWeHelpWithFeatured {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media screen and (max-width: $size_sm) {
+ .supportItemTitle {
+    font-size: 18px;
+ }
+}
+
+
+
+.whatWeHelpWithFeatured {
+    img {
+        height: 340px;
+        width: 350px;
+        border-radius: 160px 20px 20px 160px;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    }
+
+}
+
+@media screen and (max-width: $size_md) {
+    .whatWeHelpWithFeatured {
+        img {
+            height: 250px;
+            width: 250px;
+        }
+    
+    }
+}

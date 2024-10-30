@@ -32,40 +32,42 @@ $mobileSpacing = get_spacing_value_pagesBanner($spacing, 'mobile', '30px 0px 30p
 if ($showSection) { ?>
 
  <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> pt-32 bg-section-primary font-plus text-secondary <?php echo $post->post_name; ?>Banner">
-    <div class="container mx-auto relative">
-        <div class="bannerWrapper rounded-2xl mx-5 md:mx-0">
-            <div class="banner_content relative py-20 px-5  z-10" style="text-align: <?php echo $alignment_style; ?>;">
-                <?php              
-                    $reviewsEditor = get_sub_field('content_editor');
-                    $alignment = get_sub_field('align_content');
+    <div class="container mx-auto">
+        <div class="mx-5 md:mx-0">
+            <div class="bannerWrapper rounded-2xl relative">
+                <div class="banner_content relative py-20 px-5 z-10" style="text-align: <?php echo $alignment_style; ?>;">
+                    <?php              
+                        $reviewsEditor = get_sub_field('content_editor');
+                        $alignment = get_sub_field('align_content');
 
-                    // Determine the alignment value for inline CSS
-                    $alignment_style = '';
-                    if ($alignment == 'left') {
-                        $alignment_style = 'left';
-                    } elseif ($alignment == 'center') {
-                        $alignment_style = 'center';
-                    } elseif ($alignment == 'right') {
-                        $alignment_style = 'right';
-                    }
-                ?>
-                <!-- Content -->
-                 <div class="ctaBannerPage_content__wrapper" style="text-align: <?php echo $alignment_style; ?>;">
-                    <?php echo $reviewsEditor; ?>
-                    <!-- Button -->
-                    <div class="bannerButton_wrapper mt-5">
-                        <?php get_template_part('partials/form', 'links-button'); ?>
+                        // Determine the alignment value for inline CSS
+                        $alignment_style = '';
+                        if ($alignment == 'left') {
+                            $alignment_style = 'left';
+                        } elseif ($alignment == 'center') {
+                            $alignment_style = 'center';
+                        } elseif ($alignment == 'right') {
+                            $alignment_style = 'right';
+                        }
+                    ?>
+                    <!-- Content -->
+                    <div class="ctaBannerPage_content__wrapper" style="text-align: <?php echo $alignment_style; ?>;">
+                        <?php echo $reviewsEditor; ?>
+                        <!-- Button -->
+                        <div class="bannerButton_wrapper mt-5">
+                            <?php get_template_part('partials/form', 'links-button'); ?>
+                        </div>
                     </div>
-                 </div>
-                <!-- Banner Decoration -->
-                <?php 
-                $sectionDecoration = get_sub_field('show_section_decoration');
+                    <!-- Banner Decoration -->
+                    <?php 
+                    $sectionDecoration = get_sub_field('show_section_decoration');
 
-                if($sectionDecoration) { ?>
-                    <img class="bannerDecoration" src="<?php echo get_template_directory_uri() . '/assets/svgs/banner_decoration.svg'; ?>" alt="Decorative SVG"/>
-                <?php } ?>
+                    if($sectionDecoration) { ?>
+                        <img class="bannerDecoration" src="<?php echo get_template_directory_uri() . '/assets/svgs/banner_decoration.svg'; ?>" alt="Decorative SVG"/>
+                    <?php } ?>
+                </div>
+                <div class="bannerHideLine w-full h-full absolute top-0 left-0 bg-white"></div>
             </div>
-            <div class="bannerHideLine w-full h-full absolute top-0 left-0 bg-white"></div>
         </div>
     </div>
  </section>

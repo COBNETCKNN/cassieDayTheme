@@ -6,7 +6,7 @@
   h1 {
     span {
         text-transform: uppercase;
-        color: color-mix(in srgb, var(--secondary-color) 100%, rgba(63, 27, 192, 0.836) 50%);
+        color: $secondary_color;
         font-size: 16px;
         font-weight: 700;
         margin-bottom: 1rem;

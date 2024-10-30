@@ -1,17 +1,17 @@
 .blogHeroSection {
     .pagesHeroPinkDeco {
-        fill: $secondary_color;
+        fill: rgb($secondary_color_rgb, 0.5);
 
         ellipse {
-            fill: $secondary_color;
+            fill: rgb($secondary_color_rgb, 0.5);
         }
     }
 
     .pagesHeroPurpleDeco {
-        fill: rgb($primary_color_rgb, 0.3);
+        fill: rgb($primary_color_rgb, 0.5);
 
         ellipse {
-            fill: rgb($primary_color_rgb, 0.3);
+            fill: rgb($primary_color_rgb, 0.5);
         }
     }
 }

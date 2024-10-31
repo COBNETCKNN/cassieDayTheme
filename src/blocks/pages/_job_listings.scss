@@ -1,0 +1,130 @@
+#pagesJobListings {
+    background: linear-gradient(180deg, #FFFFFF 2.35%, #FAFBFC 83.93%);
+}
+
+.jobListingsGrid {
+    box-shadow: 18px 0px 26px -16px #0000001C;
+    border-radius: 40px;
+    background-color: white;
+}
+
+
+.jobListinInfo_span {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    color: $secondary_text_color;
+}
+
+.jobLocation_wrapper, .contactType_wrapper {
+    border: 1px solid $primary_text_color;
+    border-radius: 50px;
+}
+
+.jobListingTitle {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 800;
+    color: $secondary_text_color;
+}
+
+
+@media screen and (max-width: $size_lg) {
+    .jobListingContent_wrapper {
+        border-radius: 40px;
+    }
+}
+
+
+@media screen and (min-width: $size_lg) {
+    .jobListingContent_wrapper {
+        border-radius: 40px 40px 200px 40px;
+    }
+}
+
+
+.button-jobListing {
+    background-color: $banner_button_background_color;
+    position: relative;
+    overflow: hidden;
+
+        &:before, &:after {
+          content: '';
+          position: absolute;
+          height: 1px;
+          width: 1px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(0);
+          border-radius: 50%;
+        }
+          
+        &:before {
+    
+          background: color-mix(in srgb, $banner_button_background_color 100%, rgba(216, 216, 216, 0.596) 55%);
+          transition: 0.6s ease-in;
+          transition-delay: .1s;
+        }
+    
+        &:after {
+    
+          background: color-mix(in srgb, $banner_button_background_color 100%, rgba(0, 0, 0, 0.596) 45%);
+          transition: 0.8s ease;
+          transition-delay: .4s;
+        }
+    
+        &:hover {
+    
+          &:before, &:after {
+    
+            transform: translate(-50%, -50%) scale(310);
+          }
+        }
+
+        a {
+            position: relative;
+            z-index: 10;
+            color: $banner_button_text_color;
+        }
+
+        a:hover {
+          color: $banner_button_text_color;
+        }
+}
+
+.jobListingContent_wrapper-1, .jobListingContent_wrapper-4, .jobListingContent_wrapper-7, .jobListingContent_wrapper-10, .jobListingContent_wrapper-13, .jobListingContent_wrapper-16, .jobListingContent_wrapper-19, .jobListingContent_wrapper-22 {
+    background-color: rgb($secondary_color_rgb, 0.2);
+}
+
+.jobListingContent_wrapper-2, .jobListingContent_wrapper-5, .jobListingContent_wrapper-8, .jobListingContent_wrapper-11, .jobListingContent_wrapper-14, .jobListingContent_wrapper-17, .jobListingContent_wrapper-20, .jobListingContent_wrapper-23 {
+    background-color: rgb($tertiary_color_rgb, 0.2);
+}
+
+.jobListingContent_wrapper-3, .jobListingContent_wrapper-6, .jobListingContent_wrapper-9, .jobListingContent_wrapper-12, .jobListingContent_wrapper-15, .jobListingContent_wrapper-18, .jobListingContent_wrapper-21, .jobListingContent_wrapper-24 {
+    background-color: rgb($primary_color_rgb, 0.2);
+}
+
+.jobListingButtonArrow-1, .jobListingButtonArrow-4, .jobListingButtonArrow-7, .jobListingButtonArrow-10, .jobListingButtonArrow-13, .jobListingButtonArrow-16, .jobListingButtonArrow-19, .jobListingButtonArrow-22 {
+    path {
+        fill: rgb($secondary_color_rgb, 0.7);
+    }
+}
+
+.jobListingButtonArrow-2, .jobListingButtonArrow-5, .jobListingButtonArrow-8, .jobListingButtonArrow-11, .jobListingButtonArrow-14, .jobListingButtonArrow-17, .jobListingButtonArrow-20, .jobListingButtonArrow-23 {
+    path {
+        fill: rgb($tertiary_color_rgb, 0.7);
+    }
+}
+
+.jobListingButtonArrow-3, .jobListingButtonArrow-6, .jobListingButtonArrow-9, .jobListingButtonArrow-12, .jobListingButtonArrow-15, .jobListingButtonArrow-18, .jobListingButtonArrow-21, .jobListingButtonArrow-24 {
+    path {
+        fill: rgb($primary_color_rgb, 0.7);
+    }
+}
+
+.jobListinDeco {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    z-index: 1;
+}

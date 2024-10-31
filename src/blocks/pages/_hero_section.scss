@@ -193,6 +193,36 @@
     }
 }
 
+.missionHeroSection {
+    .pagesHeroPinkDeco {
+        fill: rgb($secondary_color_rgb, 0.5);
+
+        g {
+            ellipse {
+                fill: rgb($secondary_color_rgb, 0.5);
+            } 
+        }
+    }
+
+    .pagesHeroPurpleDeco {
+        fill: rgb($tertiary_color_rgb, 0.3);
+
+        ellipse {
+            fill: rgb($tertiary_color_rgb, 0.3);
+        }
+    }
+}
+
+.missionImageWrapper {
+    .heroPages_imageWrapper {
+        .heroPages_imageBorderWrapper {
+            img {
+                border: 16.28px solid rgb($tertiary_color_rgb, 0.3);
+            }
+        }
+    }
+}
+
 @media screen and (min-width: $size_lg) {
     .corporate-wellness-heroPages {
         margin-right: 5%;

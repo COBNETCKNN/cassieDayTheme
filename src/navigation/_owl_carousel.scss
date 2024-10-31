@@ -53,11 +53,10 @@
     top: -45%;
     left: -10%;
     z-index: -1;
-    fill: $tertiary_color;
-    opacity: 0.2;
+    fill: rgb($tertiary_color_rgb, 0.2);
 
     ellipse {
-        fill: $tertiary_color;
+        fill: rgb($tertiary_color_rgb, 0.2);
     }
 }
 
@@ -67,10 +66,9 @@
     top: -35%;
     right: -15%;
     z-index: -1;
-    fill: $secondary_color;
-    opacity: 0.4;
+    fill: rgb($secondary_color_rgb, 0.2);
 
     ellipse {
-        fill: $secondary_color;
+        fill: rgb($secondary_color_rgb, 0.2);
     }
 }

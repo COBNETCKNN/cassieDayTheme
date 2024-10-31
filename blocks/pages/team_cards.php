@@ -30,7 +30,7 @@ $mobileSpacing = get_spacing_value_team_cards($spacing, 'mobile', '30px 0px 30px
 
 if ($showSection) { ?>
 
-<section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> py-24 relative font-plus">
+<section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> relative font-plus">
     <div class="container mx-auto w-full h-full">
         <div class="mx-5 lg:mx-0">
             <?php

@@ -28,6 +28,34 @@
   }
 }
 
+@media (min-width: $size_md) and (max-width: $size_lg) {
+  .homeEditorContent {
+    h1 {
+      span {
+          text-transform: uppercase;
+          color: $secondary_color;
+          font-size: 16px;
+          font-weight: 700;
+          margin-bottom: 1rem;
+      }
+    }
+  
+    h2 {
+        color: $secondary_text_color;
+        font-weight: 800;
+        font-size: 52px;
+        line-height: 56px;
+        margin-bottom: 1.1rem;
+    }
+  
+    p {
+        color: $primary_light_text_color;
+        font-weight: 600;
+        font-size: 20px;
+    }
+  }
+}
+
 @media screen and (max-width: $size_sm) {
   p {
     font-size: 18px;
@@ -88,7 +116,7 @@ h2 {
 p {
     color: $primary_light_text_color;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 button {

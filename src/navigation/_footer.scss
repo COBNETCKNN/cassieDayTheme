@@ -261,3 +261,8 @@ footer {
     }
 }
 
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .footerGrid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}

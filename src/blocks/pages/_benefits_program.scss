@@ -37,6 +37,26 @@
     margin-left: 1.5rem;
 }
 
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .benefitCardTitle {
+        font-size: 20px;
+        line-height: 32px;
+        font-weight: 600;
+        color: $primary_light_text_color;
+        margin-left: 1rem;
+    }
+
+    .benefitDescription_wrapper {
+        p {
+            font-size: 18px;
+        }
+    }
+
+    .benefitCard {
+        min-height: 500px;
+    }
+}
+
 .benefitCard_content__wrapper {
     padding: 1px;
     box-shadow: 8px 6px 32px 0px #0000000F;

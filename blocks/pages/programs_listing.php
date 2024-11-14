@@ -58,62 +58,59 @@ if ($showSection) { ?>
         </div>
         <!-- Programs Repeater -->
         <div class="programListings_wrapper mx-5 lg:mx-0">
-            <?php if( have_rows('program_cards') ): ?>
-                <?php $cardIndex = 1; ?>
-                <?php while( have_rows('program_cards') ): the_row(); ?>
-                    <div class="grid lg:grid-cols-7 gap-14 lg:gap-4 programListingsGrid-<?php echo $cardIndex; ?>">
-                        <!-- Featured Image -->
-                        <div class="programListings_featuredImage__wrapper lg:col-span-1 lg:my-auto ">
-                            <?php 
-                            $coachImage = get_sub_field('featured_image');
-                            // Image variables.
-                            $url = $coachImage['url'];
-                            $alt = $coachImage['alt'];
-                            $size = 'strong-featured';
-                            $thumb = $coachImage['sizes'][ $size ];
-                            ?>
-                            <!-- Image -->
-                            <div class="programListing_image flex justify-center programListing_image-<?php echo $cardIndex; ?> relative mx-auto">
-                                <div class="programListinImage_wrapper programListinImage_wrapper-<?php echo $cardIndex; ?>">
-                                    <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
-                                    <div class="programListing_image__deco programListing_image__deco-<?php echo $cardIndex; ?> w-full h-full absolute top-0"></div>
+        <?php $cardIndex = 1; ?>
+            <?php
+                $featuredPages = get_sub_field('add_programs');
+                if( $featuredPages ): ?>
+                        <?php foreach( $featuredPages as $featuredPage ): 
+                            setup_postdata( $featuredPage ); ?>
+
+                        <!-- Featured program card -->
+                        <div class="grid md:grid-cols-7 gap-14 lg:gap-4 programListingsGrid-<?php echo $cardIndex; ?>">
+                            <!-- Featured Image -->
+                            <div class="programListings_featuredImage__wrapper md:col-span-1 md:my-auto ">
+                                <!-- Image -->
+                                <div class="programListing_image flex justify-center programListing_image-<?php echo $cardIndex; ?> relative mx-auto">
+                                    <div class="programListinImage_wrapper programListinImage_wrapper-<?php echo $cardIndex; ?>">
+                                        <?php 
+                                            $thumbnail_id = get_post_thumbnail_id( $featuredPage->ID );
+                                            $alt_text = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true );
+                                            echo wp_get_attachment_image( $thumbnail_id, 'programs-featured', false, [
+                                                'class' => 'programs-featured-image',
+                                                'alt'   => $alt_text ? $alt_text : 'Program for gym'
+                                            ] ); 
+                                        ?>
+                                        <div class="programListing_image__deco programListing_image__deco-<?php echo $cardIndex; ?> w-full h-full absolute top-0"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Content -->
-                        <div class="programListings_content__wrapper lg:col-span-6">
-                            <?php
-                            $editorContent = get_sub_field('content_editor');
-                            $alignment = get_sub_field('align_content');
-                            ?>
-                            <!-- Text Content -->
-                            <?php 
-                                // Determine the alignment value for inline CSS
-                                $alignment_style = '';
-                                if ($alignment == 'left') {
-                                    $alignment_style = 'left';
-                                } elseif ($alignment == 'center') {
-                                    $alignment_style = 'center';
-                                } elseif ($alignment == 'right') {
-                                    $alignment_style = 'right';
-                                }
-                            ?>
-                            <div class="programListings relative p-10 bg-white rounded-3xl my-10" style="text-align: <?php echo $alignment_style; ?>;">
-                                <div class="programListings_wrapper relative my-auto">
-                                    <!-- Content -->
-                                    <?php echo $editorContent; ?>
-                                    <!-- Button -->
-                                    <div class="programListings_button__wrapper mt-5">
-                                        <?php get_template_part('partials/form', 'links-button'); ?>
+                            <!-- Content -->
+                            <div class="programListings_content__wrapper md:col-span-6">
+                                <div class="programListings relative p-10 bg-white rounded-3xl my-10" style="text-align: <?php echo $alignment_style; ?>;">
+                                    <div class="programListings_wrapper relative my-auto">
+                                        <h3><?php echo get_the_title( $featuredPage->ID ); ?></h3>
+                                        <div>
+                                            <?php 
+                                            $pageDescription = get_field('short_page_description', $featuredPage->ID);
+                                            ?>
+                                            <span><?php echo $pageDescription; ?></span>
+                                        </div>
+                                        <div class="programsButton_wrapper">
+                                            <button class="button-secondary font-plus rounded-xl text-sm font-bold uppercase mt-5 lg:mt-10">
+                                                <a class="px-6 py-3 block" href="<?php echo get_permalink( $featuredPage->ID ); ?>">More details</a>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php 
-                $cardIndex++;
-                endwhile; ?>
-            <?php endif; ?>
+
+                        <?php 
+                        $cardIndex++;
+                        endforeach; ?>
+                    <?php wp_reset_postdata(); ?>
+                <?php endif; 
+            ?>
         </div>
     </div>
     <?php if($showShapeDecoration) { ?>

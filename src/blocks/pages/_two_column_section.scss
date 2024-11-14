@@ -26,6 +26,19 @@
     }
 }
 
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .twoColumnsContent_wrapper {
+        p {
+            font-size: 18px;
+        }
+    }
+    
+    .twoColumnImageDeco {
+        top: -5%;
+        left: -110% !important;
+    }
+}
+
 .twoColumnSectionDeco {
     position: absolute;
     top: 0;

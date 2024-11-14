@@ -14,7 +14,7 @@ if(!is_page('free-intro-social')){
     <div class="container mx-auto">
         <!-- Upper footer -->
         <div class="my-5 lg:my-14 mx-5 md:mx-0">
-            <div class="lg:grid gap-4" style="grid-template-columns: repeat(<?php echo $columns; ?>, 1fr);">
+            <div class="footerGrid md:grid gap-4" style="grid-template-columns: repeat(<?php echo $columns; ?>, 1fr);">
                         <!-- Logo and Partners -->
                         <div class="relative z-10">
                             <!-- Logo -->
@@ -125,7 +125,7 @@ if(!is_page('free-intro-social')){
                                 <!-- Social Media -->
                                 <div class="">
                                     <div class="footerInfo_contact__heading font-plus text-base uppercase font-normal block mb-2 mb-2 lg:mb-0">Social</div>
-                                    <div class="footerInfoSocialMedia_icon flex justify-center md:justify-start mt-2">
+                                    <div class="footerInfoSocialMedia_icon flex justify-center lg:justify-start mt-2">
                                         <?php if( have_rows('footer_social_media_icons', 'option') ): ?>
                                             <?php while( have_rows('footer_social_media_icons', 'option') ): the_row(); 
                                             
@@ -173,13 +173,13 @@ if(!is_page('free-intro-social')){
         </div>
         <!-- Bottom Footer -->
         <div class="bottom-footer relative z-10 mx-5 md:mx-0">
-            <div class="grid md:grid-cols-2">
+            <div class="grid lg:grid-cols-2">
                 <!-- Copyright -->
                 <div class="">
                     <?php 
                         $footerCopyright = get_field('footer_copyright', 'option', false, false);
                     ?>
-                    <div class="footerCopyright flex justify-center md:justify-start font-plus text-base font-semibold text-primary">
+                    <div class="footerCopyright flex justify-center lg:justify-start font-plus text-base font-semibold text-primary">
                         Copyright &copy;
                         <span class="flex" id="year">&nbsp;<?php echo date("Y"); ?>&nbsp;
                         <?php echo $footerCopyright; ?>
@@ -187,7 +187,7 @@ if(!is_page('free-intro-social')){
                     </div>
                 </div>
                 <!-- Footer menu -->
-                <div class="footerNavigation order-first md:order-last mx-10 md:mx-0 mb-10 lg:mb-0">
+                <div class="footerNavigation order-first lg:order-last mx-10 md:mx-0 mb-10 lg:mb-0">
                 <?php 
                     wp_nav_menu(
                         array(

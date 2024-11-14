@@ -58,7 +58,7 @@ if ($showSection) { ?>
         </div>
         <!-- Cards Repeater -->
         <div class="pagesBenefitCards_repeater__wrapper mx-5 lg:mx-0">
-            <div class="grid lg:grid-cols-3 gap-14 my-20">
+            <div class="grid md:grid-cols-3 gap-3 lg:gap-14 my-20">
                 <?php if( have_rows('benefit_cards') ): 
                     $cardIndex = 1; // Initialize a counter
                 ?>
@@ -69,9 +69,9 @@ if ($showSection) { ?>
                     ?>
 
                         <div class="h-fit w-full relative">
-                            <div class="benefitCard benefitCardLayout<?php echo $formattedIndex; ?> py-10 px-5 rounded-3xl m-0.5 relative z-10 bg-white">
+                            <div class="benefitCard benefitCardLayout<?php echo $formattedIndex; ?> py-5 lg:py-10 px-2 lg:px-5 rounded-3xl m-0.5 relative z-10 bg-white">
                                 <!-- Title -->
-                                <div class="flex justify-start items-center mx-3 mb-10">
+                                <div class="flex justify-start items-center mx-3 mb-6 lg:mb-10">
                                     <div class="benefitCardNumber relative benefitCardNumber<?php echo $formattedIndex; ?>">
                                         <div class="benefitNumber w-full h-full">
                                             <?php echo $formattedIndex; ?>
@@ -83,7 +83,7 @@ if ($showSection) { ?>
                                     </div>
                                 </div>
                                 <!-- Description -->
-                                <div class="mx-7">
+                                <div class="benefitDescription_wrapper mx-5 lg:mx-7">
                                     <p><?php echo $benefitDescription; ?></p>
                                 </div>
                             </div>

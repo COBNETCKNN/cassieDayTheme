@@ -62,4 +62,12 @@
         bottom: -2%;
         scale: 0.8;
     }
+
 }
+
+@media screen and (min-width: $size_md) {
+    .stepsContentWrapper {
+        text-align: center !important;
+    }
+} 
+

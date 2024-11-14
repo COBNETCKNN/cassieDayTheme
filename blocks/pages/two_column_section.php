@@ -57,7 +57,7 @@ if ($showSection) { ?>
             </div>
         </div>
         <!-- Flexible fields -->
-            <div class="my-24">
+            <div class="lg:my-24">
             <?php if( have_rows('two_column_layout') ): ?>
                 <?php while( have_rows('two_column_layout') ): the_row(); 
                     $layout = get_row_layout();
@@ -65,9 +65,9 @@ if ($showSection) { ?>
 
                 <!-- Image Content Layout -->
                 <?php if( $layout == 'image_content' ): ?>         
-                    <div class="grid lg:grid-cols-6 gap-4 my-10 lg:my-20 relative z-10">
+                    <div class="grid md:grid-cols-6 gap-4 my-10 lg:my-20 relative z-10">
                         <!-- Image -->
-                        <div class="lg:col-span-2">
+                        <div class="md:col-span-2">
                             <?php
                                 $imageContentFeatured = get_sub_field('featured_image');
                                 if( $imageContentFeatured ):
@@ -88,7 +88,7 @@ if ($showSection) { ?>
                             ?>
                         </div>
                         <!-- Content -->
-                        <div class="twoColumnPages_flexibleContent__wrapper lg:col-span-4 px-14 py-8 rounded-3xl">
+                        <div class="twoColumnPages_flexibleContent__wrapper md:col-span-4 px-14 py-8 rounded-3xl">
                             <?php
                                 $editorContent = get_sub_field('content_editor');
                                 $alignment = get_sub_field('align_content');
@@ -119,9 +119,9 @@ if ($showSection) { ?>
                         </div>
                     <!-- Content Image Layout -->
                     <?php elseif( $layout == 'content_image' ): ?>
-                        <div class="grid lg:grid-cols-6 gap-4 lg:my-20 relative z-10">
+                        <div class="grid md:grid-cols-6 gap-4 lg:my-20 relative z-10">
                             <!-- Content -->
-                            <div class="twoColumnPages_flexibleContent__wrapper lg:col-span-4 px-14 py-8 rounded-3xl order-last lg:order-first">
+                            <div class="twoColumnPages_flexibleContent__wrapper md:col-span-4 px-14 py-8 rounded-3xl order-last lg:order-first">
                                 <?php
                                     $editorContent = get_sub_field('content_editor');
                                     $alignment = get_sub_field('align_content');
@@ -150,7 +150,7 @@ if ($showSection) { ?>
                                     </div>
                                 </div>
                                 <!-- Image -->
-                                <div class="lg:col-span-2">
+                                <div class="md:col-span-2">
                                     <?php
                                         $imageContentFeatured = get_sub_field('featured_image');
                                         if( $imageContentFeatured ):

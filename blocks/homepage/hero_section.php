@@ -20,7 +20,7 @@ if ($showSection) { ?>
 <section id="<?php echo $section_id; ?>" class="heroSection <?php echo $section_class; ?> lg:h-[90vh] w-full relative py-14 lg:py-0">
     <div class="container mx-auto w-full h-full flex justify-center items-center">
         <div class="w-full mx-5 lg:mx-16">
-            <div class="grid lg:grid-cols-2 gap-14 font-plus">
+            <div class="grid md:grid-cols-2 gap-14 font-plus">
                 <?php
                     $editorContent = get_sub_field('content_editor');
                     $alignment = get_sub_field('align_content');

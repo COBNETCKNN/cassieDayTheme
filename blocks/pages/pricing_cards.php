@@ -58,7 +58,7 @@ if ($showSection) { ?>
         <!-- Packages Repeater -->
          <div class="pagsPricingCards_packages__wrapper">
             <div class="mx-5 lg:mx-0">
-                <div class="grid lg:grid-cols-3 gap-10">
+                <div class="grid md:grid-cols-3 gap-3 lg:gap-10">
                     <?php if( have_rows('package_cards') ): ?>
                         <?php $packageCardIndex = 1; ?>
                         <?php while( have_rows('package_cards') ): the_row(); 
@@ -88,7 +88,7 @@ if ($showSection) { ?>
                                         </div>
                                     </div>
                                     <!-- Bottom section -->
-                                    <div class="packageCard_bottomSection bg-white p-7">
+                                    <div class="packageCard_bottomSection bg-white p-3 lg:p-7">
                                         <!-- Price -->
                                         <div class="priceWrapper flex justify-center items-end mb-7 mt-3">
                                             <span class="packagePrice packagePrice-<?php echo $packageCardIndex; ?>"><?php echo $packagePrice; ?></span>

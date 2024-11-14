@@ -31,10 +31,9 @@
     }
 }
 
-/* Media query for smaller screens */
 @media (max-width: $size_md) {
     .imagesRepeater_wrapper {
-        flex-direction: column; /* Stacks the cards vertically */
-        align-items: center; /* Centers the cards in the container */
+        flex-direction: column;
+        align-items: center;
     }
 }

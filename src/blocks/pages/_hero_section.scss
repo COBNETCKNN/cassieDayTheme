@@ -32,6 +32,26 @@
     }
 }
 
+@media screen and (max-width: $size_lg) {
+    .heroPages_wrapper {
+        h1,h2,h3,h4,h5,h6 {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 52px;
+            color: $secondary_text_color;
+            margin-bottom: 1rem;
+        }
+    
+        p {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 32px;
+            color: $primary_light_text_color;
+        }
+    }
+}
+
+
 @media screen and (min-width: $size_lg) {
     .heroPages_wrapper {
         margin-right: 13%;
@@ -93,7 +113,7 @@
 
 }
 
-@media screen and (max-width: $size_lg) {
+@media screen and (max-width: $size_md) {
     .heroPages_wrapper {
         text-align: center;
     }

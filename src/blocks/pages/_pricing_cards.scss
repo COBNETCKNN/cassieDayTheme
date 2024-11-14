@@ -38,6 +38,13 @@
     font-weight: 800;
 }
 
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .packagePrice {
+        font-size: 32px;
+        line-height: 38px;
+    } 
+}
+
 .priceSuffix {
     font-size: 24px;
     line-height: 42px;
@@ -45,11 +52,25 @@
     color: $primary_light_text_color;
 }
 
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .priceSuffix {
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
 .packageFeatures_item {
     font-size: 20px;
     line-height: 38px;
     font-weight: 500;
     color: $primary_text_color;
+}
+
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .packageFeatures_item {
+        font-size: 18px;
+        line-height: 32px;
+    }
 }
 
 .packageFeatureIcon {
@@ -106,6 +127,12 @@
 
 .packageCard_wrapper {
     height: fit-content;
+}
+
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .packageCard_bottomSection {
+        min-height: 450px;
+    }
 }
 
 @media screen and (min-width: $size_lg) {

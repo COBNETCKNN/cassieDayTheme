@@ -70,16 +70,16 @@ if ($showSection) { ?>
                 ?>
 
                 <div class="coachesRepeater bg-white px-8 lg:px-20 py-14 mt-10 mb-14 coachesRepeaterLayout<?php echo $cardIndex; ?> relative z-10 mx-5 lg:mx-0">
-                    <div class="coachesGrid grid lg:grid-cols-5 gap-10 lg:gap-4">
+                    <div class="coachesGrid grid md:grid-cols-5 gap-10 lg:gap-4">
                         <!-- Image -->
-                        <div class="coachImage_wrapper lg:col-span-2 flex justify-center">
+                        <div class="coachImage_wrapper md:col-span-2 flex justify-center">
                             <div class="coachImage w-fit h-fit relative">
                                 <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
                                 <div class="coachCardBackgroundDeco coachCardBackgroundDeco<?php echo $cardIndex; ?> w-full h-full absolute top-0"></div>
                             </div>
                         </div>
                         <!-- Content -->
-                        <div class="lg:col-span-3">
+                        <div class="md:col-span-3">
                             <?php if( have_rows('coach_content') ): ?>
                                 <?php while( have_rows('coach_content') ): the_row(); 
                                 

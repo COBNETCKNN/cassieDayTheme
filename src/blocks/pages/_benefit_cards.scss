@@ -67,6 +67,7 @@
     align-items: center;
 }
 
+
 .benefitNumber {
     font-size: 24px;
     font-weight: 800;
@@ -78,6 +79,32 @@
     justify-content: center;
     align-items: center;
 }
+
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .benefitCardNumber {
+        min-width: 45px;
+        min-height: 25px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+    
+    
+    .benefitNumber {
+        font-size: 16px;
+        font-weight: 800;
+        border-radius: 50%;
+        color: white;
+        width: 45px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 
 .benefitCardNumber01,
 .benefitCardNumber04 {

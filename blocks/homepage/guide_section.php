@@ -30,15 +30,15 @@ $mobileSpacing = get_spacing_value_guide($spacing, 'mobile', '30px 0px 30px 0px'
 
 if ($showSection) { ?>
 
- <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> pt-52 pb-32 -mt-14 font-plus">
+ <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> -mt-14 font-plus">
     <div class="container mx-auto">
-        <div class="grid lg:grid-cols-5 gap-5 lg:gap-14 md:gap-4 mx-5 md:mx-14">
+        <div class="grid md:grid-cols-5 gap-7 lg:gap-14 mx-5 lg:mx-14">
             <?php
                 $guideFeaturedImage = get_sub_field('guide_featured_image');
                 $guideFeaturedImageSize = 'guide-featured';
             ?>
             <!-- Featured Image -->
-            <div class="guideFeatured_wrapper lg:col-span-2 my-auto">
+            <div class="guideFeatured_wrapper md:col-span-2 my-auto">
             <?php
                 $featuredImage = get_sub_field('featured_image');
                 if( $featuredImage ):
@@ -68,7 +68,7 @@ if ($showSection) { ?>
                 }
             ?>
             <!-- Content -->
-            <div class="guideContent_wrapper lg:col-span-3 my-auto" style="text-align: <?php echo $alignment_style; ?>;">
+            <div class="guideContent_wrapper md:col-span-3 my-auto" style="text-align: <?php echo $alignment_style; ?>;">
                 <!-- Content -->
                 <?php echo $guideEditor; ?>
                 <!-- Button -->

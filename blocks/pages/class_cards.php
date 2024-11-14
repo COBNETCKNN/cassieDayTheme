@@ -68,7 +68,7 @@ if ($showSection) { ?>
 
                     <!-- Image Content Layout -->
                     <?php if( $layout == 'image_content' ): ?>         
-                        <div class="grid lg:grid-cols-7 gap-4 my-10 lg:my-20 relative z-10">
+                        <div class="grid md:grid-cols-7 gap-4 my-10 lg:my-20 relative z-10">
                             <!-- Image -->
                             <div class="col-span-1">
                                 <?php
@@ -93,9 +93,9 @@ if ($showSection) { ?>
                                 ?>
                             </div>
                             <!-- Content -->
-                            <div class="classPage_flexibleContent__wrapper col-span-6 bg-white px-14 py-8 rounded-3xl pt-24 lg:pt-0">
-                                <div class="grid lg:grid-cols-10 gap-4 my-auto">
-                                    <div class="hidden lg:block col-span-3"></div>
+                            <div class="classPage_flexibleContent__wrapper col-span-6 bg-white px-14 py-8 rounded-3xl pt-24 md:pt-0">
+                                <div class="grid md:grid-cols-10 gap-4 my-auto">
+                                    <div class="hidden md:block col-span-3"></div>
                                     <div class="col-span-7">
                                         <?php
                                             $editorContent = get_sub_field('content_editor');
@@ -129,11 +129,11 @@ if ($showSection) { ?>
                             </div>
                         <!-- Content Image Layout -->
                         <?php elseif( $layout == 'content_image' ): ?>
-                            <div class="grid lg:grid-cols-7 gap-4 lg:my-20 relative z-10">
+                            <div class="grid md:grid-cols-7 gap-4 lg:my-20 relative z-10">
                             <!-- Content -->
-                            <div class="classPage_flexibleContent__wrapper col-span-6 bg-white px-14 py-8 rounded-3xl pt-24 lg:pt-0 order-last lg:order-first">
-                                <div class="grid lg:grid-cols-10 gap-4 my-auto">
-                                    <div class="lg:col-span-7">
+                            <div class="classPage_flexibleContent__wrapper col-span-6 bg-white px-14 py-8 rounded-3xl pt-24 md:pt-0 order-last md:order-first">
+                                <div class="grid md:grid-cols-10 gap-4 my-auto">
+                                    <div class="md:col-span-7">
                                         <?php
                                             $editorContent = get_sub_field('content_editor');
                                             $alignment = get_sub_field('align_content');
@@ -176,7 +176,7 @@ if ($showSection) { ?>
                                         $size = 'guide-featured';
                                         $thumb = $imageContentFeatured['sizes'][ $size ]; ?>
 
-                                            <div class="classPage_image__wrapper h-full w-full relative my-auto">
+                                            <div class="classPage_image__wrapper classPage_image__wrapper-<?php echo $layout_count; ?> h-full w-full relative my-auto">
                                                 <div class="contentImage_wrapper h-full w-full">
                                                     <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
                                                     <!-- Background Colored Div -->

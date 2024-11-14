@@ -27,7 +27,7 @@
 <!-- Blog post query -->
  <section id="blogPosts" class="mt-24 font-plus relative">
     <div class="container mx-auto">
-        <div class="grid lg:grid-cols-12 gap-10 mx-5 lg:mx-0">
+        <div class="blogArchiveGrid grid lg:grid-cols-12 gap-10 mx-5 lg:mx-0">
             <?php 
             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
             $search_query = get_search_query(); // Get the search term

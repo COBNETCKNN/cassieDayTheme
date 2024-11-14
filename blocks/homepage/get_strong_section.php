@@ -27,7 +27,7 @@ if ($showSection) { ?>
 
 <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> bg-section-primary font-plus">
     <div class="container mx-auto">
-        <div class="grid lg:grid-cols-2 gap-14 mx-5 md:mx-0">
+        <div class="grid md:grid-cols-2 gap-14 mx-5 md:mx-0">
             <!-- Featured Image -->
             <div class="relative my-auto">
                 <div class="getStrong_decobox">

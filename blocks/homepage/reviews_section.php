@@ -61,7 +61,7 @@ if ($showSection) { ?>
                         <div class="item grid grid-cols-10 gap-4 my-20 max-w-[1200px] relative">
                             <div class="col-span-1 hidden md:block order-1"></div>
                             <!-- Content -->
-                            <div class="reviewsContent_wrapper col-span-10 md:col-span-7 bg-white p-20 rounded-2xl order-last md:order-2 mx-5 md:mx-0">
+                            <div class="reviewsContent_wrapper col-span-10 md:col-span-7 bg-white p-10 lg:p-20 rounded-2xl order-last md:order-2 mx-5 md:mx-0">
                                 <div class="grid grid-cols-10">
                                     <div class="col-span-10 md:col-span-8">
                                         <?php if( have_rows('reviews_content') ): ?>

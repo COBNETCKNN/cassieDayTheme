@@ -458,3 +458,10 @@
     margin-top: -20%;
 }
 
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .blogArchiveGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
+        gap: 2rem; /* 4 units gap */
+      }
+}

@@ -1,6 +1,6 @@
 
 
-@media screen and (min-width: $size_md) {
+@media screen and (min-width: $size_lg) {
     .schdulePages_wrapper {
         p {
             margin: 0 25%;
@@ -64,6 +64,16 @@ tr:not(:first-of-type):hover {
     left: -10%;
     z-index: -1;
     scale: 0.5;
+}
+
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .schedulePagesPurpleDeco {
+        position: absolute;
+        top: -20%;
+        left: -20%;
+        z-index: -1;
+        scale: 0.5;
+    }
 }
 
 @media screen and (max-width: $size_md) {

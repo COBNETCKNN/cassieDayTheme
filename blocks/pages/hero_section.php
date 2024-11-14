@@ -22,7 +22,7 @@ if ($showSection) { ?>
 <section id="<?php echo $section_id; ?>" class="heroSection <?php echo $section_class; ?> <?php echo $post->post_name; ?>HeroSection py-24 relative">
     <div class="container mx-auto w-full h-full flex justify-center items-center">
         <div class="w-full mx-5 lg:mx-16">
-            <div class="pageHomeHeroGrid grid lg:grid-cols-5 gap-14 lg:gap-5 font-plus relative">
+            <div class="pageHomeHeroGrid grid md:grid-cols-6 lg:grid-cols-5 gap-14 lg:gap-5 font-plus relative">
                 <?php
                     $editorContent = get_sub_field('content_editor');
                     $alignment = get_sub_field('align_content');
@@ -39,7 +39,7 @@ if ($showSection) { ?>
                         $alignment_style = 'right';
                     }
                 ?>
-                <div class="heroPages my-auto relative lg:col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
+                <div class="heroPages my-auto relative md:col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
                     <div class="heroPages_wrapper <?php echo $post->post_name; ?>-heroPages relative ">
                         <!-- Content -->
                         <?php echo $editorContent; ?>
@@ -48,7 +48,7 @@ if ($showSection) { ?>
                     </div>
                 </div>
                 <!-- Featured Image --> 
-                <div class="flex justify-center lg:justify-end lg:col-span-2 <?php echo $post->post_name; ?>ImageWrapper">
+                <div class="flex justify-center lg:justify-end md:col-span-3 lg:col-span-2 my-auto <?php echo $post->post_name; ?>ImageWrapper">
                     <?php
                         $featuredImage = get_sub_field('featured_image');
                         if( $featuredImage ):

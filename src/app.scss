@@ -55,9 +55,14 @@
 @import "blocks/pages/benefits_program";
 @import "Blocks/pages/pricing_cards";
 @import "blocks/pages/job_listings";
-
+@import "blocks/pages/intro_with_form";
+@import "blocks/pages/youtube_playlist";
+@import "blocks/pages/reviews";
+@import "blocks/pages/title_with_description";
+@import "blocks/pages/image_block";
 
 @import "blocks/blog/blog_archive";
+@import "blocks/blog/blog_single";
 
 html {
     scroll-behavior: smooth;

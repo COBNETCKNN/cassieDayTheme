@@ -62,6 +62,12 @@
             width: 90%;
         }
     }
+
+    .sports-performance-heroPages {
+        h1,h2,h3,h4,h5,h6 {
+            width: 100%;
+        }
+    }
 }
 
 .pagesHeroPinkDeco {
@@ -213,6 +219,56 @@
     }
 }
 
+.free-introHeroSection {
+    .pagesHeroPinkDeco {
+        fill: rgb($tertiary_color_rgb, 0.5);
+
+        g {
+            ellipse {
+                fill: rgb($tertiary_color_rgb, 0.5);
+            } 
+        }
+    }
+
+    .pagesHeroPurpleDeco {
+        fill: rgb($primary_color_rgb, 0.3);
+
+        ellipse {
+            fill: rgb($primary_color_rgb, 0.3);
+        }
+    }
+}
+
+.cancellationHeroSection {
+    .pagesHeroPinkDeco {
+        fill: rgb($secondary_color_rgb, 0.5);
+
+        g {
+            ellipse {
+                fill: rgb($secondary_color_rgb, 0.5);
+            } 
+        }
+    }
+
+    .pagesHeroPurpleDeco {
+        fill: rgb($primary_color_rgb, 0.3);
+
+        ellipse {
+            fill: rgb($primary_color_rgb, 0.3);
+        }
+    }
+}
+
+.free-introImageWrapper {
+    .heroPages_imageWrapper {
+        .heroPages_imageBorderWrapper {
+            img {
+                border: 16.28px solid rgb($tertiary_color_rgb, 0.3);
+            }
+        }
+    }
+}
+
 .missionImageWrapper {
     .heroPages_imageWrapper {
         .heroPages_imageBorderWrapper {
@@ -222,6 +278,293 @@
         }
     }
 }
+
+.cancellationImageWrapper {
+    .heroPages_imageWrapper {
+        .heroPages_imageBorderWrapper {
+            img {
+                border: 16.28px solid rgb($secondary_color_rgb, 0.3);
+            }
+        }
+    }
+}
+
+.testimonialsHeroSection {
+    .pagesHeroPinkDeco {
+        fill: rgb($tertiary_color_rgb, 0.5);
+
+        g {
+            ellipse {
+                fill: rgb($tertiary_color_rgb, 0.5);
+            } 
+        }
+    }
+
+    .pagesHeroPurpleDeco {
+        fill: rgb($secondary_color_rgb, 0.3);
+
+        ellipse {
+            fill: rgb($secondary_color_rgb, 0.3);
+        }
+    }
+}
+
+.testimonials-heroPages {
+    h1,h2,h3,h4,h5,h6 {
+        width: 100%;
+    }
+}
+
+.privacy-policyHeroSection {
+    .pagesHeroPinkDeco {
+        fill: rgb($secondary_color_rgb, 0.5);
+
+        g {
+            ellipse {
+                fill: rgb($secondary_color_rgb, 0.5);
+            } 
+        }
+    }
+
+    .pagesHeroPurpleDeco {
+        fill: rgb($tertiary_color_rgb, 0.3);
+
+        ellipse {
+            fill: rgb($tertiary_color_rgb, 0.3);
+        }
+    }
+}
+
+.nutritionImageWrapper {
+    .heroPages_imageWrapper {
+        .heroPages_imageBorderWrapper {
+            img {
+                border: 16.28px solid rgb($secondary_color_rgb, 0.3);
+            }
+        }
+    }
+}
+
+.nutritionHeroSection {
+    .pagesHeroPinkDeco {
+        fill: rgb($tertiary_color_rgb, 0.5);
+
+        g {
+            ellipse {
+                fill: rgb($tertiary_color_rgb, 0.5);
+            } 
+        }
+    }
+
+    .pagesHeroPurpleDeco {
+        fill: rgb($secondary_color_rgb, 0.3);
+
+        ellipse {
+            fill: rgb($secondary_color_rgb, 0.3);
+        }
+    }
+}
+
+.personal-trainingImageWrapper {
+    .heroPages_imageWrapper {
+        .heroPages_imageBorderWrapper {
+            img {
+                border: 16.28px solid rgb($tertiary_color_rgb, 0.3);
+            }
+        }
+    }
+}
+
+.personal-trainingHeroSection {
+    .pagesHeroPinkDeco {
+        fill: rgb($secondary_color_rgb, 0.5);
+
+        g {
+            ellipse {
+                fill: rgb($secondary_color_rgb, 0.5);
+            } 
+        }
+    }
+
+    .pagesHeroPurpleDeco {
+        fill: rgb($primary_color_rgb, 0.3);
+
+        ellipse {
+            fill: rgb($primary_color_rgb, 0.3);
+        }
+    }
+}
+
+.kids-programHeroSection {
+    .pagesHeroPinkDeco {
+        fill: rgb($tertiary_color_rgb, 0.5);
+
+        g {
+            ellipse {
+                fill: rgb($tertiary_color_rgb, 0.5);
+            } 
+        }
+    }
+
+    .pagesHeroPurpleDeco {
+        fill: rgb($secondary_color_rgb, 0.3);
+
+        ellipse {
+            fill: rgb($secondary_color_rgb, 0.3);
+        }
+    }
+}
+
+.teen-programImageWrapper {
+    .heroPages_imageWrapper {
+        .heroPages_imageBorderWrapper {
+            img {
+                border: 16.28px solid rgb($tertiary_color_rgb, 0.3);
+            }
+        }
+    }
+}
+
+.teen-programHeroSection {
+    .pagesHeroPinkDeco {
+        fill: rgb($secondary_color_rgb, 0.5);
+
+        g {
+            ellipse {
+                fill: rgb($secondary_color_rgb, 0.5);
+            } 
+        }
+    }
+
+    .pagesHeroPurpleDeco {
+        fill: rgb($primary_color_rgb, 0.3);
+
+        ellipse {
+            fill: rgb($primary_color_rgb, 0.3);
+        }
+    }
+}
+
+.sports-performanceImageWrapper {
+    .heroPages_imageWrapper {
+        .heroPages_imageBorderWrapper {
+            img {
+                border: 16.28px solid rgb($primary_color_rgb, 0.3);
+            }
+        }
+    }
+}
+
+.sports-performanceHeroSection {
+    .pagesHeroPinkDeco {
+        fill: rgb($tertiary_color_rgb, 0.5);
+
+        g {
+            ellipse {
+                fill: rgb($tertiary_color_rgb, 0.5);
+            } 
+        }
+    }
+
+    .pagesHeroPurpleDeco {
+        fill: rgb($secondary_color_rgb, 0.3);
+
+        ellipse {
+            fill: rgb($secondary_color_rgb, 0.3);
+        }
+    }
+}
+
+.crossfitImageWrapper {
+    .heroPages_imageWrapper {
+        .heroPages_imageBorderWrapper {
+            img {
+                border: 16.28px solid rgb($tertiary_color_rgb, 0.3);
+            }
+        }
+    }
+}
+
+.crossfitHeroSection {
+    .pagesHeroPinkDeco {
+        fill: rgb($secondary_color_rgb, 0.5);
+
+        g {
+            ellipse {
+                fill: rgb($secondary_color_rgb, 0.5);
+            } 
+        }
+    }
+
+    .pagesHeroPurpleDeco {
+        fill: rgb($primary_color_rgb, 0.3);
+
+        ellipse {
+            fill: rgb($primary_color_rgb, 0.3);
+        }
+    }
+}
+
+.small-group-personal-trainingImageWrapper {
+    .heroPages_imageWrapper {
+        .heroPages_imageBorderWrapper {
+            img {
+                border: 16.28px solid rgb($primary_color_rgb, 0.3);
+            }
+        }
+    }
+}
+
+.small-group-personal-trainingHeroSection {
+    .pagesHeroPinkDeco {
+        fill: rgb($secondary_color_rgb, 0.5);
+
+        g {
+            ellipse {
+                fill: rgb($secondary_color_rgb, 0.5);
+            } 
+        }
+    }
+
+    .pagesHeroPurpleDeco {
+        fill: rgb($primary_color_rgb, 0.3);
+
+        ellipse {
+            fill: rgb($primary_color_rgb, 0.3);
+        }
+    }
+}
+
+.free-intro-nutritionImageWrapper {
+    .heroPages_imageWrapper {
+        .heroPages_imageBorderWrapper {
+            img {
+                border: 16.28px solid rgb($tertiary_color_rgb, 0.3);
+            }
+        }
+    }
+}
+
+.free-intro-nutritionHeroSection {
+    .pagesHeroPinkDeco {
+        fill: rgb($secondary_color_rgb, 0.5);
+
+        g {
+            ellipse {
+                fill: rgb($secondary_color_rgb, 0.5);
+            } 
+        }
+    }
+
+    .pagesHeroPurpleDeco {
+        fill: rgb($primary_color_rgb, 0.3);
+
+        ellipse {
+            fill: rgb($primary_color_rgb, 0.3);
+        }
+    }
+}
+
 
 @media screen and (min-width: $size_lg) {
     .corporate-wellness-heroPages {

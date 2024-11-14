@@ -1,0 +1,20 @@
+.pageReviews_content {
+    h1,h2,h3,h4,h5,h6 {
+        font-size: 36px;
+        font-weight: 800;
+        line-height: 44px;
+        color: $secondary_text_color;
+    }
+
+    p {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 30px;
+        color: $primary_text_color;
+    }
+}
+
+#pageReviews {
+    background: linear-gradient(0deg, #F6F8F9, #F6F8F9),
+linear-gradient(0deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45));
+}

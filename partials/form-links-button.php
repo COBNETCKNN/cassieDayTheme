@@ -20,9 +20,10 @@
  if ($add_custom_link && $custom_link) {
      $custom_link_url = $custom_link['url'];
      $custom_link_title = $custom_link['title'];
+     $custom_link_target = $custom_link['target'] ? $custom_link['target'] : '_self'; // Default to '_self' if not set
      ?>
      <button class="button-primary font-plus rounded-xl text-base font-bold uppercase mt-10">
-        <a class="block px-10 py-4" href="<?php echo esc_url($custom_link_url); ?>"><?php echo esc_html($custom_link_title); ?></a>
+        <a class="block px-10 py-4" href="<?php echo esc_url($custom_link_url); ?>" target="<?php echo esc_attr($custom_link_target); ?>"><?php echo esc_html($custom_link_title); ?></a>
     </button>
      <?php
  } elseif ($add_button && $popup_form_content && $form_id) {

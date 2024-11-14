@@ -6,6 +6,8 @@ $columns = get_field('show_section_in_footer', 'option') ? 4 : 3;
 //Decorations true/false checks
 $sprayDeco = get_field('show_color_decoration', 'option');
 $shapeDeco = get_field('show_shape_decoration', 'option');
+
+if(!is_page('free-intro-social')){
 ?>
 
 <footer class="py-5 md:py-14 relative">
@@ -255,3 +257,5 @@ $shapeDeco = get_field('show_shape_decoration', 'option');
 <?php wp_footer(); ?>
 </body>
 </html>
+
+<?php } ?>

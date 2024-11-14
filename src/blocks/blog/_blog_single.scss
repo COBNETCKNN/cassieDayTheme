@@ -1,0 +1,262 @@
+.singlePostHeroContent_wrapper {
+    h1 {
+        font-size: 36px;
+        line-height: 44px;
+        font-weight: 800;
+        color: $secondary_text_color;
+    }
+}
+
+@media screen and (max-width: $size_sm) {
+    .singlePostHeroContent_wrapper {
+        h1 {
+            font-size: 28px;
+            line-height: 32px;
+            font-weight: 800;
+            color: $secondary_text_color;
+        }
+    }
+}
+
+.blogPostSingleCredentialsDate {
+    padding: 15px 20px;
+    border-radius: 50%;
+
+    span {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+        color: $primary_text_color;
+    }
+}
+
+.blogPostSingleCredentialsPublisher {
+    padding: 15px 20px;
+    border-radius: 50px;
+
+    span {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+        color: $primary_text_color;
+    }
+}
+
+.blogPostSingleCredentialsReadTime {
+    padding: 15px 20px;
+    border-radius: 50px;
+
+    span {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+        color: $primary_text_color;
+
+        p {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 600;
+            color: $primary_text_color;
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+}
+
+
+
+.singleContentBeforeCoverage {
+    background-color: rgb($secondary_color_rgb, 0.3);
+    border-radius: 40px 40px 100px 100px;
+}
+
+.singleContentBeforeCoverage {
+    background-color: rgb($secondary_color_rgb, 0.3);
+    border-radius: 40px 40px 100px 100px;
+}
+
+.coverageDiv {
+    z-index: -1;
+    border-radius: 40px 40px 100px 100px;
+}
+
+.singlePostHeroFeaturedImage_wrapper {
+    img {
+        border-radius: 100px 100px 0 0;
+    }
+}
+
+@media screen and (max-width: $size_lg) {
+    .singlePostHeroContent_wrapper {
+        margin-top: -20%;
+    }
+}
+
+@media screen and (max-width: $size_lg) {
+    .singlePostHeroFeaturedImage_wrapper {
+        width: 100%;
+    
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: $size_lg) {
+    .singlePostHeroFeaturedImage_wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+    
+        img {
+            border-radius: 0 40px 40px 0;
+        }
+    }
+
+    .singlePostHeroContent_wrapper {
+        border-radius: 40px 250px 250px 40px;
+        height: 450px;
+    }
+
+    
+    .singleContentBeforeCoverage {
+        background-color: rgb($secondary_color_rgb, 0.3);
+        border-radius: 40px 250px 250px 40px;
+    }
+
+    .singlePostHeroContent_wrapper {
+        h1 {
+            width: 70%;
+        }
+    }
+
+    .coverageDiv {
+        z-index: -1;
+        border-radius: 40px 250px 250px 40px;
+    }
+}
+
+@media (min-width: $size_sm) and (max-width: $size_md) {
+
+}
+
+.singlePostContent_wrapper {
+    p {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 500;
+        color: $primary_text_color;
+    }
+
+    h1 {
+        font-size: 30px;
+        line-height: 36px;
+        font-weight: 800;
+        color: black;
+        margin-top: 3rem;
+        margin-bottom: 1.75rem;
+    }
+
+    h2 {
+        font-size: 30px;
+        line-height: 36px;
+        font-weight: 800;
+        color: black;
+        margin-top: 3rem;
+        margin-bottom: 1.75rem;
+    }
+
+    h3 {
+        font-size: 24px;        /* Slightly smaller than h2 */
+        line-height: 32px;    /* Slightly smaller line height */
+        font-weight: 800;      /* A bit lighter */
+        color: $secondary_text_color;          /* Same color */
+    }
+    
+    h4 {
+        font-size: 20px;        /* Smaller than h3 */
+        line-height: 26px;     /* Corresponding line height */
+        font-weight: 700;      /* Same weight as h3 */
+        color: black;          /* Same color */
+    }
+    
+    h5 {
+        font-size: 18px;        /* Smaller than h4 */
+        line-height: 24px;     /* Corresponding line height */
+        font-weight: 600;      /* Lighter for lesser importance */
+        color: black;          /* Same color */
+    }
+    
+    h6 {
+        font-size: 16px;        /* Smallest heading */
+        line-height: 22px;     /* Corresponding line height */
+        font-weight: 600;      /* Same weight as h5 */
+        color: black;          /* Same color */
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 1rem 0;
+    }
+    
+    ul li {
+        align-items: flex-start; /* Not needed without flex */
+        position: relative;
+        padding-left: 22px;
+        margin-bottom: 10px;
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 500;
+        color: $primary_text_color;
+    }
+    
+    ul li::before {
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: 4px;
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background: none; /* Remove background */
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'><circle cx='5' cy='5' r='5' fill='%23FF63CB'/></svg>") no-repeat center;
+        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'><circle cx='5' cy='5' r='5' fill='%23FF63CB'/></svg>") no-repeat center;
+        background-color: rgb($primary_color_rgb, 0.7); /* Use color if the mask works */
+    }
+}
+
+#blogSingle {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F6F8F9 108.83%);
+    padding-bottom: 150px;
+}
+
+@media screen and (min-width: $size_md) {
+    #blogSingle {
+        background: linear-gradient(180deg, #FFFFFF 0%, #F6F8F9 108.83%);
+        padding-bottom: 200px;
+    }
+}
+
+@media screen and (min-width: $size_lg) {
+    #blogSingle {
+        background: linear-gradient(180deg, #FFFFFF 0%, #F6F8F9 108.83%);
+        padding-bottom: 350px;
+    }
+}
+
+.screen-reader-text {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    clip: auto;
+    clip-path: none;
+    overflow: visible;
+    word-wrap: normal;
+    margin: 0 2rem;
+}

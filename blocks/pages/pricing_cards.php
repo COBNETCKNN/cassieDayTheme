@@ -78,7 +78,7 @@ if ($showSection) { ?>
                                     <div class="packageCard_topSection relative">
                                         <div class="packageCardBackground w-full h-full"></div>
                                         <div class="packageCardTopSectionContent_wrapper packageCardTopSectionContent_wrapper-<?php echo $packageCardIndex; ?> relative p-7">
-                                            <h4 class="packageName text-center mb-5"><?php echo $packageName; ?></h4>
+                                            <h4 class="packageName text-center"><?php echo $packageName; ?></h4>
                                             <div class="classesWrapper flex justify-center">
                                                 <div class="classesNumber w-fit h-fit text-center flex justify-center items-center">
                                                     <?php echo $classNumbers; ?>

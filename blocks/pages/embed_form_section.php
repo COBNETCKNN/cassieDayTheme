@@ -17,6 +17,7 @@ $showSection = get_sub_field('show_section');
 
 // Get the spacing array from ACF Dimensions plugin
 $spacing = get_sub_field('spacing');
+global $post;
 
 // Fallback function to provide a default value
 function get_spacing_value_embedCode($spacing, $key, $default = '0px 0px 0px 0px') {
@@ -48,7 +49,7 @@ if ($showSection) { ?>
             }
         ?>
         <div class="embedCodePages my-auto relative col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
-            <div class="pagesEditor embedCodePages_wrapper relative">
+            <div class="pagesEditor embedCodePages_wrapper <?php echo $post->post_name; ?>-embedCodePages relative">
                 <!-- Content -->
                 <?php echo $editorContent; ?>
                 <!-- Button -->

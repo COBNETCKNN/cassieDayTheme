@@ -25,15 +25,23 @@ jQuery(document).ready(function(jQuery){
 
 //Custom function that takes data-form-id attribute from hero button and inserts it in the free intro footer link so the popup form can query it's post
 document.addEventListener('DOMContentLoaded', function () {
-    // Get the hero button's data-form-id
+    // Only run this on the homepage if the hero button exists
     const heroButton = document.querySelector('.heroHome .cta-button');
-    const formId = heroButton ? heroButton.getAttribute('data-form-id') : null;
+    if (heroButton) {
+        const formId = heroButton.getAttribute('data-form-id');
+        if (formId) {
+            // Store formId in localStorage
+            localStorage.setItem('formId', formId);
+        }
+    }
 
-    // Get all footer-popup links and assign the data-form-id
-    if (formId) {
+    // Retrieve the formId from localStorage on all pages
+    const storedFormId = localStorage.getItem('formId');
+    if (storedFormId) {
+        // Set the data-form-id for all footer-popup links
         const footerPopupLinks = document.querySelectorAll('.footer-popup');
         footerPopupLinks.forEach(function (link) {
-            link.setAttribute('data-form-id', formId);
+            link.setAttribute('data-form-id', storedFormId);
         });
     }
 });
@@ -198,3 +206,31 @@ for (var i = 0; i < acc.length; i++) {
     }
   });
 }
+
+// Youtube playlist 
+$(document).ready(function() {
+    // Select main video elements
+    const $mainVideoWrapper = $('#main-video');
+    const $mainVideoTitle = $('#main-video-title');
+    const $mainVideoDescription = $('#main-video-description');
+
+    // Attach click event to each playlist item
+    $('.playlist-item').on('click', function() {
+        // Remove active class from all video items
+        $('.video-item').removeClass('active');
+        // Add active class to the clicked item
+        $(this).closest('.video-item').addClass('active');
+
+        // Get video details from clicked item
+        const videoEmbed = $(this).data('video-embed');
+        const videoTitle = $(this).data('video-title');
+        const videoDescription = $(this).data('video-description');
+
+        // Update main video embed
+        $mainVideoWrapper.html(videoEmbed);
+
+        // Update main video content
+        $mainVideoTitle.text(videoTitle);
+        $mainVideoDescription.text(videoDescription);
+    });
+});

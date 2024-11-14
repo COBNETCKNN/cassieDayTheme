@@ -44,4 +44,12 @@ add_filter( 'use_widgets_block_editor', '__return_false' );
 
 //Theme Supports
 add_theme_support( 'title-tag' );
-add_theme_support('post-thumbnails', array('post'));
+add_theme_support('post-thumbnails', array('post', 'page'));
+
+//Making search functionality search only for blog posts excluding rest of the content
+function restrict_search_to_posts($query) {
+    if ($query->is_search && $query->is_main_query()) {
+        $query->set('post_type', 'post');
+    }
+}
+add_action('pre_get_posts', 'restrict_search_to_posts');

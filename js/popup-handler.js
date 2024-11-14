@@ -1,1 +1,64 @@
-jQuery(document).ready((function(o){function e(){o("#form-popup").removeClass("active").addClass("hidden"),o("body").css("overflow","")}o(".cta-button").on("click",(function(e){e.preventDefault();var t=o(this).data("form-id");o.ajax({url:ajax_object.ajaxurl,type:"POST",data:{action:"load_popup_form",form_id:t},success:function(e){o("#form-content").html(e),o("#form-content iframe").on("load",(function(){var e=o(this),t=e.attr("id");console.log("Iframe Loaded: "+t),e.iFrameResize({checkOrigin:!1,log:!0,sizeHeight:!0})})),o("#form-popup").removeClass("hidden").addClass("active"),o("body").css("overflow","hidden")},error:function(){alert("Failed to load form.")}})})),o("#close-popup").on("click",(function(){e()})),o(document).on("keydown",(function(t){27===t.keyCode&&o("#form-popup").hasClass("active")&&e()})),o(document).on("click",(function(t){o("#form-popup").hasClass("active")&&!o(t.target).closest("#form-content, .cta-button").length&&e()}))}));
+jQuery(document).ready(function ($) {
+  $('.cta-button').on('click', function (e) {
+    e.preventDefault();
+    // Get the formID from the button or localStorage
+    var formID = $(this).data('form-id') || localStorage.getItem('formId');
+    if (!formID) {
+      alert('Form ID not found.');
+      return;
+    }
+    $.ajax({
+      url: ajax_object.ajaxurl,
+      type: 'POST',
+      data: {
+        action: 'load_popup_form',
+        form_id: formID
+      },
+      success: function success(response) {
+        $('#form-content').html(response);
+        $('#form-content iframe').on('load', function () {
+          var iframe = $(this);
+          var id = iframe.attr('id');
+          console.log('Iframe Loaded: ' + id);
+
+          // Apply iFrame Resizer
+          iframe.iFrameResize({
+            checkOrigin: false,
+            log: true,
+            sizeHeight: true
+          });
+        });
+        $('#form-popup').removeClass('hidden').addClass('active');
+        $('body').css('overflow', 'hidden'); // Prevent scrolling
+      },
+      error: function error() {
+        alert('Failed to load form.');
+      }
+    });
+  });
+
+  // Close popup on button click
+  $('#close-popup').on('click', function () {
+    closePopup();
+  });
+
+  // Close popup on ESC key press
+  $(document).on('keydown', function (e) {
+    if (e.keyCode === 27 && $('#form-popup').hasClass('active')) {
+      closePopup();
+    }
+  });
+
+  // Close popup when clicking outside of it
+  $(document).on('click', function (e) {
+    if ($('#form-popup').hasClass('active') && !$(e.target).closest('#form-content, .cta-button').length) {
+      closePopup();
+    }
+  });
+
+  // Function to close the popup
+  function closePopup() {
+    $('#form-popup').removeClass('active').addClass('hidden');
+    $('body').css('overflow', ''); // Restore scrolling
+  }
+});

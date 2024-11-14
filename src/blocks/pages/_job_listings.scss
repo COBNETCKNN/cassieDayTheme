@@ -1,5 +1,6 @@
 #pagesJobListings {
     background: linear-gradient(180deg, #FFFFFF 2.35%, #FAFBFC 83.93%);
+    overflow: hidden;
 }
 
 .jobListingsGrid {
@@ -17,7 +18,6 @@
 }
 
 .jobLocation_wrapper, .contactType_wrapper {
-    border: 1px solid $primary_text_color;
     border-radius: 50px;
 }
 
@@ -47,49 +47,58 @@
     background-color: $banner_button_background_color;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
 
-        &:before, &:after {
-          content: '';
-          position: absolute;
-          height: 1px;
-          width: 1px;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%) scale(0);
-          border-radius: 50%;
-        }
-          
-        &:before {
-    
-          background: color-mix(in srgb, $banner_button_background_color 100%, rgba(216, 216, 216, 0.596) 55%);
-          transition: 0.6s ease-in;
-          transition-delay: .1s;
-        }
-    
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 1px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        border-radius: 50%;
+    }
+
+    &:before {
+        background: color-mix(in srgb, $banner_button_background_color 100%, rgba(216, 216, 216, 0.596) 55%);
+        transition: 0.6s ease-in;
+        transition-delay: .1s;
+    }
+
+    &:after {
+        background: color-mix(in srgb, $banner_button_background_color 100%, rgba(0, 0, 0, 0.596) 45%);
+        transition: 0.8s ease;
+        transition-delay: .4s;
+    }
+
+    &:hover {
+        &:before,
         &:after {
-    
-          background: color-mix(in srgb, $banner_button_background_color 100%, rgba(0, 0, 0, 0.596) 45%);
-          transition: 0.8s ease;
-          transition-delay: .4s;
-        }
-    
-        &:hover {
-    
-          &:before, &:after {
-    
             transform: translate(-50%, -50%) scale(310);
-          }
         }
 
-        a {
-            position: relative;
-            z-index: 10;
-            color: $banner_button_text_color;
+        // Target SVG arrow on hover
+        svg {
+            transform: translateX(5px);  // Adjust value as needed for distance
+            transition: transform 0.5s ease;
         }
+    }
 
-        a:hover {
-          color: $banner_button_text_color;
-        }
+    a {
+        position: relative;
+        z-index: 10;
+        color: $banner_button_text_color;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $banner_button_text_color;
+    }
 }
 
 .jobListingContent_wrapper-1, .jobListingContent_wrapper-4, .jobListingContent_wrapper-7, .jobListingContent_wrapper-10, .jobListingContent_wrapper-13, .jobListingContent_wrapper-16, .jobListingContent_wrapper-19, .jobListingContent_wrapper-22 {

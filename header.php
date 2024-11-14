@@ -17,6 +17,8 @@ global $headerWidthDesktop, $headerWidthMobile;
 $header_settings = get_field('header_settings', 'option');
 $header_fixed = $header_settings && $header_settings['header_fixed_header'] ? 'header-fixed' : '';
 $header_class = 'py-5 ' . $header_fixed;
+
+if(!is_page('free-intro-social')){
 ?>
 
 <header class="<?php echo esc_attr($header_class); ?> header relative">
@@ -151,3 +153,5 @@ $header_class = 'py-5 ' . $header_fixed;
         }
     }
 </style>
+
+<?php } ?>

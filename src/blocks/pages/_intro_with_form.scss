@@ -1,0 +1,68 @@
+#pagesJobListings {
+    background: linear-gradient(180deg, #FFFFFF 2.63%, #F6F8F9 112.89%);
+}
+
+.freeIntro_wrapper {
+    h1,h2,h3,h4,h5,h6 {
+        color: $secondary_text_color;
+    }
+
+    p {
+        color: $primary_text_color;
+    }
+}
+
+.freeIntoDeco {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.freeIntro_wrapper__free-intro-social {
+    h1,h2,h3,h4,h5,h6,p {
+        color: white !important;
+    }
+}
+
+.freeIntroSocial_header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    z-index: 1;
+}
+
+.freeIntro_free-intro-social {
+    height: 100vh;
+}
+
+@media screen and (max-width: $size_lg) {
+    .freeIntro_wrapper {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: $size_lg) {
+    .container-free-intro-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: $size_lg) {
+    .freeIntro_free-intro-social {
+        height: 100vh;
+    }
+}
+
+.embeddedContentForm_wrapper {
+    div {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

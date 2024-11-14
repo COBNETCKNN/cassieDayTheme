@@ -1,0 +1,105 @@
+.pagesTitleWithDescription_wrapper {
+    /* H1 */
+    h1 {
+        font-size: 36px;
+        line-height: 44px;
+        font-weight: 800;
+        color: $secondary_text_color;
+        margin-top: 40px;
+        margin-bottom: 12px;
+    }
+
+    /* H2 */
+    h2 {
+        font-size: 30px;
+        line-height: 38px;
+        font-weight: 800;
+        color: $secondary_text_color;
+        margin-top: 40px;
+        margin-bottom: 12px;
+    }
+
+    /* H3 */
+    h3 {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 800;
+        color: $secondary_text_color;
+        margin-top: 40px;
+        margin-bottom: 12px;
+    }
+
+    /* H4 */
+    h4 {
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 700;
+        color: $secondary_text_color;
+        margin-top: 40px;
+        margin-bottom: 12px;
+    }
+
+    /* H5 */
+    h5 {
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 600;
+        color: $secondary_text_color;
+        margin-top: 40px;
+        margin-bottom: 12px;
+    }
+
+    /* H6 */
+    h6 {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+        color: $secondary_text_color;
+        margin-top: 40px;
+        margin-bottom: 12px;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 500;
+        color: $primary_text_color;
+        margin-bottom: 12px;
+    }
+
+    a {
+        font-weight: 600;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+    }
+    
+    ul li {
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        padding-left: 40px;
+        margin-bottom: 10px;
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 500;
+        color: $primary_text_color;
+    }
+    
+    ul li::before {
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: 20px;
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background: none; /* Remove background */
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'><circle cx='5' cy='5' r='5' fill='%23FF63CB'/></svg>") no-repeat center;
+        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'><circle cx='5' cy='5' r='5' fill='%23FF63CB'/></svg>") no-repeat center;
+        background-color: rgb($primary_color_rgb, 0.7); /* Use color if the mask works */
+    }
+}

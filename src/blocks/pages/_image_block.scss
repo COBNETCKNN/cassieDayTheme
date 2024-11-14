@@ -1,0 +1,40 @@
+#imageBlockPages {
+    .coachesDeco {
+        top: 20%;
+    }
+}
+
+.imageBlock_content__wrapper {
+    min-height: 400px;
+    max-width: 570px;
+
+    img {
+        border-radius: 1.5rem;
+    }
+
+    h5 {
+        font-size: 32px;
+        line-height: 38px;
+        font-weight: 800;
+        color: $secondary_text_color;
+    }
+
+    div {
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 500;
+        color: $primary_light_text_color;
+    }
+
+    button {
+        margin-top: 1.5rem;
+    }
+}
+
+/* Media query for smaller screens */
+@media (max-width: $size_md) {
+    .imagesRepeater_wrapper {
+        flex-direction: column; /* Stacks the cards vertically */
+        align-items: center; /* Centers the cards in the container */
+    }
+}

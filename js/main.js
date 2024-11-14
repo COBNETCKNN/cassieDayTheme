@@ -1,1 +1,229 @@
-jQuery(document).ready((function(e){e("#menu-header-menu li").hover((function(){e(this).find(".sub-menu").stop(!0,!0).slideDown(200)}),(function(){e(this).find(".sub-menu").stop(!0,!0).slideUp(200)}))})),jQuery(document).ready((function(e){e(".owl-carousel").owlCarousel({loop:!1,margin:10,items:1,autoplay:!1,autoplayTimeout:4e3,autoplayHoverPause:!0})})),document.addEventListener("DOMContentLoaded",(function(){var e=document.querySelector(".heroHome .cta-button"),t=e?e.getAttribute("data-form-id"):null;t&&document.querySelectorAll(".footer-popup").forEach((function(e){e.setAttribute("data-form-id",t)}))})),jQuery(document).ready((function(e){e("#nav-icon3").on("click",(function(){e(this).toggleClass("open"),e("#mobileMenu").hasClass("active")?(e("#mobileMenu").fadeOut(500,(function(){e(this).removeClass("active")})),e("body").removeClass("no-scroll")):(e("#mobileMenu").fadeIn(500,(function(){e(this).addClass("active")})),e("body").addClass("no-scroll"))})),e(".mobile-menu-list li:has(.sub-menu) > a .down-arrow").on("click",(function(t){t.preventDefault(),t.stopPropagation();var o=e(this).closest("a").siblings(".sub-menu"),n=e(this);o.slideToggle(500),n.toggleClass("open")}))})),jQuery(document).ready((function(e){e(".coachBioContent").each((function(){var t=e(this),o=t.text().trim(),n=o.split(" ").slice(0,50).join(" ")+"...";t.data("full-text",o).data("excerpt",n),t.text(n)})),e(".toggleBioBtn").on("click",(function(){var t=e(this).closest(".coachBioWrapper").find(".coachBioContent"),o=t.hasClass("expanded");t.stop().slideUp(0,(function(){var e=o?t.data("excerpt"):t.data("full-text");t.text(e).slideDown(0)})),e(this).text(o?"Show More":"Show Less"),t.toggleClass("expanded")}))})),jQuery(document).ready((function(e){function t(){e(".embededCodeWrapper iframe").each((function(){e(this).iFrameResize({checkOrigin:!1,log:!0,sizeHeight:!0,sizeWidth:!0})}))}e(".embededCodeWrapper iframe").on("load",(function(){t()})),e(window).on("resize",(function(){t()}))})),jQuery(document).ready((function(e){function t(){var t=e(".header"),o=e(".heroSection"),n="0";e("#wpadminbar").length?n="60px":t.hasClass("header-fixed")&&(n=t.outerHeight()+"px"),o.css("margin-top")!==n&&o.css("margin-top",n)}var o,n,i,a;e(window).on("load resize",t),e(window).on("scroll",(o=t,n=100,function(){var e=this,t=arguments;a?(clearTimeout(i),i=setTimeout((function(){Date.now()-a>=n&&(o.apply(e,t),a=Date.now())}),n-(Date.now()-a))):(o.apply(e,t),a=Date.now())})),t()}));for(var acc=document.getElementsByClassName("accordion"),i=0;i<acc.length;i++)acc[i].addEventListener("click",(function(){var e=this.nextElementSibling,t=this.querySelector(".accordionIcon");"block"===e.style.display?(e.style.display="none",t.classList.remove("rotate-180")):(e.style.display="block",t.classList.add("rotate-180"))}));
+jQuery(document).ready(function ($) {
+  $('#menu-header-menu li').hover(function () {
+    $(this).find('.sub-menu').stop(true, true).slideDown(200); // Show sub-menu on hover
+  }, function () {
+    $(this).find('.sub-menu').stop(true, true).slideUp(200); // Hide sub-menu on mouse leave
+  });
+});
+jQuery(document).ready(function (jQuery) {
+  var autoplayTimeout = 4000;
+
+  //Initialize OwlCarousel
+  var owl = jQuery('.owl-carousel').owlCarousel({
+    loop: false,
+    margin: 10,
+    items: 1,
+    autoplay: false,
+    autoplayTimeout: autoplayTimeout,
+    autoplayHoverPause: true
+  });
+});
+
+//Custom function that takes data-form-id attribute from hero button and inserts it in the free intro footer link so the popup form can query it's post
+document.addEventListener('DOMContentLoaded', function () {
+  // Only run this on the homepage if the hero button exists
+  var heroButton = document.querySelector('.heroHome .cta-button');
+  if (heroButton) {
+    var formId = heroButton.getAttribute('data-form-id');
+    if (formId) {
+      // Store formId in localStorage
+      localStorage.setItem('formId', formId);
+    }
+  }
+
+  // Retrieve the formId from localStorage on all pages
+  var storedFormId = localStorage.getItem('formId');
+  if (storedFormId) {
+    // Set the data-form-id for all footer-popup links
+    var footerPopupLinks = document.querySelectorAll('.footer-popup');
+    footerPopupLinks.forEach(function (link) {
+      link.setAttribute('data-form-id', storedFormId);
+    });
+  }
+});
+jQuery(document).ready(function ($) {
+  // Toggle overlay and decorations using #nav-icon3
+  $('#nav-icon3').on('click', function () {
+    $(this).toggleClass('open'); // Animate hamburger icon to "X"
+
+    // Check if the mobile menu is currently active
+    if ($('#mobileMenu').hasClass('active')) {
+      $('#mobileMenu').fadeOut(500, function () {
+        $(this).removeClass('active'); // Remove the active class after fading out
+      });
+      $('body').removeClass('no-scroll'); // Remove no-scroll class from body
+    } else {
+      $('#mobileMenu').fadeIn(500, function () {
+        $(this).addClass('active'); // Add the active class after fading in
+      });
+      $('body').addClass('no-scroll'); // Add no-scroll class to body
+    }
+  });
+
+  // Toggle submenu visibility on .down-arrow click
+  $('.mobile-menu-list li:has(.sub-menu) > a .down-arrow').on('click', function (e) {
+    e.preventDefault(); // Prevent default behavior of <a> tag
+    e.stopPropagation(); // Stop event from bubbling up to <a>
+
+    var submenu = $(this).closest('a').siblings('.sub-menu'); // Target sibling submenu
+    var arrow = $(this); // Arrow is the clicked element
+
+    submenu.slideToggle(500); // Toggle submenu visibility
+    arrow.toggleClass('open'); // Rotate arrow
+  });
+});
+
+//Show more function that expands biography paragraphs on Coaches section
+jQuery(document).ready(function ($) {
+  $('.coachBioContent').each(function () {
+    var $bioContent = $(this);
+    var fullText = $bioContent.text().trim();
+    var excerpt = fullText.split(' ').slice(0, 50).join(' ') + '...';
+
+    // Store full text and excerpt in data attributes
+    $bioContent.data('full-text', fullText).data('excerpt', excerpt);
+
+    // Display the excerpt by default
+    $bioContent.text(excerpt);
+  });
+  $('.toggleBioBtn').on('click', function () {
+    var $bioWrapper = $(this).closest('.coachBioWrapper');
+    var $bioContent = $bioWrapper.find('.coachBioContent');
+    var isExpanded = $bioContent.hasClass('expanded');
+
+    // Toggle between full text and excerpt with animation
+    $bioContent.stop().slideUp(0, function () {
+      var newText = isExpanded ? $bioContent.data('excerpt') : $bioContent.data('full-text');
+      $bioContent.text(newText).slideDown(0); // Animate the new text
+    });
+
+    // Toggle button text and expanded class
+    $(this).text(isExpanded ? 'Show More' : 'Show Less');
+    $bioContent.toggleClass('expanded');
+  });
+});
+
+//Adjust width and height of wrapper div inside code embed sections
+jQuery(document).ready(function ($) {
+  function resizeEmbeddedContent() {
+    $('.embededCodeWrapper iframe').each(function () {
+      var iframe = $(this);
+
+      // Apply iFrame Resizer with options
+      iframe.iFrameResize({
+        checkOrigin: false,
+        // Skip origin checking if cross-origin iframes are embedded
+        log: true,
+        // Enable logging for debugging purposes
+        sizeHeight: true,
+        // Automatically adjust height
+        sizeWidth: true // Automatically adjust width
+      });
+    });
+  }
+
+  // Call the function initially and whenever an iframe loads
+  $('.embededCodeWrapper iframe').on('load', function () {
+    resizeEmbeddedContent();
+  });
+
+  // Optional: Recheck and resize on window resize
+  $(window).on('resize', function () {
+    resizeEmbeddedContent();
+  });
+});
+
+//Function that adds margin to the hero section if Header is selected to be in fixed position through Theme Settings
+jQuery(document).ready(function ($) {
+  function adjustHeroPosition() {
+    var header = $('.header');
+    var hero = $('.heroSection');
+    var adminBar = $('#wpadminbar');
+    var newMarginTop = '0'; // Default margin
+
+    if (adminBar.length) {
+      newMarginTop = '60px'; // Admin bar is present
+    } else if (header.hasClass('header-fixed')) {
+      newMarginTop = header.outerHeight() + 'px'; // Header is fixed
+    }
+
+    // Only update margin if it has changed to avoid unnecessary repaints
+    if (hero.css('margin-top') !== newMarginTop) {
+      hero.css('margin-top', newMarginTop);
+    }
+  }
+
+  // Throttle function to prevent excessive calls on scroll
+  function throttle(func, limit) {
+    var lastFunc;
+    var lastRan;
+    return function () {
+      var context = this;
+      var args = arguments;
+      if (!lastRan) {
+        func.apply(context, args);
+        lastRan = Date.now();
+      } else {
+        clearTimeout(lastFunc);
+        lastFunc = setTimeout(function () {
+          if (Date.now() - lastRan >= limit) {
+            func.apply(context, args);
+            lastRan = Date.now();
+          }
+        }, limit - (Date.now() - lastRan));
+      }
+    };
+  }
+
+  // Run adjustHeroPosition on load and resize events
+  $(window).on('load resize', adjustHeroPosition);
+
+  // Throttle scroll event to reduce jittering
+  $(window).on('scroll', throttle(adjustHeroPosition, 100));
+
+  // Initial adjustment
+  adjustHeroPosition();
+});
+var acc = document.getElementsByClassName("accordion");
+for (var i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function () {
+    var panel = this.nextElementSibling;
+    var icon = this.querySelector(".accordionIcon"); // Get the icon inside the accordion
+
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+      icon.classList.remove("rotate-180"); // Remove rotation when closing
+    } else {
+      panel.style.display = "block";
+      icon.classList.add("rotate-180"); // Add rotation when opening
+    }
+  });
+}
+
+// Youtube playlist 
+$(document).ready(function () {
+  // Select main video elements
+  var $mainVideoWrapper = $('#main-video');
+  var $mainVideoTitle = $('#main-video-title');
+  var $mainVideoDescription = $('#main-video-description');
+
+  // Attach click event to each playlist item
+  $('.playlist-item').on('click', function () {
+    // Remove active class from all video items
+    $('.video-item').removeClass('active');
+    // Add active class to the clicked item
+    $(this).closest('.video-item').addClass('active');
+
+    // Get video details from clicked item
+    var videoEmbed = $(this).data('video-embed');
+    var videoTitle = $(this).data('video-title');
+    var videoDescription = $(this).data('video-description');
+
+    // Update main video embed
+    $mainVideoWrapper.html(videoEmbed);
+
+    // Update main video content
+    $mainVideoTitle.text(videoTitle);
+    $mainVideoDescription.text(videoDescription);
+  });
+});

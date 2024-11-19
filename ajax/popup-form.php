@@ -25,7 +25,18 @@ function load_popup_form_content() {
   
             // Iframe for form
             if ($formURL) {
-                echo '<iframe src="' . esc_url($formURL) . '" style="border:none;width:100%;" scrolling="no" id="' . esc_attr($formID) . '"></iframe>';
+                echo '<iframe src="' . esc_url($formURL) . '" style="width:100%;height:100%;border:none;border-radius:7px" scrolling="no" id="' . esc_attr($formID) . '"   data-layout="{&quot;id&quot;:&quot;INLINE&quot;}"
+                    data-trigger-type="alwaysShow"
+                    data-trigger-value=""
+                    data-activation-type="alwaysActivated"
+                    data-activation-value=""
+                    data-deactivation-type="neverDeactivate"
+                    data-deactivation-value=""
+                    data-form-name="Website Form - Vega"
+                    data-height="400"
+                    data-layout-iframe-id="inline-0xh9BnmCwVC2xGbiBUuH"
+                    data-form-id="0xh9BnmCwVC2xGbiBUuH"
+                    title="Website Form - Vega"></iframe>';
                 echo '<div class="formTerms">By providing your phone number, you agree to receive text messages from Kilo Gym</div>';
             }
   

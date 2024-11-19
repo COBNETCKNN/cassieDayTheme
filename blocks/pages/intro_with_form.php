@@ -7,8 +7,8 @@
 $custom_class = get_sub_field('custom_html_class');
 $custom_id = get_sub_field('custom_html_id');
 
-$default_class = 'pagesJobListings';
-$default_id = 'pagesJobListings';
+$default_class = 'introWithForm';
+$default_id = 'introWithForm';
 
 $section_class = $default_class . (!empty($custom_class) ? ' ' . esc_attr($custom_class) : '');
 $section_id = $default_id . (!empty($custom_id) ? ' ' . esc_attr($custom_id) : '');
@@ -51,12 +51,15 @@ if ($showSection) { ?>
                 <?php if (have_rows('header_logo', 'option')): ?>
                     <?php while (have_rows('header_logo', 'option')): the_row(); ?>
                         <div class="">
-                            <?php
+                            <?php 
                             $headerLogo = get_sub_field('header_logo_image', 'option');
-                            if ($headerLogo) {
-                                echo wp_get_attachment_image($headerLogo, 'full', false, ['class' => 'headerLogo']);
-                            }
-                            ?>
+                            // Image variables.
+                            $url = $headerLogo['url'];
+                            $alt = $headerLogo['alt'];
+                            $size = 'large';
+                            $thumb = $headerLogo['sizes'][ $size ]; ?>
+
+                            <img class="headerLogo" src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
                         </div>
                     <?php endwhile; ?>
                 <?php endif; ?>
@@ -68,50 +71,48 @@ if ($showSection) { ?>
     ?>
     <!-- Free Intro Socials Header -->
     <div class="container mx-auto w-full h-full container-<?php echo $post->post_name; ?>">
-        <div class="mx-5 lg:mx-0">
-            <div class="grid lg:grid-cols-2 lg:gap-14">
-            <!-- Embedded form -->
-             <div class="freeIntroEmbedCode_wrapper my-auto relative z-10 order-last lg:order-first">
-                <?php 
-                $embeddedFormCode = get_sub_field('embed_code_forms');
-                $additionalEmbeddedCodeCheck = get_sub_field('additional_form');
-                $additionalEmebeddedCode = get_sub_field('additional_embed_code');
-                echo $embeddedFormCode;
-                if($additionalEmbeddedCodeCheck) {
-                    echo $additionalEmebeddedCode;
+        <div class="grid lg:grid-cols-2 lg:gap-14">
+        <!-- Embedded form -->
+            <div class="freeIntroEmbedCode_wrapper my-auto relative z-10 order-last lg:order-first">
+            <?php 
+            $embeddedFormCode = get_sub_field('embed_code_forms');
+            $additionalEmbeddedCodeCheck = get_sub_field('additional_form');
+            $additionalEmebeddedCode = get_sub_field('additional_embed_code');
+            echo $embeddedFormCode;
+            if($additionalEmbeddedCodeCheck) {
+                echo $additionalEmebeddedCode;
+            }
+            ?>
+            </div>
+        <!-- Content -->
+            <div class="freeIntroContent_wrapper my-auto">
+            <?php
+                $editorContent = get_sub_field('content_editor');
+                $alignment = get_sub_field('align_content');
+                $contentForm = get_sub_field('embed_code');
+            ?>
+            <!-- Text Content -->
+            <?php 
+                // Determine the alignment value for inline CSS
+                $alignment_style = '';
+                if ($alignment == 'left') {
+                    $alignment_style = 'left';
+                } elseif ($alignment == 'center') {
+                    $alignment_style = 'center';
+                } elseif ($alignment == 'right') {
+                    $alignment_style = 'right';
                 }
-                ?>
-             </div>
-            <!-- Content -->
-             <div class="freeIntroContent_wrapper my-auto">
-                <?php
-                    $editorContent = get_sub_field('content_editor');
-                    $alignment = get_sub_field('align_content');
-                    $contentForm = get_sub_field('embed_code');
-                ?>
-                <!-- Text Content -->
-                <?php 
-                    // Determine the alignment value for inline CSS
-                    $alignment_style = '';
-                    if ($alignment == 'left') {
-                        $alignment_style = 'left';
-                    } elseif ($alignment == 'center') {
-                        $alignment_style = 'center';
-                    } elseif ($alignment == 'right') {
-                        $alignment_style = 'right';
-                    }
-                ?>
-                <div class="freeIntro my-auto relative lg:col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
-                    <div class="pagesEditor freeIntro_wrapper freeIntro_wrapper__<?php echo $post->post_name; ?> relative z-10">
-                        <!-- Content -->
-                        <?php echo $editorContent; ?>
-                        <!-- Embedded Content Form -->
-                        <div class="embeddedContentForm_wrapper mt-14 hidden md:block">
-                            <?php echo $contentForm; ?>
-                        </div>
+            ?>
+            <div class="freeIntro my-auto relative lg:col-span-3 mb-5 md:mb-0" style="text-align: <?php echo $alignment_style; ?>;">
+                <div class="pagesEditor freeIntro_wrapper freeIntro_wrapper__<?php echo $post->post_name; ?> relative z-10">
+                    <!-- Content -->
+                    <?php echo $editorContent; ?>
+                    <!-- Embedded Content Form -->
+                    <div class="embeddedContentForm_wrapper mt-14 hidden md:block">
+                        <?php echo $contentForm; ?>
                     </div>
                 </div>
-             </div>
+            </div>
             </div>
         </div>
     </div>

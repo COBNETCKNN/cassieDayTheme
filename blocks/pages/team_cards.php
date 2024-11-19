@@ -50,7 +50,7 @@ if ($showSection) { ?>
                 }
             ?>
             <div class="pagesTeamCards my-auto relative lg:col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
-                <div class="pagesEditor pagesTeamCards_wrapper relative mb-24">
+                <div class="pagesEditor pagesTeamCards_wrapper relative mb-10 lg:mb-24">
                     <!-- Content -->
                     <?php echo $editorContent; ?>
                 </div>
@@ -69,7 +69,7 @@ if ($showSection) { ?>
                 $thumb = $coachImage['sizes'][ $size ];
                 ?>
 
-                <div class="coachesRepeater bg-white px-8 lg:px-20 py-14 mt-10 mb-14 coachesRepeaterLayout<?php echo $cardIndex; ?> relative z-10 mx-5 lg:mx-0">
+                <div class="coachesRepeater bg-white px-8 lg:px-20 py-14 mt-0 lg:mt-10 mb-14 coachesRepeaterLayout<?php echo $cardIndex; ?> relative z-10 lg:mx-0">
                     <div class="coachesGrid grid md:grid-cols-5 gap-10 lg:gap-4">
                         <!-- Image -->
                         <div class="coachImage_wrapper md:col-span-2 flex justify-center">

@@ -65,7 +65,7 @@ if ($showSection) { ?>
 
                 <!-- Image Content Layout -->
                 <?php if( $layout == 'image_content' ): ?>         
-                    <div class="grid md:grid-cols-6 gap-4 my-10 lg:my-20 relative z-10">
+                    <div class="grid md:grid-cols-6 gap-4 mb-10 md:mb-5 lg:mb-20 relative z-10">
                         <!-- Image -->
                         <div class="md:col-span-2">
                             <?php
@@ -79,7 +79,7 @@ if ($showSection) { ?>
                                 $thumb = $imageContentFeatured['sizes'][ $size ]; ?>
 
                                     <div class="twoColumnsPages_image__wrapper h-full w-full relative my-auto">
-                                        <div class="imageContentWrapper h-full w-full flex justify-center items-center">
+                                        <div class="twoColumnsPagesImageContentWrapper h-full w-full flex justify-center items-center">
                                             <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
                                         </div>
                                     </div>
@@ -88,7 +88,7 @@ if ($showSection) { ?>
                             ?>
                         </div>
                         <!-- Content -->
-                        <div class="twoColumnPages_flexibleContent__wrapper md:col-span-4 px-14 py-8 rounded-3xl">
+                        <div class="twoColumnPages_flexibleContent__wrapper md:col-span-4 md:px-14 py-8 rounded-3xl">
                             <?php
                                 $editorContent = get_sub_field('content_editor');
                                 $alignment = get_sub_field('align_content');
@@ -121,7 +121,7 @@ if ($showSection) { ?>
                     <?php elseif( $layout == 'content_image' ): ?>
                         <div class="grid md:grid-cols-6 gap-4 lg:my-20 relative z-10">
                             <!-- Content -->
-                            <div class="twoColumnPages_flexibleContent__wrapper md:col-span-4 px-14 py-8 rounded-3xl order-last lg:order-first">
+                            <div class="twoColumnPages_flexibleContent__wrapper md:col-span-4 md:px-14 py-8 rounded-3xl order-last lg:order-first">
                                 <?php
                                     $editorContent = get_sub_field('content_editor');
                                     $alignment = get_sub_field('align_content');

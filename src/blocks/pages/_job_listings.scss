@@ -17,6 +17,12 @@
     color: $secondary_text_color;
 }
 
+@media screen and (max-width: $size_sm) {
+    .jobListinInfo_span {
+        font-size: 16px;
+    }
+} 
+
 .jobLocation_wrapper, .contactType_wrapper {
     border-radius: 50px;
 }
@@ -36,7 +42,7 @@
 }
 
 
-@media screen and (min-width: $size_lg) {
+@media screen and (min-width: $size_md) {
     .jobListingContent_wrapper {
         border-radius: 40px 40px 200px 40px;
     }

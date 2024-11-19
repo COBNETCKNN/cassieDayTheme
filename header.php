@@ -16,25 +16,42 @@ global $headerWidthDesktop, $headerWidthMobile;
 
 $header_settings = get_field('header_settings', 'option');
 $header_fixed = $header_settings && $header_settings['header_fixed_header'] ? 'header-fixed' : '';
-$header_class = 'py-5 ' . $header_fixed;
+$header_class = '' . $header_fixed;
 
-if(!is_page('free-intro-social')){
-?>
+// Get the top banner settings
+$show_top_banner = $header_settings['header_show_top_banner'];
+$banner_background_color = $header_settings['banner_background_color'];
+$banner_text_color = $header_settings['banner_text_color'];
+$banner_content = $header_settings['banner_content'];
 
+if (!is_page('free-intro-social')){ ?>
+
+<!-- Header Section -->
 <header class="<?php echo esc_attr($header_class); ?> header relative">
-    <div class="container mx-auto h-auto">
-        <div class="flex justify-between items-center mx-7 lg:mx-0">
+    <!-- Display the top banner if enabled -->
+    <?php if ($show_top_banner): ?>
+    <div class="top-banner" style="background-color: <?php echo esc_attr($banner_background_color); ?>; color: <?php echo esc_attr($banner_text_color); ?>;">
+        <div class="top-banner-content">
+            <?php echo wp_kses_post($banner_content); ?>
+        </div>
+    </div>
+    <?php endif; ?>
+    <div class="container mx-auto h-auto py-5 lg:py-0 lg:py-5">
+        <div class="flex justify-between items-center mx-0 md:mx-7 lg:mx-0">
             <!-- Logo -->
             <?php if (have_rows('header_logo', 'option')): ?>
                 <?php while (have_rows('header_logo', 'option')): the_row(); ?>
                     <div class="">
                         <a href="<?php echo site_url(); ?>">
-                            <?php
+                            <?php 
                             $headerLogo = get_sub_field('header_logo_image', 'option');
-                            if ($headerLogo) {
-                                echo wp_get_attachment_image($headerLogo, 'full', false, ['class' => 'headerLogo']);
-                            }
-                            ?>
+                            // Image variables.
+                            $url = $headerLogo['url'];
+                            $alt = $headerLogo['alt'];
+                            $size = 'large';
+                            $thumb = $headerLogo['sizes'][ $size ]; ?>
+
+                            <img class="headerLogo" src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
                         </a>
                     </div>
                 <?php endwhile; ?>
@@ -49,7 +66,7 @@ if(!is_page('free-intro-social')){
             </div>
 
             <!-- Nav items -->
-            <div class="header_navItems__wrapper my-auto hidden md:block">
+            <div class="header_navItems__wrapper my-auto hidden lg:block">
                 <?php 
                     wp_nav_menu(
                         array(
@@ -75,7 +92,7 @@ if(!is_page('free-intro-social')){
                         ?>
                     </div>
                     <div class="pb-20">
-                        <div class="headerButton_wrapper w-full h-fit my-auto md:hidden flex justify-center">
+                        <div class="headerButton_wrapper w-full h-fit my-auto lg:hidden flex justify-center">
                             <?php if (have_rows('header_button', 'option')): ?>
                                 <?php while (have_rows('header_button', 'option')): the_row();
                                     $headerAddButton = get_sub_field('add_header_button', 'option');
@@ -108,7 +125,7 @@ if(!is_page('free-intro-social')){
             </div>
 
             <!-- Button -->
-            <div class="headerButton_wrapper my-auto hidden md:block">
+            <div class="headerButton_wrapper my-auto hidden lg:block">
                 <?php if (have_rows('header_button', 'option')): ?>
                     <?php while (have_rows('header_button', 'option')): the_row();
                         $headerAddButton = get_sub_field('add_header_button', 'option');

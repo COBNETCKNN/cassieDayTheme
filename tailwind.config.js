@@ -13,23 +13,33 @@ module.exports = {
   },
   plugins: [
     function ({ addComponents }) {
-      addComponents({
-        '.container': {
-          maxWidth: '100%',
-          '@screen sm': {
-            maxWidth: '640px',
-          },
-          '@screen md': {
-            maxWidth: '768px',
-          },
-          '@screen lg': {
-            maxWidth: '1024px',
-          },
-          '@screen xl': {
-            maxWidth: '1210px',
-          },
-        }
-      })
-    }
-  ],
+        addComponents({
+            '.container': {
+                maxWidth: '100%',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                paddingLeft: '1rem',
+                paddingRight: '1rem',
+                '@screen sm': {
+                    maxWidth: '640px',
+                },
+                '@screen md': {
+                    maxWidth: '100%',
+                    paddingLeft: '1rem',
+                    paddingRight: '1rem',
+                },
+                '@screen lg': {
+                    maxWidth: '1024px',
+                    paddingLeft: '0',
+                    paddingRight: '0',
+                },
+                '@screen xl': {
+                    maxWidth: '1210px',
+                    paddingLeft: '0',
+                    paddingRight: '0',
+                },
+            },
+        });
+    },
+],
 }

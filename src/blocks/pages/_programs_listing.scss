@@ -1,3 +1,7 @@
+#pagesProgramListings {
+    overflow: hidden;
+}
+
 .pagesProgramListings {
     background: linear-gradient(180deg, #FFFFFF 0%, #F0F0F0 100%);
 }
@@ -103,8 +107,8 @@
 
 @media (min-width: $size_md) and (max-width: $size_lg) {
     .programListing_image {
-        width: 250px;
-        height: 200px;
+        width: 300px;
+        height: 270px;
     
         .programListinImage_wrapper {    
             width: 100%;
@@ -115,8 +119,8 @@
                 height: 100%;
                 position: relative;
                 z-index: 20;
-                width: 250px;
-                height: 200px;
+                width: 300px;
+                height: 270px;
             }
         }
     }
@@ -179,7 +183,37 @@
     z-index: 2;
 }
 
+
+
 @media screen and (min-width: $size_md) {
+    .programListingsGrid-2, .programListingsGrid-4, .programListingsGrid-6, .programListingsGrid-8, .programListingsGrid-10, .programListingsGrid-12, .programListingsGrid-14, .programListingsGrid-16, .programListingsGrid-18, .programListingsGrid-20, .programListingsGrid-22 {
+        .programListings_featuredImage__wrapper {
+            order: 2;
+        }
+    
+        .programListings_content__wrapper {
+            order: 1;
+        }
+    }
+    
+    .programListingsGrid-1, .programListingsGrid-3, .programListingsGrid-5, .programListingsGrid-7, .programListingsGrid-9, .programListingsGrid-11, .programListingsGrid-13, .programListingsGrid-15, .programListingsGrid-17, .programListingsGrid-19, .programListingsGrid-21 {
+        .programListings_featuredImage__wrapper {
+            order: 1;
+        }
+    
+        .programListings_content__wrapper {
+            order: 2;
+        }
+    }
+
+    .programListinImage_wrapper-2, .programListinImage_wrapper-4, .programListinImage_wrapper-6, .programListinImage_wrapper-8, .programListinImage_wrapper-10, .programListinImage_wrapper-12, .programListinImage_wrapper-14, .programListinImage_wrapper-16, .programListinImage_wrapper-18, .programListinImage_wrapper-20, .programListinImage_wrapper-22 {
+        position: absolute;
+        top: 0;
+        left: -55%;
+    }
+}
+
+@media (min-width: $size_lg) {
     .programListingsGrid-2, .programListingsGrid-4, .programListingsGrid-6, .programListingsGrid-8, .programListingsGrid-10, .programListingsGrid-12, .programListingsGrid-14, .programListingsGrid-16, .programListingsGrid-18, .programListingsGrid-20, .programListingsGrid-22 {
         .programListings_featuredImage__wrapper {
             order: 2;
@@ -189,7 +223,7 @@
             order: 1;
     
             .programListings_wrapper {
-                margin-right: 25%;
+                margin-right: 27%;
             }
         }
     }
@@ -203,15 +237,53 @@
             order: 2;
     
             .programListings_wrapper {
-                margin-left: 25%;
+                margin-left: 27%;
             }
         }
     }
+}
 
-    .programListinImage_wrapper-2, .programListinImage_wrapper-4, .programListinImage_wrapper-6, .programListinImage_wrapper-8, .programListinImage_wrapper-10, .programListinImage_wrapper-12, .programListinImage_wrapper-14, .programListinImage_wrapper-16, .programListinImage_wrapper-18, .programListinImage_wrapper-20, .programListinImage_wrapper-22 {
-        position: absolute;
-        top: 0;
-        left: -55%;
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .programListingsGrid-2, .programListingsGrid-4, .programListingsGrid-6, .programListingsGrid-8, .programListingsGrid-10, .programListingsGrid-12, .programListingsGrid-14, .programListingsGrid-16, .programListingsGrid-18, .programListingsGrid-20, .programListingsGrid-22 {
+        .programListings_featuredImage__wrapper {
+            order: 2;
+        }
+    
+        .programListings_content__wrapper {
+            order: 1;
+    
+            .programListings_wrapper {
+                margin-right: 35%;
+            }
+        }
+    }
+    
+    .programListingsGrid-1, .programListingsGrid-3, .programListingsGrid-5, .programListingsGrid-7, .programListingsGrid-9, .programListingsGrid-11, .programListingsGrid-13, .programListingsGrid-15, .programListingsGrid-17, .programListingsGrid-19, .programListingsGrid-21 {
+        .programListings_featuredImage__wrapper {
+            order: 1;
+        }
+    
+        .programListings_content__wrapper {
+            order: 2;
+    
+            .programListings_wrapper {
+                margin-left: 35%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $size_md) {
+    .programListings {
+        padding-top: 100px;
+    }
+
+    .programListinImage_wrapper, .programListing_image__deco {
+        margin-top: 10%;
+    }
+
+    .programListings_featuredImage__wrapper {
+        height: 250px;
     }
 }
 
@@ -237,7 +309,7 @@
     }
 
     .programListings {
-        padding-top: 6rem;
+        padding-top: 8rem;
         margin-top: -30%;
     }
 

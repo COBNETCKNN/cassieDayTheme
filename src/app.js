@@ -14,10 +14,10 @@ jQuery(document).ready(function(jQuery){
 
     //Initialize OwlCarousel
     var owl = jQuery('.owl-carousel').owlCarousel({
-        loop: false,
+        loop: true,
         margin: 10,
         items: 1,
-        autoplay: false,
+        autoplay: true,
         autoplayTimeout: autoplayTimeout,
         autoplayHoverPause: true,
     });
@@ -233,4 +233,58 @@ $(document).ready(function() {
         $mainVideoTitle.text(videoTitle);
         $mainVideoDescription.text(videoDescription);
     });
+});
+
+// Handle the button click to open the form modal
+jQuery(document).ready(function($) {
+    // Open the modal (just toggle 'active' and 'hidden' classes)
+    $('.cta-button').on('click', function (e) {
+        e.preventDefault();  // Prevent default anchor click behavior
+
+        var formID = $(this).data('form-id') || localStorage.getItem('formId');
+  
+        if (!formID) {
+            alert('Form ID not found.');
+            return;
+        }
+
+        // Open the modal
+        openModal(formID);  // Pass formID to load content later
+    });
+
+    // Close popup on button click
+    $('#close-popup').on('click', function () {
+        closePopup();
+    });
+
+    // Close popup on ESC key press
+    $(document).on('keydown', function (e) {
+        if (e.keyCode === 27 && $('#form-popup').hasClass('active')) {
+            closePopup();
+        }
+    });
+
+    // Close popup when clicking outside of it
+    $(document).on('click', function (e) {
+        if ($('#form-popup').hasClass('active') && !$(e.target).closest('#form-content, .cta-button').length) {
+            closePopup();
+        }
+    });
+
+    // Function to open the modal
+    function openModal(formID) {
+        $('#form-popup').removeClass('hidden').addClass('active');
+        $('body').css('overflow', 'hidden'); // Disable scrolling while modal is open
+
+        // Preload the form content in the background using AJAX (this part remains in your original file)
+        preloadFormContent(formID);
+    }
+
+    // Function to close the modal
+    function closePopup() {
+        $('#form-popup').removeClass('active').addClass('hidden');
+        $('body').css('overflow', ''); // Restore scrolling
+        $('#form-content').html('');  // Optional: Clear form content when closing
+        $('#form-content iframe').attr('src', '');  // Optional: Reset iframe when closing
+    }
 });

@@ -33,6 +33,12 @@ footer {
     }
 }
 
+@media (max-width: $size_sm) {
+    .footerCopyright {
+        font-size: 14px;
+    }
+}
+
 #menu-footer-menu {
     display: flex;
     list-style: none; /* Optional: remove default bullets */

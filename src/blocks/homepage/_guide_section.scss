@@ -81,4 +81,18 @@
             height: 280px;
         }
     }
+
+    .guideContent_wrapper {
+        h1,h2,h3,h4,h5,h6 {
+            width: 80%;
+        }
+    }
+}
+
+@media (min-width: $size_lg) and (max-width: $size_2xl) {
+    .guideContent_wrapper {
+        h1,h2,h3,h4,h5,h6 {
+            width: 70%;
+        }
+    }
 }

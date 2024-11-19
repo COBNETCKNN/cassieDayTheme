@@ -37,13 +37,17 @@
     margin-left: 1.5rem;
 }
 
-@media (min-width: $size_md) and (max-width: $size_lg) {
+@media screen and (max-width: $size_lg) {
     .benefitCardTitle {
-        font-size: 20px;
+        font-size: 18px;
         line-height: 32px;
         font-weight: 600;
         color: $primary_light_text_color;
         margin-left: 1rem;
+        min-height: 64px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
     }
 
     .benefitDescription_wrapper {
@@ -53,7 +57,34 @@
     }
 
     .benefitCard {
-        min-height: 500px;
+        min-height: 400px;
+    }
+
+    .benefitCard_number__wrapper {
+        min-width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    
+        .benefitCard_number_thickBackground {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+    
+            span {
+                font-size: 32px;
+                line-height: 38px;
+                font-weight: 800;
+                color: white;
+            }
+        }
+    }
+
+    .benefitCard_content__wrapper {
+        min-height: 110px;
+    }
+
+    .benefitCard_content {
+        min-height: 110px;
     }
 }
 
@@ -124,36 +155,38 @@
     }
 }
 
-.benefitCard_content__wrapper-1 {
-    order: 1;
-}
-
-.benefitCard_content__wrapper-2 {
-    order: 3;
-}
-
-.benefitCard_content__wrapper-3 {
-    order: 5;
-}
-
-.benefitCard_content__wrapper-4 {
-    order: 7;
-}
-
-.benefitCard_content__wrapper-5 {
-    order: 2;
-}
-
-.benefitCard_content__wrapper-6 {
-    order: 4;
-}
-
-.benefitCard_content__wrapper-7 {
-    order: 6;
-}
-
-.benefitCard_content__wrapper-8 {
-    order: 8;
+@media screen and (min-width: $size_md) {
+    .benefitCard_content__wrapper-1 {
+        order: 1;
+    }
+    
+    .benefitCard_content__wrapper-2 {
+        order: 3;
+    }
+    
+    .benefitCard_content__wrapper-3 {
+        order: 5;
+    }
+    
+    .benefitCard_content__wrapper-4 {
+        order: 7;
+    }
+    
+    .benefitCard_content__wrapper-5 {
+        order: 2;
+    }
+    
+    .benefitCard_content__wrapper-6 {
+        order: 4;
+    }
+    
+    .benefitCard_content__wrapper-7 {
+        order: 6;
+    }
+    
+    .benefitCard_content__wrapper-8 {
+        order: 8;
+    }
 }
 
 .programBenefitsDeco {

@@ -21,6 +21,16 @@
     min-height: 400px;
 }
 
+@media (max-width: $size_md) {
+    .startedCards_card__wrapper {
+        min-height: 250px;
+    }
+
+    .startedCards_title {
+        margin-bottom: 0;
+    }
+}
+
 .startedCards_number__wrapper {
     background-color: #F6F6FC;
     border-radius: 50%;
@@ -39,6 +49,24 @@
 .startedCards_title__wrapper {
     min-height: 75px;
 }
+
+@media (min-width: $size_md) and (max-width: $size_xl) {
+    .startedCards_number__wrapper {
+        background-color: #F6F6FC;
+        border-radius: 50%;
+        height: 60px;
+        width: 60px;
+        margin-top: 0.5rem;
+    }
+    
+    .startedCards_number__wrapper {
+        span {
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: 800;
+        }
+    }
+} 
 
 .startedCards_number__wrapper-1, .startedCards_number__wrapper-4, .startedCards_number__wrapper-7 {
     color: $secondary_color;

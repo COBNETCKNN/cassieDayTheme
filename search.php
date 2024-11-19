@@ -3,13 +3,13 @@
 <section id="searchResults" class="my-24 font-plus">
     <div class="container mx-auto">
         <div class="searchResultsWrapper pt-5">
-            <h1 class="text-3xl font-bold my-6 text-secondary pb-5 mx-5 lg:mx-0">Search Results for: "<?php echo get_search_query(); ?>"</h1>
+            <h1 class="text-3xl font-bold my-6 text-secondary pb-5 mx-5 md:mx-0">Search Results for: "<?php echo get_search_query(); ?>"</h1>
         </div>
         <!-- Search Query -->
-        <div class="grid lg:grid-cols-9 gap-10 mx-5 lg:mx-0">
+        <div class="blogArchiveGrid grid lg:grid-cols-9 gap-10 mx-5 md:mx-0">
             <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>
-                    <div class="blogPostSearchWrapper col-span-3">
+                    <div class="blogPostSearchWrapper lg:col-span-3">
                         <a href="<?php echo the_permalink(); ?>">
                             <div class="blogPostSearchImage_wrapper overflow-hidden">
                                 <?php the_post_thumbnail('full', ['class' => 'w-full h-full object-cover']); ?>
@@ -45,5 +45,8 @@
         </div>
     </div>
 </section>
+
+<!-- Popup Modal Structure -->
+<?php get_template_part('partials/pop', 'up-form'); ?>
 
 <?php get_footer(); ?>

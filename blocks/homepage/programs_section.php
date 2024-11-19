@@ -48,7 +48,7 @@ if ($showSection) { ?>
         ?>
 
 
-        <div class="homePrograms_content mx-5 md:mx-0" style="text-align: <?php echo $alignment_style; ?>;">
+        <div class="homePrograms_content" style="text-align: <?php echo $alignment_style; ?>;">
             <?php echo $homeStepsEditor; ?>
         </div>
         <!-- Relationship section for pages -->
@@ -60,9 +60,9 @@ if ($showSection) { ?>
                         <?php foreach( $featuredPages as $featuredPage ): 
                             setup_postdata( $featuredPage ); ?>
 
-                            <div class="grid md:grid-cols-2 gap-10 lg:gap-32 my-7 md:my-16 lg:my-24 mx-5 md:mx-0">                 
+                            <div class="grid md:grid-cols-2 gap-14 lg:gap-32 my-7 md:my-16 lg:my-24">                 
                                 <!-- Featured Image -->
-                                <div class="homePrograms_featuredImage_wrapper homePrograms_featuredImage_wrapper-<?php echo $programIndex; ?> relative my-auto">
+                                <div class="homePrograms_featuredImage_wrapper homePrograms_featuredImage_wrapper-<?php echo $programIndex; ?> relative my-auto mx-auto">
                                     <div class="programsImageContent_image relative z-10 w-full h-full">
                                         <?php 
                                             $thumbnail_id = get_post_thumbnail_id( $featuredPage->ID );

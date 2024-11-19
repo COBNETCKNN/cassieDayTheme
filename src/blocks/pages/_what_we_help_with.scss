@@ -10,6 +10,15 @@
     color: $primary_light_text_color;
 }
 
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .supportItemTitle {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 600;
+        color: $primary_light_text_color;
+    }
+}
+
 .supportItemIcon {
     path {
         fill: $tertiary_color;

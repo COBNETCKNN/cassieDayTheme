@@ -32,33 +32,31 @@ if ($showSection) { ?>
 
 <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> py-24 relative font-plus">
     <div class="container mx-auto w-full h-full">
-        <div class="mx-5 lg:mx-0">
-            <?php
-                $editorContent = get_sub_field('content_editor');
-                $alignment = get_sub_field('align_content');
-            ?>
-            <!-- Text Content -->
-            <?php 
-                // Determine the alignment value for inline CSS
-                $alignment_style = '';
-                if ($alignment == 'left') {
-                    $alignment_style = 'left';
-                } elseif ($alignment == 'center') {
-                    $alignment_style = 'center';
-                } elseif ($alignment == 'right') {
-                    $alignment_style = 'right';
-                }
-            ?>
-            <div class="pagesBenefitCards my-auto relative lg:col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
-                <div class="pagesEditor pagesBenefitCards_wrapper relative">
-                    <!-- Content -->
-                    <?php echo $editorContent; ?>
-                </div>
+        <?php
+            $editorContent = get_sub_field('content_editor');
+            $alignment = get_sub_field('align_content');
+        ?>
+        <!-- Text Content -->
+        <?php 
+            // Determine the alignment value for inline CSS
+            $alignment_style = '';
+            if ($alignment == 'left') {
+                $alignment_style = 'left';
+            } elseif ($alignment == 'center') {
+                $alignment_style = 'center';
+            } elseif ($alignment == 'right') {
+                $alignment_style = 'right';
+            }
+        ?>
+        <div class="pagesBenefitCards my-auto relative lg:col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
+            <div class="pagesEditor pagesBenefitCards_wrapper relative">
+                <!-- Content -->
+                <?php echo $editorContent; ?>
             </div>
         </div>
         <!-- Cards Repeater -->
-        <div class="pagesBenefitCards_repeater__wrapper mx-5 lg:mx-0">
-            <div class="grid md:grid-cols-3 gap-3 lg:gap-14 my-20">
+        <div class="pagesBenefitCards_repeater__wrapper">
+            <div class="grid md:grid-cols-3 gap-10 md:gap-3 lg:gap-14 mt-14 lg:mt-20 mb-24">
                 <?php if( have_rows('benefit_cards') ): 
                     $cardIndex = 1; // Initialize a counter
                 ?>

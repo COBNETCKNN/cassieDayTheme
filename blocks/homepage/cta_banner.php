@@ -32,8 +32,8 @@ if ($showSection) { ?>
 
  <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> pt-32 bg-section-primary font-plus text-secondary">
     <div class="container mx-auto relative">
-        <div class="bannerWrapperrounded-2xl mx-3 md:mx-0">
-            <div class="banner_content relative py-20 px-5 " style="text-align: <?php echo $alignment_style; ?>;">
+        <div class="bannerWrapperrounded-2xl relative">
+            <div class="banner_content relative py-20 px-5 w-full h-full" style="text-align: <?php echo $alignment_style; ?>;">
                 <?php              
                     $reviewsEditor = get_sub_field('content_editor');
                     $alignment = get_sub_field('align_content');

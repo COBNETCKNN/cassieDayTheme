@@ -9,15 +9,6 @@
 ?>
 
 <!-- Popup Modal Structure -->
-<div id="form-popup" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-    <div class="bg-white p-10 rounded-xl lg:min-w-[30rem]">
-        <div class="relative w-fit h-fit">
-            <button id="close-popup" class="absolute -top-8 -right-8 text-black bg-gray-300 px-4 py-2 rounded-full shadow-md font-bold text-lg text-white">X</button>
-            <div id="form-content">
-                <!-- AJAX-loaded form content with iframe will be inserted here -->
-            </div>
-        </div>
-    </div>
-</div>
+<?php get_template_part('partials/pop', 'up-form'); ?>
 
 <?php get_footer(); ?>

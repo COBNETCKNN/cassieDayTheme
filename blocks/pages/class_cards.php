@@ -31,7 +31,7 @@ if ($showSection) { ?>
 
 <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> font-plus relative">
     <div class="container mx-auto w-full h-full">
-        <div class="mx-5 lg:mx-24">
+        <div class="lg:mx-24">
             <?php
                 $editorContent = get_sub_field('content_editor');
                 $alignment = get_sub_field('align_content');
@@ -56,33 +56,26 @@ if ($showSection) { ?>
                     <?php get_template_part('partials/form', 'links-button'); ?>
                 </div>
             </div>
-            <!-- Flexible fields -->
-                <div class="my-24">
+            <!-- Classes Repeater -->
+             <div class="classesRepeater_wrapper">
                 <?php if( have_rows('class_cards') ): ?>
                     <?php $layout_count = 0; ?>
-                    
-                    <?php while( have_rows('class_cards') ): the_row(); 
-                        $layout_count++;
-                        $layout = get_row_layout();
-                    ?>
-
-                    <!-- Image Content Layout -->
-                    <?php if( $layout == 'image_content' ): ?>         
-                        <div class="grid md:grid-cols-7 gap-4 my-10 lg:my-20 relative z-10">
+                    <?php while( have_rows('class_cards') ): the_row();?>
+                        <div class="md:grid md:grid-cols-7 gap-4 my-10 lg:my-20 relative z-10">
                             <!-- Image -->
-                            <div class="col-span-1">
+                            <div class="col-span-1 classImage_wrapper classImage_wrapper_layout-<?php echo $layout_count; ?>">
                                 <?php
-                                    $imageContentFeatured = get_sub_field('featured_image');
-                                    if( $imageContentFeatured ):
+                                    $classImage = get_sub_field('featured_image');
+                                    if( $classImage ):
 
                                     // Image variables.
-                                    $url = $imageContentFeatured['url'];
-                                    $alt = $imageContentFeatured['alt'];
+                                    $url = $classImage['url'];
+                                    $alt = $classImage['alt'];
                                     $size = 'guide-featured';
-                                    $thumb = $imageContentFeatured['sizes'][ $size ]; ?>
+                                    $thumb = $classImage['sizes'][ $size ]; ?>
 
-                                        <div class="classPage_image__wrapper h-full w-full relative my-auto">
-                                            <div class="imageContentWrapper h-full w-full">
+                                        <div class="classPage_image__wrapper classPage_image__wrapper-layout-<?php echo $layout_count; ?> h-full w-full relative my-auto">
+                                            <div class="imageContentWrapper imageContentWrapper_layout-<?php echo $layout_count; ?> h-full w-full relative">
                                                 <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
                                                 <!-- Background Colored Div -->
                                                 <div class="classPages_imageContent__coloredBackground_layout-<?php echo $layout_count; ?>"></div>
@@ -93,10 +86,9 @@ if ($showSection) { ?>
                                 ?>
                             </div>
                             <!-- Content -->
-                            <div class="classPage_flexibleContent__wrapper col-span-6 bg-white px-14 py-8 rounded-3xl pt-24 md:pt-0">
+                            <div class="classPage_flexibleContent__wrapper col-span-6 bg-white px-5 md:px-14 py-8 rounded-3xl pt-24 md:pt-0">
                                 <div class="grid md:grid-cols-10 gap-4 my-auto">
-                                    <div class="hidden md:block col-span-3"></div>
-                                    <div class="col-span-7">
+                                    <div class="classPage_content__layout-<?php echo $layout_count; ?> col-span-10">
                                         <?php
                                             $editorContent = get_sub_field('content_editor');
                                             $alignment = get_sub_field('align_content');
@@ -127,71 +119,11 @@ if ($showSection) { ?>
                                     </div>
                                 </div>
                             </div>
-                        <!-- Content Image Layout -->
-                        <?php elseif( $layout == 'content_image' ): ?>
-                            <div class="grid md:grid-cols-7 gap-4 lg:my-20 relative z-10">
-                            <!-- Content -->
-                            <div class="classPage_flexibleContent__wrapper col-span-6 bg-white px-14 py-8 rounded-3xl pt-24 md:pt-0 order-last md:order-first">
-                                <div class="grid md:grid-cols-10 gap-4 my-auto">
-                                    <div class="md:col-span-7">
-                                        <?php
-                                            $editorContent = get_sub_field('content_editor');
-                                            $alignment = get_sub_field('align_content');
-                                        ?>
-                                        <!-- Text Content -->
-                                        <?php 
-                                            // Determine the alignment value for inline CSS
-                                            $alignment_style = '';
-                                            if ($alignment == 'left') {
-                                                $alignment_style = 'left';
-                                            } elseif ($alignment == 'center') {
-                                                $alignment_style = 'center';
-                                            } elseif ($alignment == 'right') {
-                                                $alignment_style = 'right';
-                                            }
-                                        ?>
-                                            <div class="classPageContent my-auto relative" style="text-align: <?php echo $alignment_style; ?>;">
-                                                <div class="classPageContent_wrapper relative my-7">
-                                                    <!-- Content -->
-                                                    <?php echo $editorContent; ?>
-                                                    <!-- Button -->
-                                                    <div class="classPageFlexibleButton_wrapper my-3">
-                                                        <?php get_template_part('partials/form', 'links-button'); ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="hidden lg:block col-span-3"></div>
-                                    </div>
-                                </div>
-                                <!-- Image -->
-                                <div class="col-span-1">
-                                    <?php
-                                        $imageContentFeatured = get_sub_field('featured_image');
-                                        if( $imageContentFeatured ):
-
-                                        // Image variables.
-                                        $url = $imageContentFeatured['url'];
-                                        $alt = $imageContentFeatured['alt'];
-                                        $size = 'guide-featured';
-                                        $thumb = $imageContentFeatured['sizes'][ $size ]; ?>
-
-                                            <div class="classPage_image__wrapper classPage_image__wrapper-<?php echo $layout_count; ?> h-full w-full relative my-auto">
-                                                <div class="contentImage_wrapper h-full w-full">
-                                                    <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
-                                                    <!-- Background Colored Div -->
-                                                    <div class="classPages_contentImage__coloredBackground_layout-<?php echo $layout_count; ?>"></div>
-                                                </div>
-                                            </div>
-
-                                        <?php endif; 
-                                    ?>
-                                </div>
-                            </div>
-                        <?php endif; ?>
-                    <?php endwhile; ?>
-                <?php endif; ?>
-            </div>
+                        <?php 
+                        $layout_count++;
+                        endwhile; ?>
+                    <?php endif; ?>
+                </div>
         </div>
     </div>
     <?php 

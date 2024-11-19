@@ -99,3 +99,45 @@ body {
     overflow: hidden; /* Prevent scrolling */
     height: 100%; /* Ensure the height is set */
 }
+
+/* Initially hide the modal */
+#form-popup.hidden {
+    display: none;
+}
+
+/* When the modal is active, show it */
+#form-popup.active {
+    display: flex;
+}
+
+/* Optional: Styling for modal (centered overlay, etc.) */
+#form-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+@media (min-width: $size_md) {
+    #form-popup > div {
+        min-width: 570px;
+        min-height: 500px;
+    }
+}
+
+@media (max-width: $size_sm) {
+    #form-popup > div {
+        min-width: 150px;
+        min-height: 350px;
+    }
+}
+
+@media (min-width: $size_sm) and (max-width: $size_md) {
+    #form-popup > div {
+        min-width: 250px;
+        min-height: 450px;
+    }
+}

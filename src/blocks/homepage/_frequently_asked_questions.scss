@@ -25,6 +25,13 @@
     border-radius: 12px;   
 }
 
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .accordion_item__wrapper {
+        margin: 0.5rem 0;
+    }
+     
+}
+
 
 .accordion__header.active {
     background: #ECF0F2;

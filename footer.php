@@ -20,18 +20,16 @@ if(!is_page('free-intro-social')){
                             <!-- Logo -->
                             <div class="footerLogoWrapper pt-14 md:pt-0 mb-7 lg:mb-12">
                                 <?php if( have_rows('footer_logo_group', 'option') ): ?>
-                                    <?php while( have_rows('footer_logo_group', 'option') ): the_row(); 
-                                    
-                                    $footerLogoImage = get_sub_field('footer_logo_image', 'option');
-                                    ?>
+                                    <?php while( have_rows('footer_logo_group', 'option') ): the_row(); ?>
                                     <a href="<?php echo site_url(); ?>">
                                         <?php 
-                                            if( $footerLogoImage ) {
-                                                echo wp_get_attachment_image( $footerLogoImage, 'full', false, array( 'class' => 'footerLogo' ) );
-                                            }else {
-            
-                                            }
-                                        ?>
+                                        $footerLogoImage = get_sub_field('footer_logo_image', 'option');
+                                        $footerLogoUrl = $footerLogoImage['url'];
+                                        $footerLogoAlt = $footerLogoImage['alt'];
+                                        $footerLogoSize = 'large';
+                                        $footerLogoThumb = $footerLogoImage['sizes'][ $footerLogoSize ]; ?>
+
+                                        <img src="<?php echo esc_url($footerLogoThumb); ?>" alt="<?php echo esc_attr($footerLogoAlt); ?>" />
                                     </a>
                                     <?php endwhile; ?>
                                 <?php endif; ?>
@@ -42,17 +40,16 @@ if(!is_page('free-intro-social')){
                                     <?php while( have_rows('footer_partners', 'option') ): the_row(); 
                                     
                                     $partnersLogo = get_sub_field('partners_logo', 'option');
-                                    $partnersLogoSize = 'full';
+                                    $url = $partnersLogo['url'];
+                                    $alt = $partnersLogo['alt'];
+                                    $size = 'large';
+                                    $thumb = $partnersLogo['sizes'][ $size ];
                                     $partnersLink = get_sub_field('partners_link', 'option');
                                     ?>
 
                                     <div class="footerPartnerWrapper">
                                         <a href="<?php echo esc_url($partnersLink); ?>" target="_blank">
-                                            <?php 
-                                            if( $partnersLogo ) {
-                                                echo wp_get_attachment_image( $partnersLogo, $partnersLogoSize );
-                                            }
-                                            ?>
+                                            <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
                                         </a>
                                     </div>
 
@@ -187,7 +184,7 @@ if(!is_page('free-intro-social')){
                     </div>
                 </div>
                 <!-- Footer menu -->
-                <div class="footerNavigation order-first lg:order-last mx-10 md:mx-0 mb-10 lg:mb-0">
+                <div class="footerNavigation order-first lg:order-last md:mx-0 mb-10 lg:mb-0">
                 <?php 
                     wp_nav_menu(
                         array(

@@ -3,99 +3,99 @@
 
 <section id="blogSingle" class="bg-white py-24 font-plus relative">
     <div class="container mx-auto">
-        <div class="mx-5 lg:mx-0">
-            <!-- Single post hero -->
-            <div class="singlePostHero lg:my-24 w-full relative flex flex-col lg:flex-row">
-                <!-- Featured Image (this will appear first on smaller screens) -->
-                <div class="singlePostHeroFeaturedImage_wrapper w-fit order-1 lg:order-2">
-                    <?php if ( has_post_thumbnail() ) : ?>
-                        <?php the_post_thumbnail('single-blog-featured'); ?>
-                    <?php endif; ?>
-                </div>
-
-                <!-- Content -->
-                <div class="singlePostHeroContent_wrapper lg:w-[65%] relative z-10 order-2 lg:order-1">
-                    <div class="singleContentBeforeCoverage w-full h-full relative z-10 px-5 lg:px-14 py-10 lg:py-24">
-                        <h1 class="text-center lg:text-start"><?php echo the_title(); ?></h1>
-                        <div class="singlePostHeroCredentials_wrapper flex justify-center lg:justify-start mt-2 lg:mt-10">
-                            <div class="blogPostSingleCredentialsDate w-fit my-auto">
-                                <span class="block text-center uppercase"><?php echo get_the_date('M'); ?></span>
-                                <span class="block text-center"><?php echo get_the_date('j'); ?></span>
-                            </div>
-                            <div class="blogPostSingleCredentialsPublisher w-fit ml-5 my-auto">
-                                <span class="block uppercase text-center uppercase">Author:</span>
-                                <span class="block text-center"><?php echo get_the_author(); ?></span>
-                            </div>
-                            <div class="blogPostSingleCredentialsReadTime w-fit ml-5 my-auto">
-                                <span class="block uppercase text-center uppercase">Read time:</span>
-                                <span>
-                                    <?php echo do_shortcode('[kilo_estimated_reading_time]'); ?>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="coverageDiv w-full h-full bg-white absolute top-0 right-0"></div>
-                </div>
-            </div>
-            <!-- Content -->
-            <div class="singlePostContent_wrapper">
-                <?php echo the_content(); ?>
-            </div>
-            <!-- Search Form -->
-            <div class="">
-                <?php 
-                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                $search_query = get_search_query(); // Get the search term
-
-                $blogQueryArgs = array(
-                    'post_type'      => 'post',
-                    'posts_per_page' => 8,
-                    'orderby'        => 'date',
-                    'order'          => 'DESC',
-                    'paged'          => $paged, // Add pagination
-                    's'              => $search_query, // Add search query parameter
-                );
-
-                $blogQuery = new WP_Query($blogQueryArgs); 
-                $postCounter = 1; // Initialize a counter variable
-                ?>
-                <?php if ($blogQuery->have_posts()) : ?>
-                <!-- Search Form -->
-                <div class="search-wrapper my-6 font-plus pt-14">
-                <form role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
-                    <div class="md:flex items-center text-center">
-                        <div class="mb-3 md:mb-0">
-                            <span class="screen-reader-text"><?php echo _x('Search our blog', 'label') ?></span>
-                        </div>
-                        <label class="searchFormWrapper flex w-fit h-fit">
-                            <input type="search" class="search-field" placeholder="Enter a keyword" value="<?php echo get_search_query(); ?>" name="s" title="<?php _ex('Search for:', 'label') ?>" />
-                            
-                            <!-- Custom SVG button inside the label -->
-                            <button type="submit" class="search-submit px-5 bg-white">
-                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_131_3260)">
-                                        <path d="M24.062 21.4452L19.4168 16.7981C22.8926 12.1533 21.9448 5.57034 17.3001 2.09462C12.6553 -1.3811 6.07229 -0.433388 2.59657 4.21139C-0.87915 8.85616 0.0685652 15.4392 4.71334 18.9149C8.44441 21.7069 13.5689 21.7069 17.3001 18.9149L21.9472 23.562C22.5312 24.146 23.478 24.146 24.0619 23.562C24.6459 22.978 24.6459 22.0312 24.0619 21.4472L24.062 21.4452ZM11.0454 18.0179C6.91737 18.0179 3.57096 14.6715 3.57096 10.5435C3.57096 6.41542 6.91737 3.06901 11.0454 3.06901C15.1735 3.06901 18.5199 6.41542 18.5199 10.5435C18.5155 14.6697 15.1717 18.0136 11.0454 18.0179Z" fill="#658692"/>
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_131_3260">
-                                            <rect width="24" height="24" fill="white" transform="translate(0.5)"/>
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </button>
-                        </label>
-                    </div>
-                </form>
-                </div>
-                <?php wp_reset_postdata(); ?>
+        <!-- Single post hero -->
+        <div class="singlePostHero lg:my-24 w-full relative flex flex-col lg:flex-row">
+            <!-- Featured Image (this will appear first on smaller screens) -->
+            <div class="singlePostHeroFeaturedImage_wrapper w-fit order-1 lg:order-2">
+                <?php if ( has_post_thumbnail() ) : ?>
+                    <?php the_post_thumbnail('single-blog-featured'); ?>
                 <?php endif; ?>
             </div>
-        </div>
 
+            <!-- Content -->
+            <div class="singlePostHeroContent_wrapper lg:w-[65%] relative z-10 order-2 lg:order-1">
+                <div class="singleContentBeforeCoverage w-full h-full relative z-10 px-5 lg:px-14 py-10 lg:py-24">
+                    <h1 class="text-center lg:text-start"><?php echo the_title(); ?></h1>
+                    <div class="singlePostHeroCredentials_wrapper flex justify-center lg:justify-start mt-2 lg:mt-10">
+                        <div class="blogPostSingleCredentialsDate w-fit my-auto">
+                            <span class="text-center uppercase"><?php echo get_the_date('M'); ?></span>
+                            <span class="text-center"><?php echo get_the_date('j'); ?></span>
+                        </div>
+                        <div class="blogPostSingleCredentialsPublisher w-fit my-auto">
+                            <span class="uppercase text-center uppercase">Author:</span>
+                            <span class="text-center"><?php echo get_the_author(); ?></span>
+                        </div>
+                        <div class="blogPostSingleCredentialsReadTime w-fit my-auto flex">
+                            <span class="uppercase text-center uppercase">Read time:</span>
+                            <span>
+                                <?php echo do_shortcode('[kilo_estimated_reading_time]'); ?>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="coverageDiv w-full h-full bg-white absolute top-0 right-0"></div>
+            </div>
+        </div>
+        <!-- Content -->
+        <div class="singlePostContent_wrapper">
+            <?php echo the_content(); ?>
+        </div>
+        <!-- Search Form -->
+        <div class="">
+            <?php 
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $search_query = get_search_query(); // Get the search term
+
+            $blogQueryArgs = array(
+                'post_type'      => 'post',
+                'posts_per_page' => 8,
+                'orderby'        => 'date',
+                'order'          => 'DESC',
+                'paged'          => $paged, // Add pagination
+                's'              => $search_query, // Add search query parameter
+            );
+
+            $blogQuery = new WP_Query($blogQueryArgs); 
+            $postCounter = 1; // Initialize a counter variable
+            ?>
+            <?php if ($blogQuery->have_posts()) : ?>
+            <!-- Search Form -->
+            <div class="search-wrapper my-6 font-plus pt-14">
+            <form role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
+                <div class="md:flex items-center text-center">
+                    <div class="mb-3 md:mb-0">
+                        <span class="screen-reader-text"><?php echo _x('Search our blog', 'label') ?></span>
+                    </div>
+                    <label class="searchFormWrapper flex w-fit h-fit">
+                        <input type="search" class="search-field" placeholder="Enter a keyword" value="<?php echo get_search_query(); ?>" name="s" title="<?php _ex('Search for:', 'label') ?>" />
+                        
+                        <!-- Custom SVG button inside the label -->
+                        <button type="submit" class="search-submit px-5 bg-white">
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_131_3260)">
+                                    <path d="M24.062 21.4452L19.4168 16.7981C22.8926 12.1533 21.9448 5.57034 17.3001 2.09462C12.6553 -1.3811 6.07229 -0.433388 2.59657 4.21139C-0.87915 8.85616 0.0685652 15.4392 4.71334 18.9149C8.44441 21.7069 13.5689 21.7069 17.3001 18.9149L21.9472 23.562C22.5312 24.146 23.478 24.146 24.0619 23.562C24.6459 22.978 24.6459 22.0312 24.0619 21.4472L24.062 21.4452ZM11.0454 18.0179C6.91737 18.0179 3.57096 14.6715 3.57096 10.5435C3.57096 6.41542 6.91737 3.06901 11.0454 3.06901C15.1735 3.06901 18.5199 6.41542 18.5199 10.5435C18.5155 14.6697 15.1717 18.0136 11.0454 18.0179Z" fill="#658692"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_131_3260">
+                                        <rect width="24" height="24" fill="white" transform="translate(0.5)"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                    </label>
+                </div>
+            </form>
+            </div>
+            <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+        </div>
     </div>
 </section>
 
 <?php endwhile; endif; ?>
+
+<!-- Popup Modal Structure -->
+<?php get_template_part('partials/pop', 'up-form'); ?>
 
 <!-- Banner Section -->
 <?php 

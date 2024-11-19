@@ -30,9 +30,9 @@ $mobileSpacing = get_spacing_value_guide($spacing, 'mobile', '30px 0px 30px 0px'
 
 if ($showSection) { ?>
 
- <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> -mt-14 font-plus">
+ <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> md:-mt-24 lg:-mt-14 font-plus">
     <div class="container mx-auto">
-        <div class="grid md:grid-cols-5 gap-7 lg:gap-14 mx-5 lg:mx-14">
+        <div class="grid md:grid-cols-5 gap-7 lg:gap-14 lg:mx-14">
             <?php
                 $guideFeaturedImage = get_sub_field('guide_featured_image');
                 $guideFeaturedImageSize = 'guide-featured';

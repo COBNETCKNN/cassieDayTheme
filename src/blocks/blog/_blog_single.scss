@@ -10,8 +10,8 @@
 @media screen and (max-width: $size_sm) {
     .singlePostHeroContent_wrapper {
         h1 {
-            font-size: 28px;
-            line-height: 32px;
+            font-size: 22px;
+            line-height: 28px;
             font-weight: 800;
             color: $secondary_text_color;
         }
@@ -86,7 +86,13 @@
     }
 }
 
-@media screen and (max-width: $size_lg) {
+@media (min-width: $size_md) and (max-width: $size_lg) {
+    .singlePostHeroContent_wrapper {
+        margin-top: -15%;
+    }
+}
+
+@media screen and (max-width: $size_md) {
     .singlePostHeroContent_wrapper {
         margin-top: -20%;
     }
@@ -135,10 +141,6 @@
         z-index: -1;
         border-radius: 40px 250px 250px 40px;
     }
-}
-
-@media (min-width: $size_sm) and (max-width: $size_md) {
-
 }
 
 .singlePostContent_wrapper {

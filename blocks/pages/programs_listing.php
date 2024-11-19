@@ -32,32 +32,30 @@ if ($showSection) { ?>
 
 <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> relative font-plus">
     <div class="container mx-auto w-full h-full">
-        <div class="mx-5 lg:mx-0">
-            <?php
-                $editorContent = get_sub_field('content_editor');
-                $alignment = get_sub_field('align_content');
-            ?>
-            <!-- Text Content -->
-            <?php 
-                // Determine the alignment value for inline CSS
-                $alignment_style = '';
-                if ($alignment == 'left') {
-                    $alignment_style = 'left';
-                } elseif ($alignment == 'center') {
-                    $alignment_style = 'center';
-                } elseif ($alignment == 'right') {
-                    $alignment_style = 'right';
-                }
-            ?>
-            <div class="pagesTeamCards my-auto relative lg:col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
-                <div class="pagesEditor pagesTeamCards_wrapper relative mb-24">
-                    <!-- Content -->
-                    <?php echo $editorContent; ?>
-                </div>
+        <?php
+            $editorContent = get_sub_field('content_editor');
+            $alignment = get_sub_field('align_content');
+        ?>
+        <!-- Text Content -->
+        <?php 
+            // Determine the alignment value for inline CSS
+            $alignment_style = '';
+            if ($alignment == 'left') {
+                $alignment_style = 'left';
+            } elseif ($alignment == 'center') {
+                $alignment_style = 'center';
+            } elseif ($alignment == 'right') {
+                $alignment_style = 'right';
+            }
+        ?>
+        <div class="pagesTeamCards my-auto relative lg:col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
+            <div class="pagesEditor pagesTeamCards_wrapper relative mb-10 lg:mb-24">
+                <!-- Content -->
+                <?php echo $editorContent; ?>
             </div>
         </div>
         <!-- Programs Repeater -->
-        <div class="programListings_wrapper mx-5 lg:mx-0">
+        <div class="programListings_wrapper">
         <?php $cardIndex = 1; ?>
             <?php
                 $featuredPages = get_sub_field('add_programs');
@@ -66,7 +64,7 @@ if ($showSection) { ?>
                             setup_postdata( $featuredPage ); ?>
 
                         <!-- Featured program card -->
-                        <div class="grid md:grid-cols-7 gap-14 lg:gap-4 programListingsGrid-<?php echo $cardIndex; ?>">
+                        <div class="grid md:grid-cols-7 md:gap-14 lg:gap-4 programListingsGrid-<?php echo $cardIndex; ?>">
                             <!-- Featured Image -->
                             <div class="programListings_featuredImage__wrapper md:col-span-1 md:my-auto ">
                                 <!-- Image -->
@@ -86,7 +84,7 @@ if ($showSection) { ?>
                             </div>
                             <!-- Content -->
                             <div class="programListings_content__wrapper md:col-span-6">
-                                <div class="programListings relative p-10 bg-white rounded-3xl my-10" style="text-align: <?php echo $alignment_style; ?>;">
+                                <div class="programListings relative p-5 md:p-10 bg-white rounded-3xl my-10" style="text-align: <?php echo $alignment_style; ?>;">
                                     <div class="programListings_wrapper relative my-auto">
                                         <h3><?php echo get_the_title( $featuredPage->ID ); ?></h3>
                                         <div>

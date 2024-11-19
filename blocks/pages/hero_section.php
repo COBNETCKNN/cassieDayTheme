@@ -21,7 +21,7 @@ if ($showSection) { ?>
 
 <section id="<?php echo $section_id; ?>" class="heroSection <?php echo $section_class; ?> <?php echo $post->post_name; ?>HeroSection py-24 relative">
     <div class="container mx-auto w-full h-full flex justify-center items-center">
-        <div class="w-full mx-5 lg:mx-16">
+        <div class="w-full lg:mx-16">
             <div class="pageHomeHeroGrid grid md:grid-cols-6 lg:grid-cols-5 gap-14 lg:gap-5 font-plus relative">
                 <?php
                     $editorContent = get_sub_field('content_editor');
@@ -59,11 +59,11 @@ if ($showSection) { ?>
                         $size = 'hero-featured';
                         $thumb = $featuredImage['sizes'][ $size ]; ?>
 
-                            <div class="heroPages_imageWrapper relative">
-                                <div class="heroPages_imageBorderWrapper">
-                                    <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
-                                </div>
+                        <div class="heroPages_imageWrapper relative">
+                            <div class="heroPages_imageBorderWrapper">
+                                <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
                             </div>
+                        </div>
 
                         <?php endif; ?>
                  </div>

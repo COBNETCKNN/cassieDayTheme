@@ -32,66 +32,64 @@ if ($showSection) { ?>
 
 <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> relative font-plus">
     <div class="container mx-auto w-full h-full">
-        <div class="mx-5 lg:mx-0">
-            <!-- Content -->
-            <div class="my-auto">
-                <?php
-                $editorContent = get_sub_field('content_editor');
-                $alignment = get_sub_field('align_content');
-                ?>
-                <!-- Text Content -->
-                <?php 
-                    // Determine the alignment value for inline CSS
-                    $alignment_style = '';
-                    if ($alignment == 'left') {
-                        $alignment_style = 'left';
-                    } elseif ($alignment == 'center') {
-                        $alignment_style = 'center';
-                    } elseif ($alignment == 'right') {
-                        $alignment_style = 'right';
-                    }
-                ?>
-                <div class="programBenefits my-auto relative lg:col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
-                    <div class="pagesEditor programBenefits_wrapper relative mb-8">
-                        <!-- Content -->
-                        <?php echo $editorContent; ?>
-                        <!-- Button -->
-                        <?php get_template_part('partials/form', 'links-button'); ?>
-                    </div>
+        <!-- Content -->
+        <div class="my-auto">
+            <?php
+            $editorContent = get_sub_field('content_editor');
+            $alignment = get_sub_field('align_content');
+            ?>
+            <!-- Text Content -->
+            <?php 
+                // Determine the alignment value for inline CSS
+                $alignment_style = '';
+                if ($alignment == 'left') {
+                    $alignment_style = 'left';
+                } elseif ($alignment == 'center') {
+                    $alignment_style = 'center';
+                } elseif ($alignment == 'right') {
+                    $alignment_style = 'right';
+                }
+            ?>
+            <div class="programBenefits my-auto relative lg:col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
+                <div class="pagesEditor programBenefits_wrapper relative mb-8">
+                    <!-- Content -->
+                    <?php echo $editorContent; ?>
+                    <!-- Button -->
+                    <?php get_template_part('partials/form', 'links-button'); ?>
                 </div>
-             </div>
-            <!-- Benefits card repeater -->
-             <div class="benefitsCard_wrapper pt-24 relative z-10">
-                <div class="grid lg:grid-cols-2 gap-7">
-                    <?php if( have_rows('benefit_cards') ): ?>
-                        <?php $cardIndex = 1; ?>
-                        <?php while( have_rows('benefit_cards') ): the_row(); 
-                        
-                        $benefitText = get_sub_field('benefit');
-                        ?>
+            </div>
+            </div>
+        <!-- Benefits card repeater -->
+            <div class="benefitsCard_wrapper pt-24 relative z-10">
+            <div class="grid md:grid-cols-2 gap-7">
+                <?php if( have_rows('benefit_cards') ): ?>
+                    <?php $cardIndex = 1; ?>
+                    <?php while( have_rows('benefit_cards') ): the_row(); 
+                    
+                    $benefitText = get_sub_field('benefit');
+                    ?>
 
-                        <div class="benefitCard_content__wrapper benefitCard_content__wrapper-<?php echo $cardIndex; ?> w-full relative">
-                            <div class="benefitCard_content flex justify-start items-center bg-white">
-                                <div class="benefitCard_number__wrapper benefitCard_number__wrapper-<?php echo $cardIndex; ?> flex justify-center items-center">
-                                    <div class="benefitCard_number_thickBackground flex justify-center items-center">
-                                        <span>
-                                            <?php echo sprintf('%02d', $cardIndex); ?>
-                                        </span>
-                                    </div>
+                    <div class="benefitCard_content__wrapper benefitCard_content__wrapper-<?php echo $cardIndex; ?> w-full relative">
+                        <div class="benefitCard_content flex justify-start items-center bg-white">
+                            <div class="benefitCard_number__wrapper benefitCard_number__wrapper-<?php echo $cardIndex; ?> flex justify-center items-center">
+                                <div class="benefitCard_number_thickBackground flex justify-center items-center">
+                                    <span>
+                                        <?php echo sprintf('%02d', $cardIndex); ?>
+                                    </span>
                                 </div>
-                                <h5 class="benefitCardTitle"><?php echo $benefitText; ?></h5>
                             </div>
-                            <!-- Border div -->
-                             <div class="benefitCardBorderDiv benefitCardBorderDiv-<?php echo $cardIndex; ?> w-full h-full absolute top-0 left-0"></div>
+                            <h5 class="benefitCardTitle"><?php echo $benefitText; ?></h5>
                         </div>
+                        <!-- Border div -->
+                            <div class="benefitCardBorderDiv benefitCardBorderDiv-<?php echo $cardIndex; ?> w-full h-full absolute top-0 left-0"></div>
+                    </div>
 
-                        <?php 
-                        $cardIndex++;
-                        endwhile; ?>
-                    <?php endif; ?>
-                </div>
-             </div>
-        </div>
+                    <?php 
+                    $cardIndex++;
+                    endwhile; ?>
+                <?php endif; ?>
+            </div>
+            </div>
     </div>
     <?php if($showShapeDecoration) { ?>
         <svg class="programBenefitsDeco" width="386" height="701" viewBox="0 0 386 701" fill="none" xmlns="http://www.w3.org/2000/svg">

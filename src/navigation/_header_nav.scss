@@ -120,7 +120,11 @@ header {
     display: block;
 }
 
-@media screen and (max-width: $size_md) {
+.mobileMenuWrapper {
+    overflow-x: hidden;
+}
+
+@media screen and (max-width: $size_lg) {
     #menu-header-menu {
         .menu-item {
             display: block;
@@ -283,6 +287,15 @@ header {
         justify-content: space-between;
         flex-direction: column;
     }
-
-    
   }
+
+.top-banner {
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.top-banner-content {
+    margin: 0 auto;
+    max-width: 1200px; /* Adjust based on your design */
+}

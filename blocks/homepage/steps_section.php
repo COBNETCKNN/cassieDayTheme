@@ -25,8 +25,8 @@ if ($showSection) { ?>
 
 <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> font-plus relative">
     <div class="container mx-auto">
-        <div class="md:grid lg:grid-cols-4 gap-6">
-            <div class="md:col-span-4 lg:col-span-1 my-auto">
+        <div class="md:grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div class="md:col-span-3 lg:col-span-1 my-auto">
                 <?php
                 $stepsContent = get_sub_field('content_editor');
                 $alignment = get_sub_field('align_content');
@@ -64,7 +64,7 @@ if ($showSection) { ?>
                         $formatted_number = sprintf('%02d', $counter);
                         ?>
 
-                        <div class="stepCard_wrapper bg-section-primary px-7 py-10 rounded-2xl relative z-10 mx-10 md:mx-0">
+                        <div class="stepCard_wrapper bg-section-primary px-7 py-10 rounded-2xl relative z-10 mx-0 md:mx-10 md:mx-0">
                             <div class="numberIcon_wrapper flex justify-between">
                                 <span class="stepsCard_span stepCard_counter<?php echo $counter; ?> font-plus font-extrabold leading-none opacity-40 my-auto"><?php echo $formatted_number; ?></span>
                                 <div class="iconRounded_wrapper">

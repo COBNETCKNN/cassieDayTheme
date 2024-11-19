@@ -32,90 +32,88 @@ if ($showSection) { ?>
 
 <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> relative font-plus">
     <div class="container mx-auto w-full h-full">
-        <div class="mx-5 lg:mx-0">
-            <?php
-                $editorContent = get_sub_field('content_editor');
-                $alignment = get_sub_field('align_content');
-            ?>
-            <!-- Text Content -->
-            <?php 
-                // Determine the alignment value for inline CSS
-                $alignment_style = '';
-                if ($alignment == 'left') {
-                    $alignment_style = 'left';
-                } elseif ($alignment == 'center') {
-                    $alignment_style = 'center';
-                } elseif ($alignment == 'right') {
-                    $alignment_style = 'right';
-                }
-            ?>
-            <div class="pagesTeamCards my-auto relative lg:col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
-                <div class="pagesEditor pagesTeamCards_wrapper relative mb-24">
-                    <!-- Content -->
-                    <?php echo $editorContent; ?>
-                </div>
+        <?php
+            $editorContent = get_sub_field('content_editor');
+            $alignment = get_sub_field('align_content');
+        ?>
+        <!-- Text Content -->
+        <?php 
+            // Determine the alignment value for inline CSS
+            $alignment_style = '';
+            if ($alignment == 'left') {
+                $alignment_style = 'left';
+            } elseif ($alignment == 'center') {
+                $alignment_style = 'center';
+            } elseif ($alignment == 'right') {
+                $alignment_style = 'right';
+            }
+        ?>
+        <div class="pagesTeamCards my-auto relative lg:col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
+            <div class="pagesEditor pagesTeamCards_wrapper relative mb-10 lg:mb-24">
+                <!-- Content -->
+                <?php echo $editorContent; ?>
             </div>
-            <!-- Job listings repeater -->
-             <div class="jobListings_wrapper relative z-10">
-                    <?php if( have_rows('job_listings') ): ?>
-                        <?php $jobListingIndex = 1; ?>
-                        <?php while( have_rows('job_listings') ): the_row(); 
-                        
-                            $jobPosition = get_sub_field('position');
-                            $jobLocation = get_sub_field('location');
-                            $contractType = get_sub_field('contract_type');
-                            $applyButton = get_sub_field('link');
-                            $applyButton_url = $applyButton['url'];
-                            $applyButton_title = $applyButton['title'];
-                            ?>
-                            <!-- Content -->
-                            <div class="jobListingsGrid grid lg:grid-cols-6 gap-4 my-10 pb-10 lg:pb-0">
-                                <div class="lg:col-span-4 w-full h-full">
-                                    <div class="jobListingContent_wrapper jobListingContent_wrapper-<?php echo $jobListingIndex; ?> w-full h-full p-12">
-                                        <h4 class="jobListingTitle mb-5 text-center lg:text-start"><?php echo $jobPosition; ?></h4>
-                                        <div class="jobListingInfo flex justify-start">
-                                            <div class="jobLocation_wrapper flex justify-center items-center px-7 py-4 mr-7">
-                                                <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M10.0005 0.0419922C7.35447 0.0449033 4.81761 1.09727 2.94647 2.96822C1.07533 4.83918 0.0227075 7.37593 0.0195312 10.022C0.0195312 12.592 2.00953 16.614 5.93453 21.976C6.40179 22.6161 7.01359 23.1369 7.72013 23.4959C8.42668 23.8549 9.20801 24.042 10.0005 24.042C10.7931 24.042 11.5744 23.8549 12.2809 23.4959C12.9875 23.1369 13.5993 22.6161 14.0665 21.976C17.9915 16.614 19.9815 12.592 19.9815 10.022C19.9784 7.37593 18.9257 4.83918 17.0546 2.96822C15.1835 1.09727 12.6466 0.0449033 10.0005 0.0419922ZM10.0005 14C9.20941 14 8.43605 13.7654 7.77825 13.3259C7.12045 12.8863 6.60776 12.2616 6.30501 11.5307C6.00226 10.7998 5.92305 9.99556 6.07739 9.21963C6.23173 8.44371 6.61269 7.73098 7.1721 7.17157C7.73151 6.61216 8.44425 6.23119 9.22017 6.07685C9.99609 5.92251 10.8004 6.00172 11.5313 6.30448C12.2622 6.60723 12.8869 7.11992 13.3264 7.77771C13.7659 8.43551 14.0005 9.20887 14.0005 9.99999C14.0005 11.0609 13.5791 12.0783 12.829 12.8284C12.0788 13.5786 11.0614 14 10.0005 14Z" fill="black"/>
-                                                </svg>
-                                                <span class="jobListinInfo_span ml-2"><?php echo $jobLocation; ?></span>
-                                            </div>
-                                            <div class="contactType_wrapper flex justify-center items-center px-7 py-4">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <g clip-path="url(#clip0_136_667)">
-                                                <path d="M12 0C5.383 0 0 5.383 0 12C0 18.617 5.383 24 12 24C18.617 24 24 18.617 24 12C24 5.383 18.617 0 12 0ZM16 13H12C11.448 13 11 12.553 11 12V6C11 5.447 11.448 5 12 5C12.552 5 13 5.447 13 6V11H16C16.553 11 17 11.447 17 12C17 12.553 16.553 13 16 13Z" fill="black"/>
-                                                </g>
-                                                <defs>
-                                                <clipPath id="clip0_136_667">
-                                                <rect width="24" height="24" fill="white"/>
-                                                </clipPath>
-                                                </defs>
-                                                </svg>
-                                                <span class="jobListinInfo_span ml-2"><?php echo $contractType; ?></span>
-                                            </div>
+        </div>
+        <!-- Job listings repeater -->
+            <div class="jobListings_wrapper relative z-10">
+                <?php if( have_rows('job_listings') ): ?>
+                    <?php $jobListingIndex = 1; ?>
+                    <?php while( have_rows('job_listings') ): the_row(); 
+                    
+                        $jobPosition = get_sub_field('position');
+                        $jobLocation = get_sub_field('location');
+                        $contractType = get_sub_field('contract_type');
+                        $applyButton = get_sub_field('link');
+                        $applyButton_url = $applyButton['url'];
+                        $applyButton_title = $applyButton['title'];
+                        ?>
+                        <!-- Content -->
+                        <div class="jobListingsGrid grid md:grid-cols-6 gap-4 my-10 pb-10 md:pb-0 lg:pb-0">
+                            <div class="md:col-span-4 w-full h-full">
+                                <div class="jobListingContent_wrapper jobListingContent_wrapper-<?php echo $jobListingIndex; ?> w-full h-full p-4 md:p-12">
+                                    <h4 class="jobListingTitle mb-5 text-center lg:text-start"><?php echo $jobPosition; ?></h4>
+                                    <div class="jobListingInfo flex justify-start">
+                                        <div class="jobLocation_wrapper flex justify-center items-center px-3 md:pr-7 py-2 md:py-4">
+                                            <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10.0005 0.0419922C7.35447 0.0449033 4.81761 1.09727 2.94647 2.96822C1.07533 4.83918 0.0227075 7.37593 0.0195312 10.022C0.0195312 12.592 2.00953 16.614 5.93453 21.976C6.40179 22.6161 7.01359 23.1369 7.72013 23.4959C8.42668 23.8549 9.20801 24.042 10.0005 24.042C10.7931 24.042 11.5744 23.8549 12.2809 23.4959C12.9875 23.1369 13.5993 22.6161 14.0665 21.976C17.9915 16.614 19.9815 12.592 19.9815 10.022C19.9784 7.37593 18.9257 4.83918 17.0546 2.96822C15.1835 1.09727 12.6466 0.0449033 10.0005 0.0419922ZM10.0005 14C9.20941 14 8.43605 13.7654 7.77825 13.3259C7.12045 12.8863 6.60776 12.2616 6.30501 11.5307C6.00226 10.7998 5.92305 9.99556 6.07739 9.21963C6.23173 8.44371 6.61269 7.73098 7.1721 7.17157C7.73151 6.61216 8.44425 6.23119 9.22017 6.07685C9.99609 5.92251 10.8004 6.00172 11.5313 6.30448C12.2622 6.60723 12.8869 7.11992 13.3264 7.77771C13.7659 8.43551 14.0005 9.20887 14.0005 9.99999C14.0005 11.0609 13.5791 12.0783 12.829 12.8284C12.0788 13.5786 11.0614 14 10.0005 14Z" fill="black"/>
+                                            </svg>
+                                            <span class="jobListinInfo_span ml-2"><?php echo $jobLocation; ?></span>
                                         </div>
-                                    </div>
-                                </div>
-                                <!-- Button -->
-                                <div class="lg:col-span-2">
-                                    <div class="jobListingButton_wrapper h-full w-full mt-3 lg:mt-0">
-                                        <div class="flex justify-center items-center h-full w-full">
-                                            <button class="button-jobListing px-7 py-4 font-plus rounded-xl text-base font-bold uppercase flex justify-center items-center">
-                                                <a class="block mr-4" target="_blank" href="<?php echo esc_url($applyButton_url); ?>"><?php echo esc_html($applyButton_title); ?></a>
-                                                <svg class="jobListingButtonArrow-<?php echo $jobListingIndex; ?> relative z-20" width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M23.12 4.91002L19.25 1.00002C19.157 0.906294 19.0464 0.831899 18.9246 0.78113C18.8027 0.730362 18.672 0.704224 18.54 0.704224C18.408 0.704224 18.2773 0.730362 18.1554 0.78113C18.0336 0.831899 17.923 0.906294 17.83 1.00002C17.6437 1.18738 17.5392 1.44084 17.5392 1.70502C17.5392 1.96921 17.6437 2.22266 17.83 2.41002L21.39 6.00002H1C0.734784 6.00002 0.48043 6.10538 0.292893 6.29292C0.105357 6.48045 0 6.73481 0 7.00002C0 7.26524 0.105357 7.51959 0.292893 7.70713C0.48043 7.89467 0.734784 8.00002 1 8.00002H21.45L17.83 11.61C17.7363 11.703 17.6619 11.8136 17.6111 11.9354C17.5603 12.0573 17.5342 12.188 17.5342 12.32C17.5342 12.452 17.5603 12.5827 17.6111 12.7046C17.6619 12.8265 17.7363 12.9371 17.83 13.03C17.923 13.1238 18.0336 13.1981 18.1554 13.2489C18.2773 13.2997 18.408 13.3258 18.54 13.3258C18.672 13.3258 18.8027 13.2997 18.9246 13.2489C19.0464 13.1981 19.157 13.1238 19.25 13.03L23.12 9.15002C23.6818 8.58752 23.9974 7.82503 23.9974 7.03002C23.9974 6.23502 23.6818 5.47252 23.12 4.91002Z" fill="#BBB6DF"/>
-                                                </svg>
-                                            </button>
+                                        <div class="contactType_wrapper flex justify-center items-center px-3 md:px-7 py-2 md:py-4">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_136_667)">
+                                            <path d="M12 0C5.383 0 0 5.383 0 12C0 18.617 5.383 24 12 24C18.617 24 24 18.617 24 12C24 5.383 18.617 0 12 0ZM16 13H12C11.448 13 11 12.553 11 12V6C11 5.447 11.448 5 12 5C12.552 5 13 5.447 13 6V11H16C16.553 11 17 11.447 17 12C17 12.553 16.553 13 16 13Z" fill="black"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_136_667">
+                                            <rect width="24" height="24" fill="white"/>
+                                            </clipPath>
+                                            </defs>
+                                            </svg>
+                                            <span class="jobListinInfo_span ml-2"><?php echo $contractType; ?></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        <?php 
-                        $jobListingIndex++;
-                        endwhile; ?>
-                    <?php endif; ?>
-             </div>
-        </div>
+                            <!-- Button -->
+                            <div class="md:col-span-2">
+                                <div class="jobListingButton_wrapper h-full w-full mt-3 lg:mt-0">
+                                    <div class="flex justify-center items-center h-full w-full">
+                                        <button class="button-jobListing px-7 py-4 font-plus rounded-xl text-base font-bold uppercase flex justify-center items-center">
+                                            <a class="block mr-4" target="_blank" href="<?php echo esc_url($applyButton_url); ?>"><?php echo esc_html($applyButton_title); ?></a>
+                                            <svg class="jobListingButtonArrow-<?php echo $jobListingIndex; ?> relative z-20" width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23.12 4.91002L19.25 1.00002C19.157 0.906294 19.0464 0.831899 18.9246 0.78113C18.8027 0.730362 18.672 0.704224 18.54 0.704224C18.408 0.704224 18.2773 0.730362 18.1554 0.78113C18.0336 0.831899 17.923 0.906294 17.83 1.00002C17.6437 1.18738 17.5392 1.44084 17.5392 1.70502C17.5392 1.96921 17.6437 2.22266 17.83 2.41002L21.39 6.00002H1C0.734784 6.00002 0.48043 6.10538 0.292893 6.29292C0.105357 6.48045 0 6.73481 0 7.00002C0 7.26524 0.105357 7.51959 0.292893 7.70713C0.48043 7.89467 0.734784 8.00002 1 8.00002H21.45L17.83 11.61C17.7363 11.703 17.6619 11.8136 17.6111 11.9354C17.5603 12.0573 17.5342 12.188 17.5342 12.32C17.5342 12.452 17.5603 12.5827 17.6111 12.7046C17.6619 12.8265 17.7363 12.9371 17.83 13.03C17.923 13.1238 18.0336 13.1981 18.1554 13.2489C18.2773 13.2997 18.408 13.3258 18.54 13.3258C18.672 13.3258 18.8027 13.2997 18.9246 13.2489C19.0464 13.1981 19.157 13.1238 19.25 13.03L23.12 9.15002C23.6818 8.58752 23.9974 7.82503 23.9974 7.03002C23.9974 6.23502 23.6818 5.47252 23.12 4.91002Z" fill="#BBB6DF"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php 
+                    $jobListingIndex++;
+                    endwhile; ?>
+                <?php endif; ?>
+            </div>
     </div>
     <?php if($showShapeDecoration) { ?>
         <svg class="jobListinDeco" width="280" height="900" viewBox="0 0 280 900" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -31,7 +31,7 @@ if ($showSection) { ?>
 
 <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> bg-white relative font-plus">
     <div class="container mx-auto w-full h-full">
-        <div class="lg:grid lg:grid-cols-5 gap-5 lg:gap-10 md:gap-4 mx-5 md:mx-14">
+        <div class="md:grid grid-cols-2 lg:grid-cols-5 gap-5 lg:gap-10 md:gap-4 lg:mx-14">
             <!-- Featured Image -->
             <div class="whatWeHelpWithFeatured lg:col-span-2 my-auto">
             <?php
@@ -49,7 +49,7 @@ if ($showSection) { ?>
                 <?php endif; ?>
             </div>
             <!-- Content -->
-             <div class="lg:col-span-3 my-auto">
+             <div class="col-span-1 lg:col-span-3 my-auto">
                 <?php
                 $editorContent = get_sub_field('content_editor');
                 $alignment = get_sub_field('align_content');
@@ -66,7 +66,7 @@ if ($showSection) { ?>
                         $alignment_style = 'right';
                     }
                 ?>
-                <div class="pagesWhatWeHelpWith my-auto relative lg:col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
+                <div class="pagesWhatWeHelpWith my-auto relative col-span-1 lg:col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
                     <div class="pagesEditor pagesWhatWeHelpWith_wrapper relative mb-8">
                         <!-- Content -->
                         <?php echo $editorContent; ?>

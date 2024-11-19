@@ -32,30 +32,28 @@ if ($showSection) { ?>
 
 <section id="<?php echo $section_id; ?>" class="<?php echo $section_class; ?> bg-white relative font-plus">
     <div class="container mx-auto w-full h-full">
-        <div class="mx-5 lg:mx-0">
-            <?php
-                $editorContent = get_sub_field('content_editor');
-                $alignment = get_sub_field('align_content');
-            ?>
-            <!-- Text Content -->
-            <?php 
-                // Determine the alignment value for inline CSS
-                $alignment_style = '';
-                if ($alignment == 'left') {
-                    $alignment_style = 'left';
-                } elseif ($alignment == 'center') {
-                    $alignment_style = 'center';
-                } elseif ($alignment == 'right') {
-                    $alignment_style = 'right';
-                }
-            ?>
-            <div class="pagesTitleWithDescription my-auto relative lg:col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
-                <div class="pagesEditor pagesTitleWithDescription_wrapper relative mb-14 lg:mb-24">
-                    <!-- Content -->
-                    <?php echo $editorContent; ?>
-                    <!-- Button -->
-                    <?php get_template_part('partials/form', 'links-button'); ?>
-                </div>
+        <?php
+            $editorContent = get_sub_field('content_editor');
+            $alignment = get_sub_field('align_content');
+        ?>
+        <!-- Text Content -->
+        <?php 
+            // Determine the alignment value for inline CSS
+            $alignment_style = '';
+            if ($alignment == 'left') {
+                $alignment_style = 'left';
+            } elseif ($alignment == 'center') {
+                $alignment_style = 'center';
+            } elseif ($alignment == 'right') {
+                $alignment_style = 'right';
+            }
+        ?>
+        <div class="pagesTitleWithDescription my-auto relative lg:col-span-3" style="text-align: <?php echo $alignment_style; ?>;">
+            <div class="pagesEditor pagesTitleWithDescription_wrapper relative mb-14 lg:mb-24">
+                <!-- Content -->
+                <?php echo $editorContent; ?>
+                <!-- Button -->
+                <?php get_template_part('partials/form', 'links-button'); ?>
             </div>
         </div>
     </div>

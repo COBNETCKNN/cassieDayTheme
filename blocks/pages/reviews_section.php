@@ -123,13 +123,14 @@ if ($showSection) { ?>
                             <!-- Image -->
                             <div class="reviewImage_wrapper col-span-2 my-auto order-first md:order-last">
                                 <?php 
-                                    $reviewerImage = get_sub_field('reviewer_image');
-                                    $reviewerImageSize = 'reviewer-image';
-                                    
-                                    if( $reviewerImage ) {
-                                        echo wp_get_attachment_image( $reviewerImage, $reviewerImageSize );
-                                    }
-                                ?>
+                                $reviewerImage = get_sub_field('reviewer_image');
+                                $url = $reviewerImage['url'];
+                                $alt = $reviewerImage['alt'];
+                                $size = 'reviewer-image';
+                                $thumb = $reviewerImage['sizes'][ $size ]; ?>
+
+                                <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
+
                             </div>
                         </div>
                     </div>

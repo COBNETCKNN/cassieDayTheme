@@ -39,15 +39,16 @@
 @media (min-width: $size_md) and (max-width: $size_lg) {
     .pagesEditor {
         h1,h2,h3,h4,h5,h6 {
-            font-size: 32px;
-            line-height: 38px;
             font-weight: 800;
             color: $secondary_text_color;
-            margin-bottom: 1.75rem;
+            font-size: 33px;
+            line-height: 44px;
+            font-weight: 800;
+            margin-bottom: 1.1rem;
         }
     
         p {
-            font-size: 16px;
+            font-size: 18px;
             line-height: 24px;
             font-weight: 500;
             color: $primary_light_text_color;
